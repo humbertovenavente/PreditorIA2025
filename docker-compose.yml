@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  fashion-scraper:
+    build: .
+    container_name: fashion-scraper
+    environment:
+      # Google Cloud Configuration
+      - GOOGLE_CLOUD_PROJECT=${GOOGLE_CLOUD_PROJECT}
+      - GCS_BUCKET_NAME=${GCS_BUCKET_NAME}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/gcp-key.json
+      
+      # Scraper Configuration
+      - TARGET_IMAGES=5000
+      - HEADLESS_BROWSER=true
+      
+    volumes:
+      # Montar datos locales
+      - ./data:/app/data
+      - ./credentials:/app/credentials:ro
+      
+    # Configuración de recursos
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2'
+        reservations:
+          memory: 2G
+          cpus: '1'
+    
+    # Reiniciar en caso de fallo
+    restart: unless-stopped
+    
+    # Comando por defecto
+    command: ["python", "main.py", "--platform", "all"]
+
+  # Servicio opcional para monitoreo
+  stats-viewer:
+    build: .
+    container_name: fashion-scraper-stats
+    environment:
+      - GOOGLE_CLOUD_PROJECT=${GOOGLE_CLOUD_PROJECT}
+      - GCS_BUCKET_NAME=${GCS_BUCKET_NAME}
+    volumes:
+      - ./data:/app/data
+      - ./credentials:/app/credentials:ro
+    command: ["python", "main.py", "--stats"]
+    profiles: ["stats"]
