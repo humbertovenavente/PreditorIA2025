@@ -1,0 +1,278 @@
+2025-08-23 17:38:19,406 - __main__ - INFO - Iniciando PreditorIA2025 Fashion Image Scraper
+2025-08-23 17:38:19,406 - __main__ - INFO - Objetivo: 5 imágenes
+2025-08-23 17:38:19,407 - __main__ - INFO - Imágenes actuales: 0
+2025-08-23 17:38:19,407 - __main__ - INFO - Imágenes restantes: 5
+2025-08-23 17:38:19,423 - scrapers.web_scraper - INFO - Iniciando scraping web - Objetivo: 5 imágenes
+2025-08-23 17:38:19,423 - WDM - INFO - ====== WebDriver manager ======
+2025-08-23 17:38:19,430 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 17:38:19,697 - WDM - INFO - About to download new driver from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+2025-08-23 17:38:19,857 - WDM - INFO - Driver downloading response is 200
+2025-08-23 17:38:22,609 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 17:38:22,862 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 17:38:23,043 - WDM - INFO - Driver has been saved in cache [/home/jose/.wdm/drivers/chromedriver/linux64/114.0.5735.90]
+2025-08-23 17:38:23,090 - scrapers.web_scraper - ERROR - Error en sesión de scraping web: Message: unknown error: cannot find Chrome binary
+Stacktrace:
+#0 0x5d7fa83f54e3 <unknown>
+#1 0x5d7fa8124c76 <unknown>
+#2 0x5d7fa814b757 <unknown>
+#3 0x5d7fa814a029 <unknown>
+#4 0x5d7fa8188ccc <unknown>
+#5 0x5d7fa818847f <unknown>
+#6 0x5d7fa817fde3 <unknown>
+#7 0x5d7fa81552dd <unknown>
+#8 0x5d7fa815634e <unknown>
+#9 0x5d7fa83b53e4 <unknown>
+#10 0x5d7fa83b93d7 <unknown>
+#11 0x5d7fa83c3b20 <unknown>
+#12 0x5d7fa83ba023 <unknown>
+#13 0x5d7fa83881aa <unknown>
+#14 0x5d7fa83de6b8 <unknown>
+#15 0x5d7fa83de847 <unknown>
+#16 0x5d7fa83ee243 <unknown>
+#17 0x77d86309caa4 <unknown>
+#18 0x77d863129c3c <unknown>
+
+2025-08-23 17:38:23,105 - __main__ - INFO - Scraping completado!
+2025-08-23 23:55:21,818 - __main__ - INFO - Iniciando PreditorIA2025 Fashion Image Scraper
+2025-08-23 23:55:21,819 - __main__ - INFO - Objetivo: 5 imágenes
+2025-08-23 23:55:21,821 - __main__ - INFO - Imágenes actuales: 0
+2025-08-23 23:55:21,821 - __main__ - INFO - Imágenes restantes: 5
+2025-08-23 23:55:21,827 - scrapers.web_scraper - INFO - Iniciando scraping web - Objetivo: 5 imágenes
+2025-08-23 23:55:21,827 - WDM - INFO - ====== WebDriver manager ======
+2025-08-23 23:55:21,913 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 23:55:22,157 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 23:55:22,393 - WDM - INFO - There is no [linux64] chromedriver "139.0.7258.138" for browser google-chrome "139.0.7258" in cache
+2025-08-23 23:55:22,394 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 23:55:22,975 - WDM - INFO - WebDriver version 139.0.7258.138 selected
+2025-08-23 23:55:22,981 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.138/linux64/chromedriver-linux64.zip
+2025-08-23 23:55:22,982 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.138/linux64/chromedriver-linux64.zip
+2025-08-23 23:55:23,177 - WDM - INFO - Driver downloading response is 200
+2025-08-23 23:55:27,719 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 23:55:28,067 - WDM - INFO - Driver has been saved in cache [/home/scraper/.wdm/drivers/chromedriver/linux64/139.0.7258.138]
+2025-08-23 23:55:28,830 - scrapers.web_scraper - INFO - Extrayendo imágenes de: https://www.diunsa.hn/guatemala
+2025-08-23 23:55:41,097 - scrapers.web_scraper - INFO - Sitio https://www.diunsa.hn/guatemala: 0 imágenes recolectadas
+2025-08-23 23:55:46,097 - scrapers.web_scraper - INFO - Extrayendo imágenes de: https://www.paiz.com.gt/moda
+2025-08-23 23:56:00,002 - scrapers.web_scraper - INFO - Sitio https://www.paiz.com.gt/moda: 0 imágenes recolectadas
+2025-08-23 23:56:05,084 - scrapers.web_scraper - INFO - Sesión web completada: 0 imágenes recolectadas
+2025-08-23 23:56:05,085 - __main__ - INFO - Scraping completado!
+2025-08-23 23:56:44,140 - __main__ - INFO - Iniciando PreditorIA2025 Fashion Image Scraper
+2025-08-23 23:56:44,140 - __main__ - INFO - Objetivo: 3 imágenes
+2025-08-23 23:56:44,141 - __main__ - INFO - Imágenes actuales: 0
+2025-08-23 23:56:44,141 - __main__ - INFO - Imágenes restantes: 3
+2025-08-23 23:56:56,315 - storage.cloud_storage - WARNING - No se encontraron credenciales de GCS. Funcionando en modo local.
+2025-08-23 23:56:56,330 - WDM - INFO - ====== WebDriver manager ======
+2025-08-23 23:56:56,400 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 23:56:56,628 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 23:56:57,013 - WDM - INFO - There is no [linux64] chromedriver "139.0.7258.138" for browser google-chrome "139.0.7258" in cache
+2025-08-23 23:56:57,013 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 23:56:57,673 - WDM - INFO - WebDriver version 139.0.7258.138 selected
+2025-08-23 23:56:57,677 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.138/linux64/chromedriver-linux64.zip
+2025-08-23 23:56:57,677 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.138/linux64/chromedriver-linux64.zip
+2025-08-23 23:56:57,887 - WDM - INFO - Driver downloading response is 200
+2025-08-23 23:57:01,065 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-23 23:57:01,363 - WDM - INFO - Driver has been saved in cache [/home/scraper/.wdm/drivers/chromedriver/linux64/139.0.7258.138]
+2025-08-23 23:57:01,588 - scrapers.instagram_scraper - INFO - Driver de Chrome configurado correctamente
+2025-08-23 23:57:01,588 - scrapers.instagram_scraper - INFO - Iniciando sesión de scraping - Objetivo: 3 imágenes
+2025-08-23 23:57:01,589 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #modaguatemala
+2025-08-23 23:57:08,762 - scrapers.instagram_scraper - INFO - Completado scraping para #modaguatemala: 0 imágenes
+2025-08-23 23:57:08,778 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:57:08,778 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #modaguatemala
+2025-08-23 23:57:13,778 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #fashionguatemala
+2025-08-23 23:57:19,651 - scrapers.instagram_scraper - INFO - Completado scraping para #fashionguatemala: 0 imágenes
+2025-08-23 23:57:19,656 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:57:19,656 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #fashionguatemala
+2025-08-23 23:57:24,656 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #ropaguatemala
+2025-08-23 23:57:30,359 - scrapers.instagram_scraper - INFO - Completado scraping para #ropaguatemala: 0 imágenes
+2025-08-23 23:57:30,376 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:57:30,376 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #ropaguatemala
+2025-08-23 23:57:35,377 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #estilaguatemala
+2025-08-23 23:57:40,985 - scrapers.instagram_scraper - INFO - Completado scraping para #estilaguatemala: 0 imágenes
+2025-08-23 23:57:41,001 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:57:41,001 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #estilaguatemala
+2025-08-23 23:57:46,001 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #tendenciasgt
+2025-08-23 23:57:51,721 - scrapers.instagram_scraper - INFO - Completado scraping para #tendenciasgt: 0 imágenes
+2025-08-23 23:57:51,737 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:57:51,737 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #tendenciasgt
+2025-08-23 23:57:56,737 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #modagt
+2025-08-23 23:58:02,443 - scrapers.instagram_scraper - INFO - Completado scraping para #modagt: 0 imágenes
+2025-08-23 23:58:02,448 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:58:02,449 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #modagt
+2025-08-23 23:58:07,449 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #fashiongt
+2025-08-23 23:58:13,753 - scrapers.instagram_scraper - INFO - Completado scraping para #fashiongt: 0 imágenes
+2025-08-23 23:58:13,769 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:58:13,769 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #fashiongt
+2025-08-23 23:58:18,769 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #guatemalafashion
+2025-08-23 23:58:24,690 - scrapers.instagram_scraper - INFO - Completado scraping para #guatemalafashion: 0 imágenes
+2025-08-23 23:58:24,710 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:58:24,710 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #guatemalafashion
+2025-08-23 23:58:29,711 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #diseñoguatemala
+2025-08-23 23:58:35,477 - scrapers.instagram_scraper - INFO - Completado scraping para #diseñoguatemala: 0 imágenes
+2025-08-23 23:58:35,482 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:58:35,482 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #diseñoguatemala
+2025-08-23 23:58:40,482 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #boutiqueguatemala
+2025-08-23 23:58:46,256 - scrapers.instagram_scraper - INFO - Completado scraping para #boutiqueguatemala: 0 imágenes
+2025-08-23 23:58:46,275 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:58:46,275 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #boutiqueguatemala
+2025-08-23 23:58:51,276 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #tiendaguatemala
+2025-08-23 23:58:56,966 - scrapers.instagram_scraper - INFO - Completado scraping para #tiendaguatemala: 0 imágenes
+2025-08-23 23:58:56,984 - scrapers.instagram_scraper - INFO - Progreso: 0/3 imágenes
+2025-08-23 23:58:56,984 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #tiendaguatemala
+2025-08-23 23:59:02,000 - scrapers.instagram_scraper - INFO - Sesión completada: 0 imágenes recolectadas
+2025-08-23 23:59:02,077 - __main__ - INFO - Scraping completado!
+2025-08-24 00:01:46,503 - __main__ - INFO - Iniciando PreditorIA2025 Fashion Image Scraper
+2025-08-24 00:01:46,503 - __main__ - INFO - Objetivo: 5 imágenes
+2025-08-24 00:01:46,505 - __main__ - INFO - Imágenes actuales: 0
+2025-08-24 00:01:46,505 - __main__ - INFO - Imágenes restantes: 5
+2025-08-24 00:01:58,456 - storage.cloud_storage - WARNING - No se encontraron credenciales de GCS. Funcionando en modo local.
+2025-08-24 00:01:58,472 - scrapers.public_api_scraper - INFO - Iniciando sesión de scraping API - Objetivo: 5 imágenes
+2025-08-24 00:01:58,472 - scrapers.public_api_scraper - INFO - Creando 5 imágenes de demostración
+2025-08-24 00:01:58,767 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755993718_ea94891b.jpg
+2025-08-24 00:02:01,092 - scrapers.public_api_scraper - INFO - Imagen demo 1/5 guardada 💾: demo_1755993720_04dd72bc.jpg
+2025-08-24 00:02:03,376 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755993723_be925cac.jpg
+2025-08-24 00:02:05,570 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755993725_2cb9c408.jpg
+2025-08-24 00:02:13,775 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755993727_b65a886f.jpg
+2025-08-24 00:02:15,790 - scrapers.public_api_scraper - INFO - Sesión API completada: 1 imágenes recolectadas
+2025-08-24 00:02:15,791 - __main__ - INFO - Scraping completado!
+2025-08-23 18:19:52,702 - __main__ - INFO - Iniciando PreditorIA2025 Fashion Image Scraper
+2025-08-23 18:19:52,703 - __main__ - INFO - Objetivo: 5 imágenes
+2025-08-23 18:19:52,704 - __main__ - INFO - Imágenes actuales: 1
+2025-08-23 18:19:52,705 - __main__ - INFO - Imágenes restantes: 4
+2025-08-23 18:19:52,715 - storage.cloud_storage - INFO - Cliente GCS inicializado con archivo de credenciales
+2025-08-23 18:19:52,715 - storage.cloud_storage - INFO - Bucket configurado: fashion-images-preditoria2025-1755994382-1755994702
+2025-08-23 18:19:52,720 - scrapers.public_api_scraper - INFO - Iniciando sesión de scraping API - Objetivo: 4 imágenes
+2025-08-23 18:19:52,721 - scrapers.public_api_scraper - INFO - Creando 4 imágenes de demostración
+2025-08-23 18:19:53,005 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994792_ea94891b.jpg
+2025-08-23 18:20:01,265 - storage.cloud_storage - INFO - Imagen subida a GCS: images/demo_1755994795_04dd72bc.jpg
+2025-08-23 18:20:01,570 - storage.cloud_storage - INFO - Metadatos subidos a GCS: metadata/demo_1755994795_04dd72bc.json
+2025-08-23 18:20:01,586 - scrapers.public_api_scraper - INFO - Imagen demo 1/4 guardada ☁️: demo_1755994795_04dd72bc.jpg
+2025-08-23 18:20:03,880 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994803_be925cac.jpg
+2025-08-23 18:20:06,399 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994805_2cb9c408.jpg
+2025-08-23 18:20:08,585 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994808_b65a886f.jpg
+2025-08-23 18:20:10,601 - scrapers.public_api_scraper - INFO - Sesión API completada: 1 imágenes recolectadas
+2025-08-23 18:20:10,601 - __main__ - INFO - Scraping completado!
+2025-08-23 18:20:37,182 - __main__ - INFO - Iniciando PreditorIA2025 Fashion Image Scraper
+2025-08-23 18:20:37,182 - __main__ - INFO - Objetivo: 50 imágenes
+2025-08-23 18:20:37,183 - __main__ - INFO - Imágenes actuales: 2
+2025-08-23 18:20:37,183 - __main__ - INFO - Imágenes restantes: 48
+2025-08-23 18:20:37,190 - storage.cloud_storage - INFO - Cliente GCS inicializado con archivo de credenciales
+2025-08-23 18:20:37,191 - storage.cloud_storage - INFO - Bucket configurado: fashion-images-preditoria2025-1755994382-1755994702
+2025-08-23 18:20:37,206 - scrapers.public_api_scraper - INFO - Iniciando sesión de scraping API - Objetivo: 48 imágenes
+2025-08-23 18:20:37,206 - scrapers.public_api_scraper - INFO - Creando 48 imágenes de demostración
+2025-08-23 18:20:37,630 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994837_ea94891b.jpg
+2025-08-23 18:20:40,839 - storage.cloud_storage - INFO - Imagen subida a GCS: images/demo_1755994839_04dd72bc.jpg
+2025-08-23 18:20:40,998 - storage.cloud_storage - INFO - Metadatos subidos a GCS: metadata/demo_1755994839_04dd72bc.json
+2025-08-23 18:20:41,003 - scrapers.public_api_scraper - INFO - Imagen demo 1/48 guardada ☁️: demo_1755994839_04dd72bc.jpg
+2025-08-23 18:20:43,223 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994843_be925cac.jpg
+2025-08-23 18:20:45,416 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994845_2cb9c408.jpg
+2025-08-23 18:20:47,631 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994847_b65a886f.jpg
+2025-08-23 18:20:49,647 - scrapers.public_api_scraper - INFO - Sesión API completada: 1 imágenes recolectadas
+2025-08-23 18:20:49,647 - __main__ - INFO - Scraping completado!
+2025-08-24 00:22:37,305 - __main__ - INFO - Iniciando PreditorIA2025 Fashion Image Scraper
+2025-08-24 00:22:37,306 - __main__ - INFO - Objetivo: 5000 imágenes
+2025-08-24 00:22:37,308 - __main__ - INFO - Imágenes actuales: 3
+2025-08-24 00:22:37,308 - __main__ - INFO - Imágenes restantes: 4997
+2025-08-24 00:22:37,308 - __main__ - INFO - Distribución: 2498 APIs públicas, 1499 Instagram, 1000 sitios web
+2025-08-24 00:22:37,308 - __main__ - INFO - Iniciando scraping de APIs públicas...
+2025-08-24 00:22:37,318 - storage.cloud_storage - INFO - Cliente GCS inicializado con archivo de credenciales
+2025-08-24 00:22:37,319 - storage.cloud_storage - INFO - Bucket configurado: fashion-images-preditoria2025-1755994382-1755994702
+2025-08-24 00:22:37,325 - scrapers.public_api_scraper - INFO - Iniciando sesión de scraping API - Objetivo: 2498 imágenes
+2025-08-24 00:22:37,325 - scrapers.public_api_scraper - INFO - Creando 2498 imágenes de demostración
+2025-08-24 00:22:37,752 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994957_ea94891b.jpg
+2025-08-24 00:22:40,979 - storage.cloud_storage - INFO - Imagen subida a GCS: images/demo_1755994959_04dd72bc.jpg
+2025-08-24 00:22:41,179 - storage.cloud_storage - INFO - Metadatos subidos a GCS: metadata/demo_1755994959_04dd72bc.json
+2025-08-24 00:22:41,183 - scrapers.public_api_scraper - INFO - Imagen demo 1/2498 guardada ☁️: demo_1755994959_04dd72bc.jpg
+2025-08-24 00:22:43,426 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994963_be925cac.jpg
+2025-08-24 00:22:45,629 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994965_2cb9c408.jpg
+2025-08-24 00:22:47,986 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755994967_b65a886f.jpg
+2025-08-24 00:22:50,002 - scrapers.public_api_scraper - INFO - Sesión API completada: 1 imágenes recolectadas
+2025-08-24 00:22:50,002 - __main__ - INFO - Iniciando scraping de Instagram...
+2025-08-24 00:22:50,004 - storage.cloud_storage - INFO - Cliente GCS inicializado con archivo de credenciales
+2025-08-24 00:22:50,004 - storage.cloud_storage - INFO - Bucket configurado: fashion-images-preditoria2025-1755994382-1755994702
+2025-08-24 00:22:50,009 - WDM - INFO - ====== WebDriver manager ======
+2025-08-24 00:22:50,073 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-24 00:22:50,261 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-24 00:22:50,490 - WDM - INFO - There is no [linux64] chromedriver "139.0.7258.138" for browser google-chrome "139.0.7258" in cache
+2025-08-24 00:22:50,490 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-24 00:22:51,094 - WDM - INFO - WebDriver version 139.0.7258.138 selected
+2025-08-24 00:22:51,100 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.138/linux64/chromedriver-linux64.zip
+2025-08-24 00:22:51,100 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.138/linux64/chromedriver-linux64.zip
+2025-08-24 00:22:51,310 - WDM - INFO - Driver downloading response is 200
+2025-08-24 00:22:53,774 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-24 00:22:54,078 - WDM - INFO - Driver has been saved in cache [/home/scraper/.wdm/drivers/chromedriver/linux64/139.0.7258.138]
+2025-08-24 00:22:54,869 - scrapers.instagram_scraper - INFO - Driver de Chrome configurado correctamente
+2025-08-24 00:22:54,869 - scrapers.instagram_scraper - INFO - Iniciando sesión de scraping - Objetivo: 1499 imágenes
+2025-08-24 00:22:54,869 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #modaguatemala
+2025-08-24 00:25:31,734 - scrapers.instagram_scraper - INFO - Completado scraping para #modaguatemala: 0 imágenes
+2025-08-24 00:25:31,751 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:25:31,751 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #modaguatemala
+2025-08-24 00:25:36,751 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #fashionguatemala
+2025-08-24 00:28:14,950 - scrapers.instagram_scraper - INFO - Completado scraping para #fashionguatemala: 0 imágenes
+2025-08-24 00:28:14,970 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:28:14,970 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #fashionguatemala
+2025-08-23 18:28:17,203 - __main__ - INFO - Iniciando PreditorIA2025 Fashion Image Scraper
+2025-08-23 18:28:17,203 - __main__ - INFO - Objetivo: 1000 imágenes
+2025-08-23 18:28:17,205 - __main__ - INFO - Imágenes actuales: 4
+2025-08-23 18:28:17,205 - __main__ - INFO - Imágenes restantes: 996
+2025-08-23 18:28:17,218 - storage.cloud_storage - INFO - Cliente GCS inicializado con archivo de credenciales
+2025-08-23 18:28:17,218 - storage.cloud_storage - INFO - Bucket configurado: fashion-images-preditoria2025-1755994382-1755994702
+2025-08-23 18:28:17,224 - scrapers.public_api_scraper - INFO - Iniciando sesión de scraping API - Objetivo: 996 imágenes
+2025-08-23 18:28:17,224 - scrapers.public_api_scraper - INFO - Creando 996 imágenes de demostración
+2025-08-23 18:28:17,476 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755995297_ea94891b.jpg
+2025-08-24 00:28:19,970 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #ropaguatemala
+2025-08-23 18:28:20,474 - storage.cloud_storage - INFO - Imagen subida a GCS: images/demo_1755995299_04dd72bc.jpg
+2025-08-23 18:28:20,635 - storage.cloud_storage - INFO - Metadatos subidos a GCS: metadata/demo_1755995299_04dd72bc.json
+2025-08-23 18:28:20,641 - scrapers.public_api_scraper - INFO - Imagen demo 1/996 guardada ☁️: demo_1755995299_04dd72bc.jpg
+2025-08-23 18:28:22,867 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755995302_be925cac.jpg
+2025-08-23 18:28:25,107 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755995304_2cb9c408.jpg
+2025-08-23 18:28:27,413 - scrapers.public_api_scraper - WARNING - Imagen demo no pasó filtros de calidad: demo_1755995307_b65a886f.jpg
+2025-08-23 18:28:29,418 - scrapers.public_api_scraper - INFO - Sesión API completada: 1 imágenes recolectadas
+2025-08-23 18:28:29,418 - __main__ - INFO - Scraping completado!
+2025-08-24 00:30:56,202 - scrapers.instagram_scraper - INFO - Completado scraping para #ropaguatemala: 0 imágenes
+2025-08-24 00:30:56,221 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:30:56,221 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #ropaguatemala
+2025-08-24 00:31:01,221 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #estilaguatemala
+2025-08-24 00:33:37,622 - scrapers.instagram_scraper - INFO - Completado scraping para #estilaguatemala: 0 imágenes
+2025-08-24 00:33:37,640 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:33:37,640 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #estilaguatemala
+2025-08-24 00:33:42,641 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #tendenciasgt
+2025-08-24 00:36:18,834 - scrapers.instagram_scraper - INFO - Completado scraping para #tendenciasgt: 0 imágenes
+2025-08-24 00:36:18,852 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:36:18,852 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #tendenciasgt
+2025-08-24 00:36:23,853 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #modagt
+2025-08-24 00:38:59,947 - scrapers.instagram_scraper - INFO - Completado scraping para #modagt: 0 imágenes
+2025-08-24 00:38:59,966 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:38:59,966 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #modagt
+2025-08-24 00:39:04,966 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #fashiongt
+2025-08-24 00:41:41,214 - scrapers.instagram_scraper - INFO - Completado scraping para #fashiongt: 0 imágenes
+2025-08-24 00:41:41,232 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:41:41,232 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #fashiongt
+2025-08-24 00:41:46,232 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #guatemalafashion
+2025-08-24 00:44:22,503 - scrapers.instagram_scraper - INFO - Completado scraping para #guatemalafashion: 0 imágenes
+2025-08-24 00:44:22,521 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:44:22,521 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #guatemalafashion
+2025-08-24 00:44:27,522 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #diseñoguatemala
+2025-08-24 00:47:03,750 - scrapers.instagram_scraper - INFO - Completado scraping para #diseñoguatemala: 0 imágenes
+2025-08-24 00:47:03,769 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:47:03,769 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #diseñoguatemala
+2025-08-24 00:47:08,769 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #boutiqueguatemala
+2025-08-24 00:49:45,093 - scrapers.instagram_scraper - INFO - Completado scraping para #boutiqueguatemala: 0 imágenes
+2025-08-24 00:49:45,111 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:49:45,111 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #boutiqueguatemala
+2025-08-24 00:49:50,111 - scrapers.instagram_scraper - INFO - Iniciando scraping para hashtag: #tiendaguatemala
+2025-08-24 00:52:26,502 - scrapers.instagram_scraper - INFO - Completado scraping para #tiendaguatemala: 0 imágenes
+2025-08-24 00:52:26,521 - scrapers.instagram_scraper - INFO - Progreso: 0/1499 imágenes
+2025-08-24 00:52:26,521 - scrapers.instagram_scraper - WARNING - No se pudieron obtener imágenes para #tiendaguatemala
+2025-08-24 00:52:31,538 - scrapers.instagram_scraper - INFO - Sesión completada: 0 imágenes recolectadas
+2025-08-24 00:52:31,661 - __main__ - INFO - Iniciando scraping de sitios web...
+2025-08-24 00:52:31,670 - scrapers.web_scraper - INFO - Iniciando scraping web - Objetivo: 1000 imágenes
+2025-08-24 00:52:31,670 - WDM - INFO - ====== WebDriver manager ======
+2025-08-24 00:52:31,902 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-24 00:52:32,246 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-24 00:52:32,489 - WDM - INFO - Driver [/home/scraper/.wdm/drivers/chromedriver/linux64/139.0.7258.138/chromedriver-linux64/chromedriver] found in cache
+2025-08-24 00:52:33,258 - scrapers.web_scraper - INFO - Extrayendo imágenes de: https://unsplash.com/s/photos/fashion
+2025-08-24 00:54:59,986 - scrapers.web_scraper - INFO - Imagen guardada: web_unsplash_com_1755996899_ef397518.jpg
+2025-08-24 00:55:48,286 - scrapers.web_scraper - INFO - Sitio https://unsplash.com/s/photos/fashion: 1 imágenes recolectadas
+2025-08-24 00:55:53,289 - scrapers.web_scraper - INFO - Extrayendo imágenes de: https://unsplash.com/s/photos/clothing
+2025-08-24 00:57:53,749 - scrapers.web_scraper - INFO - Imagen guardada: web_unsplash_com_1755997071_9981f7f6.jpg
+2025-08-24 00:58:23,874 - scrapers.web_scraper - INFO - Sitio https://unsplash.com/s/photos/clothing: 1 imágenes recolectadas
+2025-08-24 00:58:28,878 - scrapers.web_scraper - INFO - Extrayendo imágenes de: https://unsplash.com/s/photos/style

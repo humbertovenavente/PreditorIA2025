@@ -22,11 +22,16 @@ class WebScraper:
         self.session_id = None
         self.images_collected = 0
         
-        # Sitios web de moda guatemaltecos
-        self.guatemala_fashion_sites = [
-            'https://www.diunsa.hn/guatemala',  # Tienda departamental
-            'https://www.paiz.com.gt/moda',     # Supermercado con sección moda
-            # Agregar más sitios específicos aquí
+        # Sitios web de moda y catálogos públicos
+        self.fashion_sites = [
+            'https://unsplash.com/s/photos/fashion',
+            'https://unsplash.com/s/photos/clothing',
+            'https://unsplash.com/s/photos/style',
+            'https://pixabay.com/images/search/fashion/',
+            'https://pixabay.com/images/search/clothing/',
+            'https://pexels.com/search/fashion/',
+            'https://pexels.com/search/clothing/',
+            # Sitios de moda con imágenes públicas
         ]
         
         # Crear directorios necesarios
@@ -74,16 +79,18 @@ class WebScraper:
             # Obtener HTML de la página
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
             
-            # Buscar imágenes con diferentes selectores
+            # Buscar imágenes con diferentes selectores para sitios de stock photos
             image_selectors = [
-                'img[src*="product"]',
-                'img[src*="fashion"]',
-                'img[src*="clothing"]',
-                'img[alt*="moda"]',
-                'img[alt*="ropa"]',
-                '.product-image img',
-                '.fashion-item img',
-                '.clothing-item img'
+                'img[src*="unsplash"]',
+                'img[src*="pixabay"]',
+                'img[src*="pexels"]',
+                'img[alt*="fashion"]',
+                'img[alt*="clothing"]',
+                'img[alt*="style"]',
+                'img[data-src]',
+                '.photo img',
+                '.image img',
+                '[data-testid="photo-grid"] img'
             ]
             
             images_found = []
@@ -233,8 +240,8 @@ class WebScraper:
         try:
             total_collected = 0
             
-            for site_url in self.guatemala_fashion_sites:
-                if total_collected >= max_images_per_site * len(self.guatemala_fashion_sites):
+            for site_url in self.fashion_sites:
+                if total_collected >= max_images_per_site * len(self.fashion_sites):
                     break
                 
                 collected = self.extract_images_from_page(site_url, max_images_per_site)
@@ -256,7 +263,7 @@ class WebScraper:
         try:
             self.logger.info(f"Iniciando scraping web - Objetivo: {target_images} imágenes")
             
-            images_per_site = target_images // len(self.guatemala_fashion_sites)
+            images_per_site = target_images // len(self.fashion_sites)
             collected = self.scrape_fashion_websites(images_per_site)
             
             # Actualizar sesión
