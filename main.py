@@ -7,11 +7,11 @@ Scraper principal para recolectar 5,000 imágenes de moda de Guatemala
 import argparse
 import logging
 from pathlib import Path
-from scrapers.instagram_scraper import InstagramScraper
+from scrapers.fashion_websites_scraper import FashionWebsitesScraper
 from scrapers.web_scraper import WebScraper
-from scrapers.public_api_scraper import PublicAPIImageScraper
+from scrapers.enhanced_api_scraper import EnhancedAPIImageScraper
 from scrapers.fast_image_generator import FastImageGenerator
-from storage.database import ImageDatabase
+from storage.cloud_database import CloudDatabase
 from config.settings import TARGET_IMAGES, DIRECTORIES
 
 def setup_logging():
@@ -29,7 +29,7 @@ def setup_logging():
 
 def show_statistics():
     """Muestra estadísticas actuales de la colección"""
-    db = ImageDatabase()
+    db = CloudDatabase()
     stats = db.get_statistics()
     
     print("\n" + "="*50)
@@ -81,7 +81,7 @@ def main():
         logger.info(f"Objetivo: {args.images} imágenes")
         
         # Verificar imágenes existentes
-        db = ImageDatabase()
+        db = CloudDatabase()
         current_images = db.get_image_count()
         remaining_images = max(0, args.images - current_images)
         
@@ -123,8 +123,8 @@ def main():
             # Scraping de Instagram
             if instagram_images > 0 and total_collected < remaining_images:
                 logger.info("Iniciando scraping de Instagram...")
-                instagram_scraper = InstagramScraper()
-                collected = instagram_scraper.run_scraping_session(instagram_images)
+                        fashion_websites_scraper = FashionWebsitesScraper()
+        collected = fashion_websites_scraper.run_scraping_session(instagram_images)
                 total_collected += collected
                 logger.info(f"Instagram completado: {collected} imágenes")
             
@@ -145,8 +145,8 @@ def main():
                 total_collected += collected
             elif args.instagram_only:
                 logger.info("Iniciando scraping de Instagram...")
-                instagram_scraper = InstagramScraper()
-                collected = instagram_scraper.run_scraping_session(remaining_images)
+                        fashion_websites_scraper = FashionWebsitesScraper()
+        collected = fashion_websites_scraper.run_scraping_session(remaining_images)
                 total_collected += collected
             elif args.web_only:
                 logger.info("Iniciando scraping de sitios web...")

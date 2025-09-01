@@ -1,0 +1,23 @@
+{
+  "target_size": [
+    224,
+    224
+  ],
+  "statistics": {
+    "original_count": 6057,
+    "processed_count": 6057,
+    "augmented_count": 18171,
+    "train_count": 16959,
+    "val_count": 3634,
+    "test_count": 3635
+  },
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "augmentation": {
+    "augmentations_per_image": 3,
+    "total_augmented": 18171
+  }
+}

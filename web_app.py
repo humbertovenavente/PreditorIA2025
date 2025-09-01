@@ -11,9 +11,9 @@ from threading import Thread
 import time
 from scrapers.fast_image_generator import FastImageGenerator
 from scrapers.public_api_scraper import PublicAPIImageScraper
-from scrapers.instagram_scraper import InstagramScraper
+from scrapers.fashion_websites_scraper import FashionWebsitesScraper
 from scrapers.web_scraper import WebScraper
-from storage.database import ImageDatabase
+from storage.cloud_database import CloudDatabase
 
 app = Flask(__name__)
 
@@ -62,7 +62,7 @@ def run_scraping_task(target_images, method='fast'):
             scraper = PublicAPIImageScraper()
             collected = scraper.run_scraping_session(target_images)
         elif method == 'instagram':
-            scraper = InstagramScraper()
+            scraper = FashionWebsitesScraper()
             collected = scraper.run_scraping_session(target_images)
         elif method == 'web':
             scraper = WebScraper()
@@ -71,8 +71,15 @@ def run_scraping_task(target_images, method='fast'):
             scraper = PublicAPIImageScraper()
             collected = scraper.run_scraping_session(target_images)
         
-        scraping_status['images_collected'] = collected
-        add_log(f"Scraping completado: {collected} imágenes recolectadas")
+        # Obtener progreso real del scraper
+        if hasattr(scraper, 'get_progress'):
+            progress_data = scraper.get_progress()
+            scraping_status['images_collected'] = progress_data.get('images_collected', collected)
+            scraping_status['total_in_db'] = progress_data.get('total_in_db', 0)
+        else:
+            scraping_status['images_collected'] = collected
+            
+        add_log(f"Scraping completado: {scraping_status['images_collected']} imágenes recolectadas")
         
     except Exception as e:
         add_log(f"Error en scraping: {str(e)}")
@@ -121,18 +128,21 @@ def start_scraping():
 
 @app.route('/status')
 def get_status():
-    """Obtener estado actual del scraping"""
-    # Actualizar progreso si está corriendo
-    if scraping_status['running']:
-        try:
-            db = ImageDatabase()
-            current_count = db.get_image_count()
-            scraping_status['images_collected'] = current_count
+    """Estado del scraping con progreso real"""
+    # Actualizar con datos reales de la base de datos
+    try:
+        from storage.cloud_database import CloudDatabase
+        db = CloudDatabase()
+        real_count = db.get_image_count()
+        
+        # Actualizar contador con datos reales
+        if real_count > scraping_status.get('images_collected', 0):
+            scraping_status['images_collected'] = real_count
+            if scraping_status.get('total_target', 0) > 0:
+                scraping_status['progress'] = (real_count / scraping_status['total_target']) * 100
             
-            if scraping_status['total_target'] > 0:
-                scraping_status['progress'] = (current_count / scraping_status['total_target']) * 100
-        except Exception as e:
-            add_log(f"Error actualizando estado: {str(e)}")
+    except Exception as e:
+        add_log(f"Error actualizando estado: {str(e)}")
     
     return jsonify(scraping_status)
 
@@ -140,7 +150,8 @@ def get_status():
 def get_stats():
     """Obtener estadísticas de la base de datos"""
     try:
-        db = ImageDatabase()
+        from storage.cloud_database import CloudDatabase
+        db = CloudDatabase()
         stats = db.get_statistics()
         return jsonify(stats)
     except Exception as e:

@@ -22,15 +22,13 @@ class GoogleCloudStorage:
     def initialize_client(self):
         """Inicializa el cliente de Google Cloud Storage"""
         try:
-            # Verificar credenciales
-            credentials_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-            if credentials_path and Path(credentials_path).exists():
-                self.client = storage.Client(project=self.project_id)
-                self.logger.info("Cliente GCS inicializado con archivo de credenciales")
-            else:
-                # Intentar con credenciales por defecto
-                self.client = storage.Client(project=self.project_id)
-                self.logger.info("Cliente GCS inicializado con credenciales por defecto")
+            # Usar credenciales del archivo gcp-key.json
+            # Asegurar que las credenciales estén configuradas
+            if not os.getenv('GOOGLE_APPLICATION_CREDENTIALS'):
+                os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'credentials/gcp-key.json'
+            
+            self.client = storage.Client(project=self.project_id)
+            self.logger.info("Cliente GCS inicializado con credenciales del archivo")
             
             # Verificar bucket
             if self.bucket_name:

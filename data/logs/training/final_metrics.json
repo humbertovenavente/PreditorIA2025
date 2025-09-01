@@ -1,0 +1,6 @@
+{
+  "test_loss": 0.6777898073196411,
+  "test_accuracy": 0.7596365809440613,
+  "num_classes": 11,
+  "total_params": 3048011
+}
