@@ -1,0 +1,1139 @@
+2025-09-06 16:07:37,252 - __main__ - INFO - 🚀 Iniciando extracción de embeddings
+2025-09-06 16:07:37,253 - __main__ - INFO - 📁 Cargando dataset desde data/processed
+2025-09-06 16:07:37,332 - fashion_clustering.utils.data - WARNING - Split val no encontrado en data/processed/val
+2025-09-06 16:07:37,350 - fashion_clustering.utils.data - INFO - Cargadas 20594 imágenes de 2 splits
+2025-09-06 16:07:37,351 - __main__ - INFO - ✅ Cargadas 20594 imágenes
+2025-09-06 16:07:37,351 - __main__ - INFO - 📊 Creando metadatos
+2025-09-06 16:07:37,587 - __main__ - INFO - 🤖 Cargando modelo MobileNetV2
+2025-09-06 16:07:39,491 - absl - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-09-06 16:07:39,554 - fashion_clustering.utils.vision - INFO - Modelo afinado cargado desde data/logs/training/mobilenet_v2_final.h5
+2025-09-06 16:07:39,557 - fashion_clustering.utils.vision - INFO - Capas base congeladas
+2025-09-06 16:07:39,570 - fashion_clustering.utils.vision - INFO - Extractor de características creado (capa -2)
+2025-09-06 16:07:39,570 - __main__ - INFO - 🔧 Configuración: batch_size=64, image_size=(224, 224), normalize=True
+2025-09-06 16:07:39,570 - __main__ - INFO - 🔄 Extrayendo embeddings...
+2025-09-06 16:07:43,586 - __main__ - INFO - 📈 Progreso: 0.3%
+2025-09-06 16:07:46,097 - __main__ - INFO - 📈 Progreso: 0.6%
+2025-09-06 16:07:48,443 - __main__ - INFO - 📈 Progreso: 0.9%
+2025-09-06 16:07:50,758 - __main__ - INFO - 📈 Progreso: 1.2%
+2025-09-06 16:07:52,995 - __main__ - INFO - 📈 Progreso: 1.6%
+2025-09-06 16:07:55,220 - __main__ - INFO - 📈 Progreso: 1.9%
+2025-09-06 16:07:57,561 - __main__ - INFO - 📈 Progreso: 2.2%
+2025-09-06 16:07:59,822 - __main__ - INFO - 📈 Progreso: 2.5%
+2025-09-06 16:08:02,215 - __main__ - INFO - 📈 Progreso: 2.8%
+2025-09-06 16:08:04,726 - __main__ - INFO - 📈 Progreso: 3.1%
+2025-09-06 16:08:07,079 - __main__ - INFO - 📈 Progreso: 3.4%
+2025-09-06 16:08:09,381 - __main__ - INFO - 📈 Progreso: 3.7%
+2025-09-06 16:08:11,609 - __main__ - INFO - 📈 Progreso: 4.0%
+2025-09-06 16:08:14,085 - __main__ - INFO - 📈 Progreso: 4.3%
+2025-09-06 16:08:16,307 - __main__ - INFO - 📈 Progreso: 4.7%
+2025-09-06 16:08:18,673 - __main__ - INFO - 📈 Progreso: 5.0%
+2025-09-06 16:08:20,886 - __main__ - INFO - 📈 Progreso: 5.3%
+2025-09-06 16:08:23,213 - __main__ - INFO - 📈 Progreso: 5.6%
+2025-09-06 16:08:25,491 - __main__ - INFO - 📈 Progreso: 5.9%
+2025-09-06 16:08:27,721 - __main__ - INFO - 📈 Progreso: 6.2%
+2025-09-06 16:08:30,565 - __main__ - INFO - 📈 Progreso: 6.5%
+2025-09-06 16:08:32,895 - __main__ - INFO - 📈 Progreso: 6.8%
+2025-09-06 16:08:35,314 - __main__ - INFO - 📈 Progreso: 7.1%
+2025-09-06 16:08:37,540 - __main__ - INFO - 📈 Progreso: 7.5%
+2025-09-06 16:08:39,903 - __main__ - INFO - 📈 Progreso: 7.8%
+2025-09-06 16:08:42,186 - __main__ - INFO - 📈 Progreso: 8.1%
+2025-09-06 16:08:44,525 - __main__ - INFO - 📈 Progreso: 8.4%
+2025-09-06 16:08:46,892 - __main__ - INFO - 📈 Progreso: 8.7%
+2025-09-06 16:08:49,158 - __main__ - INFO - 📈 Progreso: 9.0%
+2025-09-06 16:08:51,537 - __main__ - INFO - 📈 Progreso: 9.3%
+2025-09-06 16:08:53,826 - __main__ - INFO - 📈 Progreso: 9.6%
+2025-09-06 16:08:56,024 - __main__ - INFO - 📈 Progreso: 9.9%
+2025-09-06 16:08:58,397 - __main__ - INFO - 📈 Progreso: 10.2%
+2025-09-06 16:09:00,606 - __main__ - INFO - 📈 Progreso: 10.6%
+2025-09-06 16:09:02,942 - __main__ - INFO - 📈 Progreso: 10.9%
+2025-09-06 16:09:05,208 - __main__ - INFO - 📈 Progreso: 11.2%
+2025-09-06 16:09:07,566 - __main__ - INFO - 📈 Progreso: 11.5%
+2025-09-06 16:09:09,862 - __main__ - INFO - 📈 Progreso: 11.8%
+2025-09-06 16:09:12,108 - __main__ - INFO - 📈 Progreso: 12.1%
+2025-09-06 16:09:14,502 - __main__ - INFO - 📈 Progreso: 12.4%
+2025-09-06 16:09:16,773 - __main__ - INFO - 📈 Progreso: 12.7%
+2025-09-06 16:09:19,132 - __main__ - INFO - 📈 Progreso: 13.0%
+2025-09-06 16:09:21,369 - __main__ - INFO - 📈 Progreso: 13.4%
+2025-09-06 16:09:23,585 - __main__ - INFO - 📈 Progreso: 13.7%
+2025-09-06 16:09:25,876 - __main__ - INFO - 📈 Progreso: 14.0%
+2025-09-06 16:09:28,121 - __main__ - INFO - 📈 Progreso: 14.3%
+2025-09-06 16:09:30,720 - __main__ - INFO - 📈 Progreso: 14.6%
+2025-09-06 16:09:33,249 - __main__ - INFO - 📈 Progreso: 14.9%
+2025-09-06 16:09:35,721 - __main__ - INFO - 📈 Progreso: 15.2%
+2025-09-06 16:09:37,951 - __main__ - INFO - 📈 Progreso: 15.5%
+2025-09-06 16:09:40,186 - __main__ - INFO - 📈 Progreso: 15.8%
+2025-09-06 16:09:42,500 - __main__ - INFO - 📈 Progreso: 16.1%
+2025-09-06 16:09:44,682 - __main__ - INFO - 📈 Progreso: 16.5%
+2025-09-06 16:09:47,067 - __main__ - INFO - 📈 Progreso: 16.8%
+2025-09-06 16:09:49,339 - __main__ - INFO - 📈 Progreso: 17.1%
+2025-09-06 16:09:51,555 - __main__ - INFO - 📈 Progreso: 17.4%
+2025-09-06 16:09:53,860 - __main__ - INFO - 📈 Progreso: 17.7%
+2025-09-06 16:09:56,070 - __main__ - INFO - 📈 Progreso: 18.0%
+2025-09-06 16:09:58,368 - __main__ - INFO - 📈 Progreso: 18.3%
+2025-09-06 16:10:00,670 - __main__ - INFO - 📈 Progreso: 18.6%
+2025-09-06 16:10:03,394 - __main__ - INFO - 📈 Progreso: 18.9%
+2025-09-06 16:10:05,737 - __main__ - INFO - 📈 Progreso: 19.3%
+2025-09-06 16:10:08,501 - __main__ - INFO - 📈 Progreso: 19.6%
+2025-09-06 16:10:12,319 - __main__ - INFO - 📈 Progreso: 19.9%
+2025-09-06 16:10:16,800 - __main__ - INFO - 📈 Progreso: 20.2%
+2025-09-06 16:10:21,370 - __main__ - INFO - 📈 Progreso: 20.5%
+2025-09-06 16:10:23,520 - __main__ - INFO - 📈 Progreso: 20.8%
+2025-09-06 16:10:25,581 - __main__ - INFO - 📈 Progreso: 21.1%
+2025-09-06 16:10:27,753 - __main__ - INFO - 📈 Progreso: 21.4%
+2025-09-06 16:10:29,891 - __main__ - INFO - 📈 Progreso: 21.7%
+2025-09-06 16:10:32,033 - __main__ - INFO - 📈 Progreso: 22.0%
+2025-09-06 16:10:34,130 - __main__ - INFO - 📈 Progreso: 22.4%
+2025-09-06 16:10:36,498 - __main__ - INFO - 📈 Progreso: 22.7%
+2025-09-06 16:10:38,517 - __main__ - INFO - 📈 Progreso: 23.0%
+2025-09-06 16:10:40,575 - __main__ - INFO - 📈 Progreso: 23.3%
+2025-09-06 16:10:42,569 - __main__ - INFO - 📈 Progreso: 23.6%
+2025-09-06 16:10:44,654 - __main__ - INFO - 📈 Progreso: 23.9%
+2025-09-06 16:10:46,658 - __main__ - INFO - 📈 Progreso: 24.2%
+2025-09-06 16:10:48,697 - __main__ - INFO - 📈 Progreso: 24.5%
+2025-09-06 16:10:50,720 - __main__ - INFO - 📈 Progreso: 24.8%
+2025-09-06 16:10:52,744 - __main__ - INFO - 📈 Progreso: 25.2%
+2025-09-06 16:10:54,732 - __main__ - INFO - 📈 Progreso: 25.5%
+2025-09-06 16:10:56,735 - __main__ - INFO - 📈 Progreso: 25.8%
+2025-09-06 16:10:58,776 - __main__ - INFO - 📈 Progreso: 26.1%
+2025-09-06 16:11:00,812 - __main__ - INFO - 📈 Progreso: 26.4%
+2025-09-06 16:11:02,830 - __main__ - INFO - 📈 Progreso: 26.7%
+2025-09-06 16:11:04,933 - __main__ - INFO - 📈 Progreso: 27.0%
+2025-09-06 16:11:06,990 - __main__ - INFO - 📈 Progreso: 27.3%
+2025-09-06 16:11:09,028 - __main__ - INFO - 📈 Progreso: 27.6%
+2025-09-06 16:11:11,011 - __main__ - INFO - 📈 Progreso: 28.0%
+2025-09-06 16:11:13,188 - __main__ - INFO - 📈 Progreso: 28.3%
+2025-09-06 16:11:15,202 - __main__ - INFO - 📈 Progreso: 28.6%
+2025-09-06 16:11:17,285 - __main__ - INFO - 📈 Progreso: 28.9%
+2025-09-06 16:11:19,504 - __main__ - INFO - 📈 Progreso: 29.2%
+2025-09-06 16:11:21,548 - __main__ - INFO - 📈 Progreso: 29.5%
+2025-09-06 16:11:23,862 - __main__ - INFO - 📈 Progreso: 29.8%
+2025-09-06 16:11:26,086 - __main__ - INFO - 📈 Progreso: 30.1%
+2025-09-06 16:11:28,493 - __main__ - INFO - 📈 Progreso: 30.4%
+2025-09-06 16:11:30,834 - __main__ - INFO - 📈 Progreso: 30.7%
+2025-09-06 16:11:33,336 - __main__ - INFO - 📈 Progreso: 31.1%
+2025-09-06 16:11:35,614 - __main__ - INFO - 📈 Progreso: 31.4%
+2025-09-06 16:11:38,212 - __main__ - INFO - 📈 Progreso: 31.7%
+2025-09-06 16:11:40,529 - __main__ - INFO - 📈 Progreso: 32.0%
+2025-09-06 16:11:42,734 - __main__ - INFO - 📈 Progreso: 32.3%
+2025-09-06 16:11:45,121 - __main__ - INFO - 📈 Progreso: 32.6%
+2025-09-06 16:11:47,330 - __main__ - INFO - 📈 Progreso: 32.9%
+2025-09-06 16:11:49,600 - __main__ - INFO - 📈 Progreso: 33.2%
+2025-09-06 16:11:51,851 - __main__ - INFO - 📈 Progreso: 33.5%
+2025-09-06 16:11:54,073 - __main__ - INFO - 📈 Progreso: 33.9%
+2025-09-06 16:11:56,371 - __main__ - INFO - 📈 Progreso: 34.2%
+2025-09-06 16:11:58,705 - __main__ - INFO - 📈 Progreso: 34.5%
+2025-09-06 16:12:01,178 - __main__ - INFO - 📈 Progreso: 34.8%
+2025-09-06 16:12:03,462 - __main__ - INFO - 📈 Progreso: 35.1%
+2025-09-06 16:12:05,708 - __main__ - INFO - 📈 Progreso: 35.4%
+2025-09-06 16:12:08,212 - __main__ - INFO - 📈 Progreso: 35.7%
+2025-09-06 16:12:10,507 - __main__ - INFO - 📈 Progreso: 36.0%
+2025-09-06 16:12:12,884 - __main__ - INFO - 📈 Progreso: 36.3%
+2025-09-06 16:12:15,133 - __main__ - INFO - 📈 Progreso: 36.6%
+2025-09-06 16:12:17,500 - __main__ - INFO - 📈 Progreso: 37.0%
+2025-09-06 16:12:19,812 - __main__ - INFO - 📈 Progreso: 37.3%
+2025-09-06 16:12:22,058 - __main__ - INFO - 📈 Progreso: 37.6%
+2025-09-06 16:12:25,033 - __main__ - INFO - 📈 Progreso: 37.9%
+2025-09-06 16:12:27,459 - __main__ - INFO - 📈 Progreso: 38.2%
+2025-09-06 16:12:29,901 - __main__ - INFO - 📈 Progreso: 38.5%
+2025-09-06 16:12:32,110 - __main__ - INFO - 📈 Progreso: 38.8%
+2025-09-06 16:12:34,916 - __main__ - INFO - 📈 Progreso: 39.1%
+2025-09-06 16:12:37,234 - __main__ - INFO - 📈 Progreso: 39.4%
+2025-09-06 16:12:39,504 - __main__ - INFO - 📈 Progreso: 39.8%
+2025-09-06 16:12:41,820 - __main__ - INFO - 📈 Progreso: 40.1%
+2025-09-06 16:12:44,063 - __main__ - INFO - 📈 Progreso: 40.4%
+2025-09-06 16:12:46,375 - __main__ - INFO - 📈 Progreso: 40.7%
+2025-09-06 16:12:48,569 - __main__ - INFO - 📈 Progreso: 41.0%
+2025-09-06 16:12:50,962 - __main__ - INFO - 📈 Progreso: 41.3%
+2025-09-06 16:12:53,210 - __main__ - INFO - 📈 Progreso: 41.6%
+2025-09-06 16:12:55,458 - __main__ - INFO - 📈 Progreso: 41.9%
+2025-09-06 16:12:57,765 - __main__ - INFO - 📈 Progreso: 42.2%
+2025-09-06 16:13:00,018 - __main__ - INFO - 📈 Progreso: 42.5%
+2025-09-06 16:13:02,406 - __main__ - INFO - 📈 Progreso: 42.9%
+2025-09-06 16:13:04,756 - __main__ - INFO - 📈 Progreso: 43.2%
+2025-09-06 16:13:07,032 - __main__ - INFO - 📈 Progreso: 43.5%
+2025-09-06 16:13:09,368 - __main__ - INFO - 📈 Progreso: 43.8%
+2025-09-06 16:13:11,541 - __main__ - INFO - 📈 Progreso: 44.1%
+2025-09-06 16:13:13,929 - __main__ - INFO - 📈 Progreso: 44.4%
+2025-09-06 16:13:16,185 - __main__ - INFO - 📈 Progreso: 44.7%
+2025-09-06 16:13:18,512 - __main__ - INFO - 📈 Progreso: 45.0%
+2025-09-06 16:13:20,761 - __main__ - INFO - 📈 Progreso: 45.3%
+2025-09-06 16:13:22,992 - __main__ - INFO - 📈 Progreso: 45.7%
+2025-09-06 16:13:25,371 - __main__ - INFO - 📈 Progreso: 46.0%
+2025-09-06 16:13:27,643 - __main__ - INFO - 📈 Progreso: 46.3%
+2025-09-06 16:13:30,053 - __main__ - INFO - 📈 Progreso: 46.6%
+2025-09-06 16:13:32,322 - __main__ - INFO - 📈 Progreso: 46.9%
+2025-09-06 16:13:34,980 - __main__ - INFO - 📈 Progreso: 47.2%
+2025-09-06 16:13:37,364 - __main__ - INFO - 📈 Progreso: 47.5%
+2025-09-06 16:13:39,632 - __main__ - INFO - 📈 Progreso: 47.8%
+2025-09-06 16:13:41,930 - __main__ - INFO - 📈 Progreso: 48.1%
+2025-09-06 16:13:44,146 - __main__ - INFO - 📈 Progreso: 48.4%
+2025-09-06 16:13:46,461 - __main__ - INFO - 📈 Progreso: 48.8%
+2025-09-06 16:13:48,725 - __main__ - INFO - 📈 Progreso: 49.1%
+2025-09-06 16:13:50,988 - __main__ - INFO - 📈 Progreso: 49.4%
+2025-09-06 16:13:53,338 - __main__ - INFO - 📈 Progreso: 49.7%
+2025-09-06 16:13:55,584 - __main__ - INFO - 📈 Progreso: 50.0%
+2025-09-06 16:13:57,910 - __main__ - INFO - 📈 Progreso: 50.3%
+2025-09-06 16:14:00,173 - __main__ - INFO - 📈 Progreso: 50.6%
+2025-09-06 16:14:02,377 - __main__ - INFO - 📈 Progreso: 50.9%
+2025-09-06 16:14:04,702 - __main__ - INFO - 📈 Progreso: 51.2%
+2025-09-06 16:14:06,922 - __main__ - INFO - 📈 Progreso: 51.6%
+2025-09-06 16:14:09,288 - __main__ - INFO - 📈 Progreso: 51.9%
+2025-09-06 16:14:11,606 - __main__ - INFO - 📈 Progreso: 52.2%
+2025-09-06 16:14:14,559 - __main__ - INFO - 📈 Progreso: 52.5%
+2025-09-06 16:14:16,843 - __main__ - INFO - 📈 Progreso: 52.8%
+2025-09-06 16:14:19,120 - __main__ - INFO - 📈 Progreso: 53.1%
+2025-09-06 16:14:22,148 - __main__ - INFO - 📈 Progreso: 53.4%
+2025-09-06 16:14:24,411 - __main__ - INFO - 📈 Progreso: 53.7%
+2025-09-06 16:14:26,714 - __main__ - INFO - 📈 Progreso: 54.0%
+2025-09-06 16:14:29,098 - __main__ - INFO - 📈 Progreso: 54.3%
+2025-09-06 16:14:31,506 - __main__ - INFO - 📈 Progreso: 54.7%
+2025-09-06 16:14:33,745 - __main__ - INFO - 📈 Progreso: 55.0%
+2025-09-06 16:14:36,540 - __main__ - INFO - 📈 Progreso: 55.3%
+2025-09-06 16:14:38,911 - __main__ - INFO - 📈 Progreso: 55.6%
+2025-09-06 16:14:41,196 - __main__ - INFO - 📈 Progreso: 55.9%
+2025-09-06 16:14:43,492 - __main__ - INFO - 📈 Progreso: 56.2%
+2025-09-06 16:14:45,669 - __main__ - INFO - 📈 Progreso: 56.5%
+2025-09-06 16:14:48,033 - __main__ - INFO - 📈 Progreso: 56.8%
+2025-09-06 16:14:50,380 - __main__ - INFO - 📈 Progreso: 57.1%
+2025-09-06 16:14:52,815 - __main__ - INFO - 📈 Progreso: 57.5%
+2025-09-06 16:14:55,049 - __main__ - INFO - 📈 Progreso: 57.8%
+2025-09-06 16:14:57,298 - __main__ - INFO - 📈 Progreso: 58.1%
+2025-09-06 16:14:59,626 - __main__ - INFO - 📈 Progreso: 58.4%
+2025-09-06 16:15:01,834 - __main__ - INFO - 📈 Progreso: 58.7%
+2025-09-06 16:15:04,159 - __main__ - INFO - 📈 Progreso: 59.0%
+2025-09-06 16:15:06,451 - __main__ - INFO - 📈 Progreso: 59.3%
+2025-09-06 16:15:08,667 - __main__ - INFO - 📈 Progreso: 59.6%
+2025-09-06 16:15:10,992 - __main__ - INFO - 📈 Progreso: 59.9%
+2025-09-06 16:15:13,230 - __main__ - INFO - 📈 Progreso: 60.2%
+2025-09-06 16:15:15,606 - __main__ - INFO - 📈 Progreso: 60.6%
+2025-09-06 16:15:17,862 - __main__ - INFO - 📈 Progreso: 60.9%
+2025-09-06 16:15:20,192 - __main__ - INFO - 📈 Progreso: 61.2%
+2025-09-06 16:15:22,451 - __main__ - INFO - 📈 Progreso: 61.5%
+2025-09-06 16:15:24,658 - __main__ - INFO - 📈 Progreso: 61.8%
+2025-09-06 16:15:26,955 - __main__ - INFO - 📈 Progreso: 62.1%
+2025-09-06 16:15:29,273 - __main__ - INFO - 📈 Progreso: 62.4%
+2025-09-06 16:15:31,633 - __main__ - INFO - 📈 Progreso: 62.7%
+2025-09-06 16:15:33,857 - __main__ - INFO - 📈 Progreso: 63.0%
+2025-09-06 16:15:36,616 - __main__ - INFO - 📈 Progreso: 63.4%
+2025-09-06 16:15:39,088 - __main__ - INFO - 📈 Progreso: 63.7%
+2025-09-06 16:15:41,333 - __main__ - INFO - 📈 Progreso: 64.0%
+2025-09-06 16:15:43,748 - __main__ - INFO - 📈 Progreso: 64.3%
+2025-09-06 16:15:46,128 - __main__ - INFO - 📈 Progreso: 64.6%
+2025-09-06 16:15:48,530 - __main__ - INFO - 📈 Progreso: 64.9%
+2025-09-06 16:15:50,754 - __main__ - INFO - 📈 Progreso: 65.2%
+2025-09-06 16:15:52,977 - __main__ - INFO - 📈 Progreso: 65.5%
+2025-09-06 16:15:55,302 - __main__ - INFO - 📈 Progreso: 65.8%
+2025-09-06 16:15:57,620 - __main__ - INFO - 📈 Progreso: 66.1%
+2025-09-06 16:16:00,004 - __main__ - INFO - 📈 Progreso: 66.5%
+2025-09-06 16:16:02,270 - __main__ - INFO - 📈 Progreso: 66.8%
+2025-09-06 16:16:04,610 - __main__ - INFO - 📈 Progreso: 67.1%
+2025-09-06 16:16:06,898 - __main__ - INFO - 📈 Progreso: 67.4%
+2025-09-06 16:16:09,155 - __main__ - INFO - 📈 Progreso: 67.7%
+2025-09-06 16:16:11,483 - __main__ - INFO - 📈 Progreso: 68.0%
+2025-09-06 16:16:13,721 - __main__ - INFO - 📈 Progreso: 68.3%
+2025-09-06 16:16:16,113 - __main__ - INFO - 📈 Progreso: 68.6%
+2025-09-06 16:16:18,378 - __main__ - INFO - 📈 Progreso: 68.9%
+2025-09-06 16:16:20,596 - __main__ - INFO - 📈 Progreso: 69.3%
+2025-09-06 16:16:22,999 - __main__ - INFO - 📈 Progreso: 69.6%
+2025-09-06 16:16:25,238 - __main__ - INFO - 📈 Progreso: 69.9%
+2025-09-06 16:16:27,560 - __main__ - INFO - 📈 Progreso: 70.2%
+2025-09-06 16:16:29,926 - __main__ - INFO - 📈 Progreso: 70.5%
+2025-09-06 16:16:32,405 - __main__ - INFO - 📈 Progreso: 70.8%
+2025-09-06 16:16:34,704 - __main__ - INFO - 📈 Progreso: 71.1%
+2025-09-06 16:16:37,646 - __main__ - INFO - 📈 Progreso: 71.4%
+2025-09-06 16:16:39,984 - __main__ - INFO - 📈 Progreso: 71.7%
+2025-09-06 16:16:42,254 - __main__ - INFO - 📈 Progreso: 72.0%
+2025-09-06 16:16:45,554 - __main__ - INFO - 📈 Progreso: 72.4%
+2025-09-06 16:16:50,531 - __main__ - INFO - 📈 Progreso: 72.7%
+2025-09-06 16:16:53,311 - __main__ - INFO - 📈 Progreso: 73.0%
+2025-09-06 16:16:55,732 - __main__ - INFO - 📈 Progreso: 73.3%
+2025-09-06 16:16:57,977 - __main__ - INFO - 📈 Progreso: 73.6%
+2025-09-06 16:17:00,409 - __main__ - INFO - 📈 Progreso: 73.9%
+2025-09-06 16:17:02,652 - __main__ - INFO - 📈 Progreso: 74.2%
+2025-09-06 16:17:04,987 - __main__ - INFO - 📈 Progreso: 74.5%
+2025-09-06 16:17:07,245 - __main__ - INFO - 📈 Progreso: 74.8%
+2025-09-06 16:17:09,483 - __main__ - INFO - 📈 Progreso: 75.2%
+2025-09-06 16:17:11,844 - __main__ - INFO - 📈 Progreso: 75.5%
+2025-09-06 16:17:14,191 - __main__ - INFO - 📈 Progreso: 75.8%
+2025-09-06 16:17:16,520 - __main__ - INFO - 📈 Progreso: 76.1%
+2025-09-06 16:17:18,772 - __main__ - INFO - 📈 Progreso: 76.4%
+2025-09-06 16:17:21,000 - __main__ - INFO - 📈 Progreso: 76.7%
+2025-09-06 16:17:23,343 - __main__ - INFO - 📈 Progreso: 77.0%
+2025-09-06 16:17:25,576 - __main__ - INFO - 📈 Progreso: 77.3%
+2025-09-06 16:17:28,077 - __main__ - INFO - 📈 Progreso: 77.6%
+2025-09-06 16:17:30,421 - __main__ - INFO - 📈 Progreso: 78.0%
+2025-09-06 16:17:32,770 - __main__ - INFO - 📈 Progreso: 78.3%
+2025-09-06 16:17:35,088 - __main__ - INFO - 📈 Progreso: 78.6%
+2025-09-06 16:17:37,780 - __main__ - INFO - 📈 Progreso: 78.9%
+2025-09-06 16:17:40,209 - __main__ - INFO - 📈 Progreso: 79.2%
+2025-09-06 16:17:42,542 - __main__ - INFO - 📈 Progreso: 79.5%
+2025-09-06 16:17:44,904 - __main__ - INFO - 📈 Progreso: 79.8%
+2025-09-06 16:17:47,240 - __main__ - INFO - 📈 Progreso: 80.1%
+2025-09-06 16:17:49,643 - __main__ - INFO - 📈 Progreso: 80.4%
+2025-09-06 16:17:51,923 - __main__ - INFO - 📈 Progreso: 80.7%
+2025-09-06 16:17:54,207 - __main__ - INFO - 📈 Progreso: 81.1%
+2025-09-06 16:17:56,630 - __main__ - INFO - 📈 Progreso: 81.4%
+2025-09-06 16:17:58,951 - __main__ - INFO - 📈 Progreso: 81.7%
+2025-09-06 16:18:01,365 - __main__ - INFO - 📈 Progreso: 82.0%
+2025-09-06 16:18:03,682 - __main__ - INFO - 📈 Progreso: 82.3%
+2025-09-06 16:18:06,611 - __main__ - INFO - 📈 Progreso: 82.6%
+2025-09-06 16:18:08,930 - __main__ - INFO - 📈 Progreso: 82.9%
+2025-09-06 16:18:11,289 - __main__ - INFO - 📈 Progreso: 83.2%
+2025-09-06 16:18:13,653 - __main__ - INFO - 📈 Progreso: 83.5%
+2025-09-06 16:18:16,032 - __main__ - INFO - 📈 Progreso: 83.9%
+2025-09-06 16:18:18,447 - __main__ - INFO - 📈 Progreso: 84.2%
+2025-09-06 16:18:20,698 - __main__ - INFO - 📈 Progreso: 84.5%
+2025-09-06 16:18:23,099 - __main__ - INFO - 📈 Progreso: 84.8%
+2025-09-06 16:18:25,380 - __main__ - INFO - 📈 Progreso: 85.1%
+2025-09-06 16:18:28,319 - __main__ - INFO - 📈 Progreso: 85.4%
+2025-09-06 16:18:30,649 - __main__ - INFO - 📈 Progreso: 85.7%
+2025-09-06 16:18:33,019 - __main__ - INFO - 📈 Progreso: 86.0%
+2025-09-06 16:18:35,351 - __main__ - INFO - 📈 Progreso: 86.3%
+2025-09-06 16:18:38,302 - __main__ - INFO - 📈 Progreso: 86.6%
+2025-09-06 16:18:40,842 - __main__ - INFO - 📈 Progreso: 87.0%
+2025-09-06 16:18:43,250 - __main__ - INFO - 📈 Progreso: 87.3%
+2025-09-06 16:18:45,598 - __main__ - INFO - 📈 Progreso: 87.6%
+2025-09-06 16:18:47,932 - __main__ - INFO - 📈 Progreso: 87.9%
+2025-09-06 16:18:50,327 - __main__ - INFO - 📈 Progreso: 88.2%
+2025-09-06 16:18:52,620 - __main__ - INFO - 📈 Progreso: 88.5%
+2025-09-06 16:18:54,901 - __main__ - INFO - 📈 Progreso: 88.8%
+2025-09-06 16:18:57,266 - __main__ - INFO - 📈 Progreso: 89.1%
+2025-09-06 16:18:59,535 - __main__ - INFO - 📈 Progreso: 89.4%
+2025-09-06 16:19:01,937 - __main__ - INFO - 📈 Progreso: 89.8%
+2025-09-06 16:19:04,216 - __main__ - INFO - 📈 Progreso: 90.1%
+2025-09-06 16:19:06,583 - __main__ - INFO - 📈 Progreso: 90.4%
+2025-09-06 16:19:08,959 - __main__ - INFO - 📈 Progreso: 90.7%
+2025-09-06 16:19:11,267 - __main__ - INFO - 📈 Progreso: 91.0%
+2025-09-06 16:19:13,619 - __main__ - INFO - 📈 Progreso: 91.3%
+2025-09-06 16:19:15,972 - __main__ - INFO - 📈 Progreso: 91.6%
+2025-09-06 16:19:18,384 - __main__ - INFO - 📈 Progreso: 91.9%
+2025-09-06 16:19:20,627 - __main__ - INFO - 📈 Progreso: 92.2%
+2025-09-06 16:19:22,974 - __main__ - INFO - 📈 Progreso: 92.5%
+2025-09-06 16:19:25,282 - __main__ - INFO - 📈 Progreso: 92.9%
+2025-09-06 16:19:27,541 - __main__ - INFO - 📈 Progreso: 93.2%
+2025-09-06 16:19:30,043 - __main__ - INFO - 📈 Progreso: 93.5%
+2025-09-06 16:19:32,348 - __main__ - INFO - 📈 Progreso: 93.8%
+2025-09-06 16:19:34,729 - __main__ - INFO - 📈 Progreso: 94.1%
+2025-09-06 16:19:36,982 - __main__ - INFO - 📈 Progreso: 94.4%
+2025-09-06 16:19:39,803 - __main__ - INFO - 📈 Progreso: 94.7%
+2025-09-06 16:19:42,251 - __main__ - INFO - 📈 Progreso: 95.0%
+2025-09-06 16:19:44,615 - __main__ - INFO - 📈 Progreso: 95.3%
+2025-09-06 16:19:47,089 - __main__ - INFO - 📈 Progreso: 95.7%
+2025-09-06 16:19:49,465 - __main__ - INFO - 📈 Progreso: 96.0%
+2025-09-06 16:19:51,823 - __main__ - INFO - 📈 Progreso: 96.3%
+2025-09-06 16:19:54,131 - __main__ - INFO - 📈 Progreso: 96.6%
+2025-09-06 16:19:56,494 - __main__ - INFO - 📈 Progreso: 96.9%
+2025-09-06 16:19:58,809 - __main__ - INFO - 📈 Progreso: 97.2%
+2025-09-06 16:20:01,107 - __main__ - INFO - 📈 Progreso: 97.5%
+2025-09-06 16:20:03,495 - __main__ - INFO - 📈 Progreso: 97.8%
+2025-09-06 16:20:05,777 - __main__ - INFO - 📈 Progreso: 98.1%
+2025-09-06 16:20:08,173 - __main__ - INFO - 📈 Progreso: 98.4%
+2025-09-06 16:20:10,519 - __main__ - INFO - 📈 Progreso: 98.8%
+2025-09-06 16:20:12,966 - __main__ - INFO - 📈 Progreso: 99.1%
+2025-09-06 16:20:15,431 - __main__ - INFO - 📈 Progreso: 99.4%
+2025-09-06 16:20:17,836 - __main__ - INFO - 📈 Progreso: 99.7%
+2025-09-06 16:20:22,054 - __main__ - INFO - 📈 Progreso: 100.0%
+2025-09-06 16:20:22,067 - fashion_clustering.utils.vision - INFO - Extraídos 20594 embeddings de dimensión 256
+2025-09-06 16:20:22,072 - __main__ - INFO - ✅ Embeddings extraídos: (20594, 256)
+2025-09-06 16:20:22,072 - __main__ - INFO - 💾 Guardando resultados
+2025-09-06 16:20:22,206 - fashion_clustering.utils.io - INFO - Embeddings guardados en reports/embeddings.npy
+2025-09-06 16:20:22,206 - fashion_clustering.utils.io - INFO - Metadatos guardados en reports/metadata.csv
+2025-09-06 16:20:22,206 - __main__ - INFO - 🎉 Extracción de embeddings completada exitosamente
+2025-09-06 16:20:22,206 - __main__ - INFO - 📁 Archivos guardados:
+2025-09-06 16:20:22,206 - __main__ - INFO -   - embeddings: reports/embeddings.npy
+2025-09-06 16:20:22,206 - __main__ - INFO -   - metadata: reports/metadata.csv
+2025-09-06 16:20:49,950 - __main__ - INFO - 🚀 Iniciando reducción de dimensionalidad
+2025-09-06 16:20:49,950 - __main__ - INFO - 📁 Cargando embeddings desde reports
+2025-09-06 16:20:50,016 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:20:50,016 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:20:50,016 - __main__ - INFO - ✅ Embeddings cargados: (20594, 256)
+2025-09-06 16:20:50,016 - __main__ - INFO - 🔄 Ejecutando PCA con 50 componentes
+2025-09-06 16:20:50,343 - __main__ - INFO - ✅ PCA completado: (20594, 50)
+2025-09-06 16:20:50,343 - __main__ - INFO - 📊 Varianza explicada: 0.960
+2025-09-06 16:20:50,344 - __main__ - INFO - 🔄 Ejecutando UMAP con 2 componentes
+2025-09-06 16:21:47,313 - __main__ - INFO - ✅ UMAP completado: (20594, 2)
+2025-09-06 16:21:47,343 - __main__ - INFO - 💾 Guardando resultados
+2025-09-06 16:21:47,348 - fashion_clustering.utils.io - INFO - Embeddings PCA guardados en reports/pca.npy
+2025-09-06 16:21:47,349 - fashion_clustering.utils.io - INFO - Embeddings UMAP guardados en reports/umap.npy
+2025-09-06 16:21:47,349 - __main__ - INFO - 🎉 Reducción de dimensionalidad completada exitosamente
+2025-09-06 16:21:47,349 - __main__ - INFO - 📁 Archivos guardados:
+2025-09-06 16:21:47,349 - __main__ - INFO -   - pca: reports/pca.npy
+2025-09-06 16:21:47,349 - __main__ - INFO -   - umap: reports/umap.npy
+2025-09-06 16:22:02,662 - __main__ - INFO - 🚀 Iniciando resumen de clusters
+2025-09-06 16:22:02,662 - __main__ - INFO - 📁 Cargando datos desde reports
+2025-09-06 16:22:02,727 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:22:02,728 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:22:02,728 - fashion_clustering.utils.io - ERROR - Error cargando resultados de clustering: [Errno 2] No such file or directory: 'reports/cluster_assignments.csv'
+2025-09-06 16:22:02,728 - __main__ - ERROR - ❌ Error en resumen de clusters: [Errno 2] No such file or directory: 'reports/cluster_assignments.csv'
+2025-09-06 16:22:10,009 - __main__ - INFO - 🚀 Iniciando generación de visualizaciones
+2025-09-06 16:22:10,009 - __main__ - INFO - 📁 Cargando datos desde reports
+2025-09-06 16:22:10,071 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:22:10,071 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:22:10,071 - fashion_clustering.utils.io - ERROR - Error cargando resultados de clustering: [Errno 2] No such file or directory: 'reports/cluster_assignments.csv'
+2025-09-06 16:22:10,071 - __main__ - ERROR - ❌ Error generando visualizaciones: [Errno 2] No such file or directory: 'reports/cluster_assignments.csv'
+2025-09-06 16:22:35,273 - __main__ - INFO - 🚀 Iniciando clustering
+2025-09-06 16:22:35,273 - __main__ - INFO - 📁 Cargando embeddings desde reports
+2025-09-06 16:22:35,340 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:22:35,341 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:22:35,341 - __main__ - INFO - ✅ Embeddings cargados: (20594, 256)
+2025-09-06 16:22:35,341 - __main__ - INFO - 🔍 Ejecutando K-Means
+2025-09-06 16:22:35,341 - __main__ - INFO - 🔍 Buscando K óptimo en rango 4-20
+2025-09-06 16:22:35,341 - fashion_clustering.utils.metrics - INFO - Buscando K óptimo en rango 4-20
+2025-09-06 16:22:56,954 - fashion_clustering.utils.metrics - INFO - K=4: Inertia=2753475.00, Silhouette=0.213, DBI=1.526
+2025-09-06 16:23:20,862 - fashion_clustering.utils.metrics - INFO - K=5: Inertia=2526658.50, Silhouette=0.203, DBI=1.564
+2025-09-06 16:23:44,098 - fashion_clustering.utils.metrics - INFO - K=6: Inertia=2384488.00, Silhouette=0.175, DBI=1.591
+2025-09-06 16:24:08,792 - fashion_clustering.utils.metrics - INFO - K=7: Inertia=2280079.50, Silhouette=0.178, DBI=1.534
+2025-09-06 16:24:34,498 - fashion_clustering.utils.metrics - INFO - K=8: Inertia=2185658.50, Silhouette=0.144, DBI=1.620
+2025-09-06 16:24:59,825 - fashion_clustering.utils.metrics - INFO - K=9: Inertia=2103902.25, Silhouette=0.135, DBI=1.654
+2025-09-06 16:25:26,662 - fashion_clustering.utils.metrics - INFO - K=10: Inertia=2048023.12, Silhouette=0.137, DBI=1.695
+2025-09-06 16:25:54,382 - fashion_clustering.utils.metrics - INFO - K=11: Inertia=1996820.75, Silhouette=0.141, DBI=1.744
+2025-09-06 16:26:21,807 - fashion_clustering.utils.metrics - INFO - K=12: Inertia=1956509.38, Silhouette=0.102, DBI=1.831
+2025-09-06 16:26:50,056 - fashion_clustering.utils.metrics - INFO - K=13: Inertia=1917984.88, Silhouette=0.101, DBI=1.823
+2025-09-06 16:27:19,456 - fashion_clustering.utils.metrics - INFO - K=14: Inertia=1882067.75, Silhouette=0.099, DBI=1.826
+2025-09-06 16:27:49,321 - fashion_clustering.utils.metrics - INFO - K=15: Inertia=1850881.25, Silhouette=0.098, DBI=1.818
+2025-09-06 16:28:19,736 - fashion_clustering.utils.metrics - INFO - K=16: Inertia=1816580.00, Silhouette=0.131, DBI=1.795
+2025-09-06 16:28:51,212 - fashion_clustering.utils.metrics - INFO - K=17: Inertia=1784454.50, Silhouette=0.115, DBI=1.761
+2025-09-06 16:29:22,208 - fashion_clustering.utils.metrics - INFO - K=18: Inertia=1761742.00, Silhouette=0.097, DBI=1.849
+2025-09-06 16:29:54,749 - fashion_clustering.utils.metrics - INFO - K=19: Inertia=1736853.00, Silhouette=0.102, DBI=1.821
+2025-09-06 16:30:27,708 - fashion_clustering.utils.metrics - INFO - K=20: Inertia=1712945.00, Silhouette=0.095, DBI=1.858
+2025-09-06 16:30:27,709 - fashion_clustering.utils.metrics - INFO - K óptimo seleccionado: 4
+2025-09-06 16:30:27,709 - __main__ - INFO - 🔄 Ejecutando K-Means con K=4
+2025-09-06 16:30:49,003 - fashion_clustering.utils.metrics - INFO - Métricas calculadas - Silhouette: 0.213, DBI: 1.526, CHI: 5448.094
+2025-09-06 16:30:49,004 - __main__ - INFO - ✅ K-Means completado: 4 clusters
+2025-09-06 16:30:49,004 - __main__ - INFO - 📊 Silhouette: 0.213, DBI: 1.526
+2025-09-06 16:30:49,004 - __main__ - INFO - 🔍 Ejecutando DBSCAN
+2025-09-06 16:30:49,004 - __main__ - INFO - 🔍 Buscando parámetros óptimos para DBSCAN
+2025-09-06 16:30:49,004 - fashion_clustering.utils.metrics - INFO - Buscando parámetros óptimos para DBSCAN
+2025-09-06 16:30:55,502 - fashion_clustering.utils.metrics - INFO - eps=0.3, min_samples=5: 170 clusters, 18659 ruido, silhouette=0.944
+2025-09-06 16:31:01,365 - fashion_clustering.utils.metrics - INFO - eps=0.3, min_samples=10: 53 clusters, 19423 ruido, silhouette=0.967
+2025-09-06 16:31:07,314 - fashion_clustering.utils.metrics - INFO - eps=0.3, min_samples=15: 30 clusters, 19704 ruido, silhouette=0.988
+2025-09-06 16:31:13,825 - fashion_clustering.utils.metrics - INFO - eps=0.3, min_samples=20: 18 clusters, 19907 ruido, silhouette=0.994
+2025-09-06 16:31:20,744 - fashion_clustering.utils.metrics - INFO - eps=0.5, min_samples=5: 195 clusters, 18178 ruido, silhouette=0.852
+2025-09-06 16:31:26,732 - fashion_clustering.utils.metrics - INFO - eps=0.5, min_samples=10: 62 clusters, 19086 ruido, silhouette=0.873
+2025-09-06 16:31:32,794 - fashion_clustering.utils.metrics - INFO - eps=0.5, min_samples=15: 37 clusters, 19404 ruido, silhouette=0.924
+2025-09-06 16:31:38,981 - fashion_clustering.utils.metrics - INFO - eps=0.5, min_samples=20: 22 clusters, 19682 ruido, silhouette=0.938
+2025-09-06 16:31:45,343 - fashion_clustering.utils.metrics - INFO - eps=0.7, min_samples=5: 217 clusters, 17578 ruido, silhouette=0.779
+2025-09-06 16:31:51,502 - fashion_clustering.utils.metrics - INFO - eps=0.7, min_samples=10: 74 clusters, 18597 ruido, silhouette=0.804
+2025-09-06 16:31:57,887 - fashion_clustering.utils.metrics - INFO - eps=0.7, min_samples=15: 41 clusters, 19057 ruido, silhouette=0.870
+2025-09-06 16:32:03,998 - fashion_clustering.utils.metrics - INFO - eps=0.7, min_samples=20: 28 clusters, 19292 ruido, silhouette=0.900
+2025-09-06 16:32:10,557 - fashion_clustering.utils.metrics - INFO - eps=0.9, min_samples=5: 254 clusters, 16863 ruido, silhouette=0.757
+2025-09-06 16:32:16,808 - fashion_clustering.utils.metrics - INFO - eps=0.9, min_samples=10: 77 clusters, 18145 ruido, silhouette=0.804
+2025-09-06 16:32:22,840 - fashion_clustering.utils.metrics - INFO - eps=0.9, min_samples=15: 45 clusters, 18590 ruido, silhouette=0.826
+2025-09-06 16:32:29,308 - fashion_clustering.utils.metrics - INFO - eps=0.9, min_samples=20: 34 clusters, 18824 ruido, silhouette=0.849
+2025-09-06 16:32:29,310 - __main__ - INFO - 🔄 Ejecutando DBSCAN con eps=0.3, min_samples=20
+2025-09-06 16:32:35,562 - fashion_clustering.utils.metrics - INFO - Métricas calculadas - Silhouette: 0.994, DBI: 0.018, CHI: 456875.781
+2025-09-06 16:32:35,564 - __main__ - INFO - ✅ DBSCAN completado: 18 clusters, 19907 ruido
+2025-09-06 16:32:35,564 - __main__ - INFO - 📊 Silhouette: 0.994, DBI: 0.018
+2025-09-06 16:32:35,565 - __main__ - INFO - 🔄 Comparando algoritmos
+2025-09-06 16:33:01,813 - fashion_clustering.utils.metrics - INFO - Métricas calculadas - Silhouette: 0.137, DBI: 1.695, CHI: 3228.665
+2025-09-06 16:33:07,845 - fashion_clustering.utils.metrics - INFO - Métricas calculadas - Silhouette: 0.873, DBI: 0.167, CHI: 26509.273
+2025-09-06 16:33:07,846 - __main__ - INFO - 🔄 Mejor algoritmo: dbscan
+2025-09-06 16:33:07,847 - __main__ - INFO - 💾 Guardando resultados
+2025-09-06 16:33:07,879 - fashion_clustering.utils.io - ERROR - Error guardando resultados de clustering: Object of type int64 is not JSON serializable
+2025-09-06 16:33:07,879 - __main__ - ERROR - ❌ Error en clustering: Object of type int64 is not JSON serializable
+2025-09-06 16:33:48,277 - __main__ - INFO - 🚀 Iniciando clustering
+2025-09-06 16:33:48,278 - __main__ - INFO - 📁 Cargando embeddings desde reports
+2025-09-06 16:33:48,363 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:33:48,363 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:33:48,363 - __main__ - INFO - ✅ Embeddings cargados: (20594, 256)
+2025-09-06 16:33:48,363 - __main__ - INFO - 🔍 Ejecutando K-Means
+2025-09-06 16:33:48,363 - __main__ - INFO - 🔍 Buscando K óptimo en rango 4-20
+2025-09-06 16:33:48,363 - fashion_clustering.utils.metrics - INFO - Buscando K óptimo en rango 4-20
+2025-09-06 16:34:09,918 - fashion_clustering.utils.metrics - INFO - K=4: Inertia=2753475.00, Silhouette=0.213, DBI=1.526
+2025-09-06 16:34:31,860 - fashion_clustering.utils.metrics - INFO - K=5: Inertia=2526658.50, Silhouette=0.203, DBI=1.564
+2025-09-06 16:34:54,067 - fashion_clustering.utils.metrics - INFO - K=6: Inertia=2384488.00, Silhouette=0.175, DBI=1.591
+2025-09-06 16:35:17,527 - fashion_clustering.utils.metrics - INFO - K=7: Inertia=2280079.50, Silhouette=0.178, DBI=1.534
+2025-09-06 16:35:41,594 - fashion_clustering.utils.metrics - INFO - K=8: Inertia=2185658.25, Silhouette=0.144, DBI=1.620
+2025-09-06 16:35:59,100 - fashion_clustering.utils.metrics - INFO - K=9: Inertia=2103902.25, Silhouette=0.135, DBI=1.654
+2025-09-06 16:36:13,203 - fashion_clustering.utils.metrics - INFO - K=10: Inertia=2048023.25, Silhouette=0.137, DBI=1.695
+2025-09-06 16:36:27,129 - fashion_clustering.utils.metrics - INFO - K=11: Inertia=1996820.75, Silhouette=0.141, DBI=1.744
+2025-09-06 16:36:42,626 - fashion_clustering.utils.metrics - INFO - K=12: Inertia=1956509.50, Silhouette=0.102, DBI=1.831
+2025-09-06 16:36:59,640 - fashion_clustering.utils.metrics - INFO - K=13: Inertia=1917984.88, Silhouette=0.101, DBI=1.823
+2025-09-06 16:37:17,462 - fashion_clustering.utils.metrics - INFO - K=14: Inertia=1882067.75, Silhouette=0.099, DBI=1.826
+2025-09-06 16:37:35,456 - fashion_clustering.utils.metrics - INFO - K=15: Inertia=1850881.25, Silhouette=0.098, DBI=1.818
+2025-09-06 16:37:53,558 - fashion_clustering.utils.metrics - INFO - K=16: Inertia=1816580.00, Silhouette=0.131, DBI=1.795
+2025-09-06 16:38:12,441 - fashion_clustering.utils.metrics - INFO - K=17: Inertia=1784454.50, Silhouette=0.115, DBI=1.761
+2025-09-06 16:38:30,701 - fashion_clustering.utils.metrics - INFO - K=18: Inertia=1761742.00, Silhouette=0.097, DBI=1.849
+2025-09-06 16:38:50,899 - fashion_clustering.utils.metrics - INFO - K=19: Inertia=1736853.12, Silhouette=0.102, DBI=1.821
+2025-09-06 16:39:12,383 - fashion_clustering.utils.metrics - INFO - K=20: Inertia=1712944.88, Silhouette=0.095, DBI=1.858
+2025-09-06 16:39:12,383 - fashion_clustering.utils.metrics - INFO - K óptimo seleccionado: 4
+2025-09-06 16:39:12,383 - __main__ - INFO - 🔄 Ejecutando K-Means con K=4
+2025-09-06 16:39:25,240 - fashion_clustering.utils.metrics - INFO - Métricas calculadas - Silhouette: 0.213, DBI: 1.526, CHI: 5448.094
+2025-09-06 16:39:25,240 - __main__ - INFO - ✅ K-Means completado: 4 clusters
+2025-09-06 16:39:25,240 - __main__ - INFO - 📊 Silhouette: 0.213, DBI: 1.526
+2025-09-06 16:39:25,240 - __main__ - INFO - 🔍 Ejecutando DBSCAN
+2025-09-06 16:39:25,241 - __main__ - INFO - 🔍 Buscando parámetros óptimos para DBSCAN
+2025-09-06 16:39:25,241 - fashion_clustering.utils.metrics - INFO - Buscando parámetros óptimos para DBSCAN
+2025-09-06 16:39:29,206 - fashion_clustering.utils.metrics - INFO - eps=0.3, min_samples=5: 170 clusters, 18659 ruido, silhouette=0.944
+2025-09-06 16:39:33,289 - fashion_clustering.utils.metrics - INFO - eps=0.3, min_samples=10: 53 clusters, 19423 ruido, silhouette=0.967
+2025-09-06 16:39:36,987 - fashion_clustering.utils.metrics - INFO - eps=0.3, min_samples=15: 30 clusters, 19704 ruido, silhouette=0.988
+2025-09-06 16:39:40,717 - fashion_clustering.utils.metrics - INFO - eps=0.3, min_samples=20: 18 clusters, 19907 ruido, silhouette=0.994
+2025-09-06 16:39:44,709 - fashion_clustering.utils.metrics - INFO - eps=0.5, min_samples=5: 195 clusters, 18178 ruido, silhouette=0.852
+2025-09-06 16:39:48,935 - fashion_clustering.utils.metrics - INFO - eps=0.5, min_samples=10: 62 clusters, 19086 ruido, silhouette=0.873
+2025-09-06 16:39:52,575 - fashion_clustering.utils.metrics - INFO - eps=0.5, min_samples=15: 37 clusters, 19404 ruido, silhouette=0.924
+2025-09-06 16:39:57,232 - fashion_clustering.utils.metrics - INFO - eps=0.5, min_samples=20: 22 clusters, 19682 ruido, silhouette=0.938
+2025-09-06 16:40:01,512 - fashion_clustering.utils.metrics - INFO - eps=0.7, min_samples=5: 217 clusters, 17578 ruido, silhouette=0.779
+2025-09-06 16:40:05,346 - fashion_clustering.utils.metrics - INFO - eps=0.7, min_samples=10: 74 clusters, 18597 ruido, silhouette=0.804
+2025-09-06 16:40:09,299 - fashion_clustering.utils.metrics - INFO - eps=0.7, min_samples=15: 41 clusters, 19057 ruido, silhouette=0.870
+2025-09-06 16:40:13,461 - fashion_clustering.utils.metrics - INFO - eps=0.7, min_samples=20: 28 clusters, 19292 ruido, silhouette=0.900
+2025-09-06 16:40:18,116 - fashion_clustering.utils.metrics - INFO - eps=0.9, min_samples=5: 254 clusters, 16863 ruido, silhouette=0.757
+2025-09-06 16:40:22,011 - fashion_clustering.utils.metrics - INFO - eps=0.9, min_samples=10: 77 clusters, 18145 ruido, silhouette=0.804
+2025-09-06 16:40:26,492 - fashion_clustering.utils.metrics - INFO - eps=0.9, min_samples=15: 45 clusters, 18590 ruido, silhouette=0.826
+2025-09-06 16:40:31,431 - fashion_clustering.utils.metrics - INFO - eps=0.9, min_samples=20: 34 clusters, 18824 ruido, silhouette=0.849
+2025-09-06 16:40:31,432 - __main__ - INFO - 🔄 Ejecutando DBSCAN con eps=0.3, min_samples=20
+2025-09-06 16:40:35,393 - fashion_clustering.utils.metrics - INFO - Métricas calculadas - Silhouette: 0.994, DBI: 0.018, CHI: 456875.781
+2025-09-06 16:40:35,393 - __main__ - INFO - ✅ DBSCAN completado: 18 clusters, 19907 ruido
+2025-09-06 16:40:35,394 - __main__ - INFO - 📊 Silhouette: 0.994, DBI: 0.018
+2025-09-06 16:40:35,394 - __main__ - INFO - 🔄 Comparando algoritmos
+2025-09-06 16:40:50,859 - fashion_clustering.utils.metrics - INFO - Métricas calculadas - Silhouette: 0.137, DBI: 1.695, CHI: 3228.665
+2025-09-06 16:40:55,268 - fashion_clustering.utils.metrics - INFO - Métricas calculadas - Silhouette: 0.873, DBI: 0.167, CHI: 26509.273
+2025-09-06 16:40:55,269 - __main__ - INFO - 🔄 Mejor algoritmo: dbscan
+2025-09-06 16:40:55,270 - __main__ - INFO - 💾 Guardando resultados
+2025-09-06 16:40:55,294 - fashion_clustering.utils.io - INFO - Asignaciones guardadas en reports/cluster_assignments.csv
+2025-09-06 16:40:55,295 - fashion_clustering.utils.io - INFO - Estadísticas guardadas en reports/cluster_stats.json
+2025-09-06 16:40:55,295 - __main__ - INFO - 🎉 Clustering completado exitosamente
+2025-09-06 16:40:55,295 - __main__ - INFO - 📊 Algoritmo: dbscan
+2025-09-06 16:40:55,296 - __main__ - INFO - 📊 Clusters: 62
+2025-09-06 16:40:55,296 - __main__ - INFO - 📊 Silhouette: 0.873
+2025-09-06 16:40:55,297 - __main__ - INFO - 📁 Archivos guardados:
+2025-09-06 16:40:55,297 - __main__ - INFO -   - assignments: reports/cluster_assignments.csv
+2025-09-06 16:40:55,298 - __main__ - INFO -   - stats: reports/cluster_stats.json
+2025-09-06 16:41:50,349 - __main__ - INFO - 🚀 Iniciando resumen de clusters
+2025-09-06 16:41:50,349 - __main__ - INFO - 📁 Cargando datos desde reports
+2025-09-06 16:41:50,391 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:41:50,391 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:41:50,406 - fashion_clustering.utils.io - INFO - Resultados de clustering cargados: 20594 imágenes
+2025-09-06 16:41:50,406 - fashion_clustering.utils.io - INFO - Algoritmo: dbscan
+2025-09-06 16:41:50,407 - __main__ - INFO - ✅ Datos cargados: 20594 imágenes, 62 clusters
+2025-09-06 16:41:50,408 - __main__ - INFO - 🔍 Buscando prototipos de clusters
+2025-09-06 16:41:50,408 - __main__ - INFO - 🔍 Buscando 10 prototipos por cluster
+2025-09-06 16:41:50,411 - __main__ - INFO -   Cluster 0: 10 prototipos
+2025-09-06 16:41:50,414 - __main__ - INFO -   Cluster 1: 10 prototipos
+2025-09-06 16:41:50,417 - __main__ - INFO -   Cluster 2: 10 prototipos
+2025-09-06 16:41:50,419 - __main__ - INFO -   Cluster 3: 10 prototipos
+2025-09-06 16:41:50,421 - __main__ - INFO -   Cluster 4: 10 prototipos
+2025-09-06 16:41:50,424 - __main__ - INFO -   Cluster 5: 10 prototipos
+2025-09-06 16:41:50,425 - __main__ - INFO -   Cluster 6: 10 prototipos
+2025-09-06 16:41:50,427 - __main__ - INFO -   Cluster 7: 10 prototipos
+2025-09-06 16:41:50,429 - __main__ - INFO -   Cluster 8: 10 prototipos
+2025-09-06 16:41:50,430 - __main__ - INFO -   Cluster 9: 10 prototipos
+2025-09-06 16:41:50,432 - __main__ - INFO -   Cluster 10: 10 prototipos
+2025-09-06 16:41:50,434 - __main__ - INFO -   Cluster 11: 10 prototipos
+2025-09-06 16:41:50,435 - __main__ - INFO -   Cluster 12: 10 prototipos
+2025-09-06 16:41:50,437 - __main__ - INFO -   Cluster 13: 10 prototipos
+2025-09-06 16:41:50,439 - __main__ - INFO -   Cluster 14: 10 prototipos
+2025-09-06 16:41:50,441 - __main__ - INFO -   Cluster 15: 10 prototipos
+2025-09-06 16:41:50,444 - __main__ - INFO -   Cluster 16: 10 prototipos
+2025-09-06 16:41:50,445 - __main__ - INFO -   Cluster 17: 10 prototipos
+2025-09-06 16:41:50,447 - __main__ - INFO -   Cluster 18: 10 prototipos
+2025-09-06 16:41:50,449 - __main__ - INFO -   Cluster 19: 10 prototipos
+2025-09-06 16:41:50,452 - __main__ - INFO -   Cluster 20: 10 prototipos
+2025-09-06 16:41:50,454 - __main__ - INFO -   Cluster 21: 10 prototipos
+2025-09-06 16:41:50,456 - __main__ - INFO -   Cluster 22: 10 prototipos
+2025-09-06 16:41:50,457 - __main__ - INFO -   Cluster 23: 10 prototipos
+2025-09-06 16:41:50,459 - __main__ - INFO -   Cluster 24: 10 prototipos
+2025-09-06 16:41:50,460 - __main__ - INFO -   Cluster 25: 10 prototipos
+2025-09-06 16:41:50,462 - __main__ - INFO -   Cluster 26: 10 prototipos
+2025-09-06 16:41:50,464 - __main__ - INFO -   Cluster 27: 10 prototipos
+2025-09-06 16:41:50,465 - __main__ - INFO -   Cluster 28: 10 prototipos
+2025-09-06 16:41:50,467 - __main__ - INFO -   Cluster 29: 10 prototipos
+2025-09-06 16:41:50,468 - __main__ - INFO -   Cluster 30: 10 prototipos
+2025-09-06 16:41:50,470 - __main__ - INFO -   Cluster 31: 10 prototipos
+2025-09-06 16:41:50,471 - __main__ - INFO -   Cluster 32: 10 prototipos
+2025-09-06 16:41:50,473 - __main__ - INFO -   Cluster 33: 10 prototipos
+2025-09-06 16:41:50,475 - __main__ - INFO -   Cluster 34: 10 prototipos
+2025-09-06 16:41:50,477 - __main__ - INFO -   Cluster 35: 10 prototipos
+2025-09-06 16:41:50,479 - __main__ - INFO -   Cluster 36: 10 prototipos
+2025-09-06 16:41:50,480 - __main__ - INFO -   Cluster 37: 10 prototipos
+2025-09-06 16:41:50,482 - __main__ - INFO -   Cluster 38: 10 prototipos
+2025-09-06 16:41:50,484 - __main__ - INFO -   Cluster 39: 10 prototipos
+2025-09-06 16:41:50,486 - __main__ - INFO -   Cluster 40: 10 prototipos
+2025-09-06 16:41:50,487 - __main__ - INFO -   Cluster 41: 10 prototipos
+2025-09-06 16:41:50,489 - __main__ - INFO -   Cluster 42: 10 prototipos
+2025-09-06 16:41:50,491 - __main__ - INFO -   Cluster 43: 10 prototipos
+2025-09-06 16:41:50,493 - __main__ - INFO -   Cluster 44: 10 prototipos
+2025-09-06 16:41:50,494 - __main__ - INFO -   Cluster 45: 10 prototipos
+2025-09-06 16:41:50,496 - __main__ - INFO -   Cluster 46: 10 prototipos
+2025-09-06 16:41:50,498 - __main__ - INFO -   Cluster 47: 10 prototipos
+2025-09-06 16:41:50,500 - __main__ - INFO -   Cluster 48: 10 prototipos
+2025-09-06 16:41:50,501 - __main__ - INFO -   Cluster 49: 10 prototipos
+2025-09-06 16:41:50,503 - __main__ - INFO -   Cluster 50: 10 prototipos
+2025-09-06 16:41:50,505 - __main__ - INFO -   Cluster 51: 10 prototipos
+2025-09-06 16:41:50,506 - __main__ - INFO -   Cluster 52: 10 prototipos
+2025-09-06 16:41:50,508 - __main__ - INFO -   Cluster 53: 10 prototipos
+2025-09-06 16:41:50,510 - __main__ - INFO -   Cluster 54: 10 prototipos
+2025-09-06 16:41:50,511 - __main__ - INFO -   Cluster 55: 10 prototipos
+2025-09-06 16:41:50,513 - __main__ - INFO -   Cluster 56: 10 prototipos
+2025-09-06 16:41:50,515 - __main__ - INFO -   Cluster 57: 10 prototipos
+2025-09-06 16:41:50,517 - __main__ - INFO -   Cluster 58: 10 prototipos
+2025-09-06 16:41:50,518 - __main__ - INFO -   Cluster 59: 10 prototipos
+2025-09-06 16:41:50,521 - __main__ - INFO -   Cluster 60: 10 prototipos
+2025-09-06 16:41:50,523 - __main__ - INFO -   Cluster 61: 10 prototipos
+2025-09-06 16:41:50,523 - __main__ - INFO - 🎨 Analizando clusters
+2025-09-06 16:41:50,523 - __main__ - INFO -   Analizando cluster 0
+2025-09-06 16:41:52,242 - __main__ - INFO -   Analizando cluster 1
+2025-09-06 16:41:52,549 - __main__ - INFO -   Analizando cluster 2
+2025-09-06 16:41:52,877 - __main__ - INFO -   Analizando cluster 3
+2025-09-06 16:41:54,096 - __main__ - INFO -   Analizando cluster 4
+2025-09-06 16:41:55,916 - __main__ - INFO -   Analizando cluster 5
+2025-09-06 16:41:56,229 - __main__ - INFO -   Analizando cluster 6
+2025-09-06 16:41:56,687 - __main__ - INFO -   Analizando cluster 7
+2025-09-06 16:41:58,564 - __main__ - INFO -   Analizando cluster 8
+2025-09-06 16:41:58,997 - __main__ - INFO -   Analizando cluster 9
+2025-09-06 16:41:59,557 - __main__ - INFO -   Analizando cluster 10
+2025-09-06 16:42:00,721 - __main__ - INFO -   Analizando cluster 11
+2025-09-06 16:42:02,443 - __main__ - INFO -   Analizando cluster 12
+2025-09-06 16:42:02,784 - __main__ - INFO -   Analizando cluster 13
+2025-09-06 16:42:03,392 - __main__ - INFO -   Analizando cluster 14
+2025-09-06 16:42:03,780 - __main__ - INFO -   Analizando cluster 15
+2025-09-06 16:42:04,354 - __main__ - INFO -   Analizando cluster 16
+2025-09-06 16:42:04,818 - __main__ - INFO -   Analizando cluster 17
+2025-09-06 16:42:05,414 - __main__ - INFO -   Analizando cluster 18
+2025-09-06 16:42:05,805 - __main__ - INFO -   Analizando cluster 19
+2025-09-06 16:42:06,149 - __main__ - INFO -   Analizando cluster 20
+2025-09-06 16:42:06,556 - __main__ - INFO -   Analizando cluster 21
+2025-09-06 16:42:07,002 - __main__ - INFO -   Analizando cluster 22
+2025-09-06 16:42:07,342 - __main__ - INFO -   Analizando cluster 23
+2025-09-06 16:42:10,823 - __main__ - INFO -   Analizando cluster 24
+2025-09-06 16:42:11,105 - __main__ - INFO -   Analizando cluster 25
+2025-09-06 16:42:11,572 - __main__ - INFO -   Analizando cluster 26
+2025-09-06 16:42:12,791 - __main__ - INFO -   Analizando cluster 27
+2025-09-06 16:42:13,072 - __main__ - INFO -   Analizando cluster 28
+2025-09-06 16:42:14,197 - __main__ - INFO -   Analizando cluster 29
+2025-09-06 16:42:16,154 - __main__ - INFO -   Analizando cluster 30
+2025-09-06 16:42:17,168 - __main__ - INFO -   Analizando cluster 31
+2025-09-06 16:42:17,602 - __main__ - INFO -   Analizando cluster 32
+2025-09-06 16:42:18,079 - __main__ - INFO -   Analizando cluster 33
+2025-09-06 16:42:19,861 - __main__ - INFO -   Analizando cluster 34
+2025-09-06 16:42:20,163 - __main__ - INFO -   Analizando cluster 35
+2025-09-06 16:42:20,662 - __main__ - INFO -   Analizando cluster 36
+2025-09-06 16:42:21,158 - __main__ - INFO -   Analizando cluster 37
+2025-09-06 16:42:22,821 - __main__ - INFO -   Analizando cluster 38
+2025-09-06 16:42:24,336 - __main__ - INFO -   Analizando cluster 39
+2025-09-06 16:42:24,827 - __main__ - INFO -   Analizando cluster 40
+2025-09-06 16:42:25,326 - __main__ - INFO -   Analizando cluster 41
+2025-09-06 16:42:25,830 - __main__ - INFO -   Analizando cluster 42
+2025-09-06 16:42:26,855 - __main__ - INFO -   Analizando cluster 43
+2025-09-06 16:42:27,438 - __main__ - INFO -   Analizando cluster 44
+2025-09-06 16:42:28,208 - __main__ - INFO -   Analizando cluster 45
+2025-09-06 16:42:28,697 - __main__ - INFO -   Analizando cluster 46
+2025-09-06 16:42:28,968 - __main__ - INFO -   Analizando cluster 47
+2025-09-06 16:42:29,332 - __main__ - INFO -   Analizando cluster 48
+2025-09-06 16:42:30,293 - __main__ - INFO -   Analizando cluster 49
+2025-09-06 16:42:30,825 - __main__ - INFO -   Analizando cluster 50
+2025-09-06 16:42:31,990 - __main__ - INFO -   Analizando cluster 51
+2025-09-06 16:42:32,440 - __main__ - INFO -   Analizando cluster 52
+2025-09-06 16:42:32,846 - __main__ - INFO -   Analizando cluster 53
+2025-09-06 16:42:33,135 - __main__ - INFO -   Analizando cluster 54
+2025-09-06 16:42:33,678 - __main__ - INFO -   Analizando cluster 55
+2025-09-06 16:42:34,357 - __main__ - INFO -   Analizando cluster 56
+2025-09-06 16:42:35,013 - __main__ - INFO -   Analizando cluster 57
+2025-09-06 16:42:35,553 - __main__ - INFO -   Analizando cluster 58
+2025-09-06 16:42:35,919 - __main__ - INFO -   Analizando cluster 59
+2025-09-06 16:42:36,233 - __main__ - INFO -   Analizando cluster 60
+2025-09-06 16:42:36,554 - __main__ - INFO -   Analizando cluster 61
+2025-09-06 16:42:37,191 - __main__ - INFO - 📝 Creando resumen completo
+2025-09-06 16:42:37,192 - __main__ - INFO - 💾 Guardando resumen
+2025-09-06 16:42:37,193 - fashion_clustering.utils.io - INFO - Resumen de clusters guardado en reports/cluster_summary.md
+2025-09-06 16:42:37,193 - __main__ - INFO - 🎉 Resumen de clusters completado exitosamente
+2025-09-06 16:42:37,193 - __main__ - INFO - 📁 Resumen guardado en: reports/cluster_summary.md
+2025-09-06 16:42:37,193 - __main__ - INFO - 
+📊 RESUMEN DE CLUSTERS:
+2025-09-06 16:42:37,193 - __main__ - INFO -   Cluster 0: 47 imágenes
+2025-09-06 16:42:37,193 - __main__ - INFO -     Colores: negro, marrón, beige
+2025-09-06 16:42:37,194 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,194 - __main__ - INFO -     Palabras clave: runway(24), fashion(15), general(4)
+2025-09-06 16:42:37,194 - __main__ - INFO -   Cluster 1: 10 imágenes
+2025-09-06 16:42:37,194 - __main__ - INFO -     Colores: negro, gris, blanco
+2025-09-06 16:42:37,194 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,194 - __main__ - INFO -     Palabras clave: ropa(3), runway(3), fashion(2)
+2025-09-06 16:42:37,194 - __main__ - INFO -   Cluster 2: 11 imágenes
+2025-09-06 16:42:37,194 - __main__ - INFO -     Colores: negro, marrón, gris
+2025-09-06 16:42:37,194 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,194 - __main__ - INFO -     Palabras clave: general(4), fashion(4), runway(3)
+2025-09-06 16:42:37,194 - __main__ - INFO -   Cluster 3: 42 imágenes
+2025-09-06 16:42:37,194 - __main__ - INFO -     Colores: negro, marrón, gris
+2025-09-06 16:42:37,194 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,194 - __main__ - INFO -     Palabras clave: ropa(13), general(11), runway(10)
+2025-09-06 16:42:37,194 - __main__ - INFO -   Cluster 4: 47 imágenes
+2025-09-06 16:42:37,194 - __main__ - INFO -     Colores: negro, gris, marrón
+2025-09-06 16:42:37,194 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,195 - __main__ - INFO -     Palabras clave: runway(26), fashion(15), general(3)
+2025-09-06 16:42:37,195 - __main__ - INFO -   Cluster 5: 10 imágenes
+2025-09-06 16:42:37,195 - __main__ - INFO -     Colores: negro, marrón, gris
+2025-09-06 16:42:37,195 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,195 - __main__ - INFO -     Palabras clave: ropa(9), general(1), fuente:local(10)
+2025-09-06 16:42:37,195 - __main__ - INFO -   Cluster 6: 15 imágenes
+2025-09-06 16:42:37,195 - __main__ - INFO -     Colores: negro, blanco, rosa
+2025-09-06 16:42:37,195 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,195 - __main__ - INFO -     Palabras clave: runway(7), ropa(6), general(2)
+2025-09-06 16:42:37,195 - __main__ - INFO -   Cluster 7: 52 imágenes
+2025-09-06 16:42:37,195 - __main__ - INFO -     Colores: negro, rosa, rojo
+2025-09-06 16:42:37,195 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,195 - __main__ - INFO -     Palabras clave: general(15), ropa(15), fashion(12)
+2025-09-06 16:42:37,195 - __main__ - INFO -   Cluster 8: 15 imágenes
+2025-09-06 16:42:37,195 - __main__ - INFO -     Colores: negro, azul marino, verde azulado
+2025-09-06 16:42:37,195 - __main__ - INFO -     Etiqueta: clásico confiable tranquilo
+2025-09-06 16:42:37,196 - __main__ - INFO -     Palabras clave: fashion(9), general(2), estilo(2)
+2025-09-06 16:42:37,196 - __main__ - INFO -   Cluster 9: 17 imágenes
+2025-09-06 16:42:37,196 - __main__ - INFO -     Colores: gris, marrón, negro
+2025-09-06 16:42:37,196 - __main__ - INFO -     Etiqueta: neutral moderno urbano
+2025-09-06 16:42:37,196 - __main__ - INFO -     Palabras clave: ropa(9), general(5), estilo(1)
+2025-09-06 16:42:37,196 - __main__ - INFO -   Cluster 10: 42 imágenes
+2025-09-06 16:42:37,196 - __main__ - INFO -     Colores: negro, marrón, beige
+2025-09-06 16:42:37,196 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,196 - __main__ - INFO -     Palabras clave: runway(20), fashion(15), general(3)
+2025-09-06 16:42:37,196 - __main__ - INFO -   Cluster 11: 58 imágenes
+2025-09-06 16:42:37,196 - __main__ - INFO -     Colores: negro, blanco, beige
+2025-09-06 16:42:37,196 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,196 - __main__ - INFO -     Palabras clave: runway(29), fashion(10), ropa(10)
+2025-09-06 16:42:37,196 - __main__ - INFO -   Cluster 12: 11 imágenes
+2025-09-06 16:42:37,196 - __main__ - INFO -     Colores: negro, blanco, beige
+2025-09-06 16:42:37,196 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,197 - __main__ - INFO -     Palabras clave: fashion(6), general(2), ropa(2)
+2025-09-06 16:42:37,197 - __main__ - INFO -   Cluster 13: 20 imágenes
+2025-09-06 16:42:37,197 - __main__ - INFO -     Colores: negro, marrón, gris
+2025-09-06 16:42:37,197 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,197 - __main__ - INFO -     Palabras clave: general(8), fashion(7), ropa(4)
+2025-09-06 16:42:37,197 - __main__ - INFO -   Cluster 14: 10 imágenes
+2025-09-06 16:42:37,197 - __main__ - INFO -     Colores: negro, marrón, gris
+2025-09-06 16:42:37,197 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,197 - __main__ - INFO -     Palabras clave: general(4), ropa(4), fashion(2)
+2025-09-06 16:42:37,197 - __main__ - INFO -   Cluster 15: 22 imágenes
+2025-09-06 16:42:37,197 - __main__ - INFO -     Colores: negro, coral, blanco
+2025-09-06 16:42:37,197 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,197 - __main__ - INFO -     Palabras clave: general(6), fashion(6), runway(6)
+2025-09-06 16:42:37,197 - __main__ - INFO -   Cluster 16: 16 imágenes
+2025-09-06 16:42:37,197 - __main__ - INFO -     Colores: coral, negro, marrón
+2025-09-06 16:42:37,198 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,198 - __main__ - INFO -     Palabras clave: ropa(10), general(5), moda(1)
+2025-09-06 16:42:37,198 - __main__ - INFO -   Cluster 17: 15 imágenes
+2025-09-06 16:42:37,198 - __main__ - INFO -     Colores: negro, marrón, gris
+2025-09-06 16:42:37,198 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,198 - __main__ - INFO -     Palabras clave: general(6), runway(3), moda(2)
+2025-09-06 16:42:37,198 - __main__ - INFO -   Cluster 18: 15 imágenes
+2025-09-06 16:42:37,198 - __main__ - INFO -     Colores: negro, gris, blanco
+2025-09-06 16:42:37,198 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,198 - __main__ - INFO -     Palabras clave: general(6), fashion(5), runway(3)
+2025-09-06 16:42:37,198 - __main__ - INFO -   Cluster 19: 10 imágenes
+2025-09-06 16:42:37,198 - __main__ - INFO -     Colores: negro, gris, marrón
+2025-09-06 16:42:37,198 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,198 - __main__ - INFO -     Palabras clave: fashion(5), runway(3), general(1)
+2025-09-06 16:42:37,198 - __main__ - INFO -   Cluster 20: 12 imágenes
+2025-09-06 16:42:37,199 - __main__ - INFO -     Colores: negro, burdeos, marrón
+2025-09-06 16:42:37,199 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,199 - __main__ - INFO -     Palabras clave: fashion(8), runway(3), general(1)
+2025-09-06 16:42:37,199 - __main__ - INFO -   Cluster 21: 14 imágenes
+2025-09-06 16:42:37,199 - __main__ - INFO -     Colores: negro, marrón, caqui
+2025-09-06 16:42:37,199 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,199 - __main__ - INFO -     Palabras clave: runway(6), fashion(4), ropa(2)
+2025-09-06 16:42:37,199 - __main__ - INFO -   Cluster 22: 10 imágenes
+2025-09-06 16:42:37,199 - __main__ - INFO -     Colores: negro, gris, marrón
+2025-09-06 16:42:37,199 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,199 - __main__ - INFO -     Palabras clave: fashion(9), general(1), fuente:local(10)
+2025-09-06 16:42:37,199 - __main__ - INFO -   Cluster 23: 124 imágenes
+2025-09-06 16:42:37,199 - __main__ - INFO -     Colores: negro, gris, blanco
+2025-09-06 16:42:37,199 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,199 - __main__ - INFO -     Palabras clave: fashion(57), runway(44), general(9)
+2025-09-06 16:42:37,199 - __main__ - INFO -   Cluster 24: 11 imágenes
+2025-09-06 16:42:37,200 - __main__ - INFO -     Colores: negro, marrón, gris
+2025-09-06 16:42:37,200 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,200 - __main__ - INFO -     Palabras clave: runway(4), ropa(3), general(2)
+2025-09-06 16:42:37,200 - __main__ - INFO -   Cluster 25: 14 imágenes
+2025-09-06 16:42:37,200 - __main__ - INFO -     Colores: negro, marrón, verde azulado
+2025-09-06 16:42:37,200 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,200 - __main__ - INFO -     Palabras clave: fashion(7), runway(4), general(2)
+2025-09-06 16:42:37,200 - __main__ - INFO -   Cluster 26: 44 imágenes
+2025-09-06 16:42:37,200 - __main__ - INFO -     Colores: negro, gris, blanco
+2025-09-06 16:42:37,200 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,200 - __main__ - INFO -     Palabras clave: runway(12), fashion(11), ropa(11)
+2025-09-06 16:42:37,200 - __main__ - INFO -   Cluster 27: 10 imágenes
+2025-09-06 16:42:37,200 - __main__ - INFO -     Colores: negro, marrón, beige
+2025-09-06 16:42:37,200 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,200 - __main__ - INFO -     Palabras clave: fashion(4), runway(4), general(2)
+2025-09-06 16:42:37,201 - __main__ - INFO -   Cluster 28: 34 imágenes
+2025-09-06 16:42:37,201 - __main__ - INFO -     Colores: negro, gris, marrón
+2025-09-06 16:42:37,201 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,201 - __main__ - INFO -     Palabras clave: runway(19), fashion(6), general(4)
+2025-09-06 16:42:37,201 - __main__ - INFO -   Cluster 29: 60 imágenes
+2025-09-06 16:42:37,201 - __main__ - INFO -     Colores: gris, azul marino, negro
+2025-09-06 16:42:37,201 - __main__ - INFO -     Etiqueta: clásico confiable tranquilo
+2025-09-06 16:42:37,201 - __main__ - INFO -     Palabras clave: runway(29), fashion(18), ropa(8)
+2025-09-06 16:42:37,201 - __main__ - INFO -   Cluster 30: 35 imágenes
+2025-09-06 16:42:37,201 - __main__ - INFO -     Colores: negro, gris, beige
+2025-09-06 16:42:37,201 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,201 - __main__ - INFO -     Palabras clave: runway(20), fashion(6), general(4)
+2025-09-06 16:42:37,201 - __main__ - INFO -   Cluster 31: 15 imágenes
+2025-09-06 16:42:37,201 - __main__ - INFO -     Colores: negro, gris, beige
+2025-09-06 16:42:37,201 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,201 - __main__ - INFO -     Palabras clave: runway(6), general(4), fashion(3)
+2025-09-06 16:42:37,201 - __main__ - INFO -   Cluster 32: 17 imágenes
+2025-09-06 16:42:37,202 - __main__ - INFO -     Colores: negro, beige, caqui
+2025-09-06 16:42:37,202 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,202 - __main__ - INFO -     Palabras clave: fashion(8), runway(7), general(1)
+2025-09-06 16:42:37,202 - __main__ - INFO -   Cluster 33: 58 imágenes
+2025-09-06 16:42:37,202 - __main__ - INFO -     Colores: negro, burdeos, marrón
+2025-09-06 16:42:37,202 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,202 - __main__ - INFO -     Palabras clave: fashion(38), runway(9), general(7)
+2025-09-06 16:42:37,202 - __main__ - INFO -   Cluster 34: 12 imágenes
+2025-09-06 16:42:37,202 - __main__ - INFO -     Colores: negro, blanco, marrón
+2025-09-06 16:42:37,202 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,202 - __main__ - INFO -     Palabras clave: ropa(7), fashion(3), general(2)
+2025-09-06 16:42:37,202 - __main__ - INFO -   Cluster 35: 21 imágenes
+2025-09-06 16:42:37,202 - __main__ - INFO -     Colores: blanco, gris, negro
+2025-09-06 16:42:37,202 - __main__ - INFO -     Etiqueta: limpio minimalista fresco
+2025-09-06 16:42:37,202 - __main__ - INFO -     Palabras clave: fashion(16), general(2), runway(2)
+2025-09-06 16:42:37,202 - __main__ - INFO -   Cluster 36: 18 imágenes
+2025-09-06 16:42:37,202 - __main__ - INFO -     Colores: negro, azul marino, beige
+2025-09-06 16:42:37,203 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,203 - __main__ - INFO -     Palabras clave: runway(10), fashion(5), ropa(2)
+2025-09-06 16:42:37,203 - __main__ - INFO -   Cluster 37: 53 imágenes
+2025-09-06 16:42:37,203 - __main__ - INFO -     Colores: negro, marrón, verde azulado
+2025-09-06 16:42:37,203 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,203 - __main__ - INFO -     Palabras clave: runway(33), fashion(14), ropa(3)
+2025-09-06 16:42:37,203 - __main__ - INFO -   Cluster 38: 47 imágenes
+2025-09-06 16:42:37,203 - __main__ - INFO -     Colores: negro, marrón, beige
+2025-09-06 16:42:37,203 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,203 - __main__ - INFO -     Palabras clave: runway(20), fashion(16), general(5)
+2025-09-06 16:42:37,203 - __main__ - INFO -   Cluster 39: 11 imágenes
+2025-09-06 16:42:37,203 - __main__ - INFO -     Colores: negro, beige, marrón
+2025-09-06 16:42:37,203 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,203 - __main__ - INFO -     Palabras clave: runway(7), general(1), fashion(1)
+2025-09-06 16:42:37,203 - __main__ - INFO -   Cluster 40: 17 imágenes
+2025-09-06 16:42:37,203 - __main__ - INFO -     Colores: burdeos, negro, marrón
+2025-09-06 16:42:37,203 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,204 - __main__ - INFO -     Palabras clave: fashion(14), moda(2), runway(1)
+2025-09-06 16:42:37,204 - __main__ - INFO -   Cluster 41: 21 imágenes
+2025-09-06 16:42:37,204 - __main__ - INFO -     Colores: negro, marrón, blanco
+2025-09-06 16:42:37,204 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,204 - __main__ - INFO -     Palabras clave: fashion(14), runway(3), general(2)
+2025-09-06 16:42:37,204 - __main__ - INFO -   Cluster 42: 35 imágenes
+2025-09-06 16:42:37,204 - __main__ - INFO -     Colores: negro, verde azulado, gris
+2025-09-06 16:42:37,204 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,204 - __main__ - INFO -     Palabras clave: runway(22), fashion(11), ropa(2)
+2025-09-06 16:42:37,204 - __main__ - INFO -   Cluster 43: 18 imágenes
+2025-09-06 16:42:37,204 - __main__ - INFO -     Colores: negro, gris, marrón
+2025-09-06 16:42:37,204 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,204 - __main__ - INFO -     Palabras clave: fashion(15), moda(2), runway(1)
+2025-09-06 16:42:37,204 - __main__ - INFO -   Cluster 44: 29 imágenes
+2025-09-06 16:42:37,204 - __main__ - INFO -     Colores: gris, negro, amarillo
+2025-09-06 16:42:37,204 - __main__ - INFO -     Etiqueta: neutral moderno urbano
+2025-09-06 16:42:37,204 - __main__ - INFO -     Palabras clave: fashion(14), runway(13), vestidos(1)
+2025-09-06 16:42:37,205 - __main__ - INFO -   Cluster 45: 18 imágenes
+2025-09-06 16:42:37,205 - __main__ - INFO -     Colores: negro, marrón, verde azulado
+2025-09-06 16:42:37,205 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,205 - __main__ - INFO -     Palabras clave: fashion(10), runway(8), fuente:local(18)
+2025-09-06 16:42:37,205 - __main__ - INFO -   Cluster 46: 13 imágenes
+2025-09-06 16:42:37,205 - __main__ - INFO -     Colores: negro, blanco, gris
+2025-09-06 16:42:37,205 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,205 - __main__ - INFO -     Palabras clave: fashion(13), fuente:local(13), split:train(11)
+2025-09-06 16:42:37,205 - __main__ - INFO -   Cluster 47: 12 imágenes
+2025-09-06 16:42:37,205 - __main__ - INFO -     Colores: negro, marrón, verde azulado
+2025-09-06 16:42:37,205 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,205 - __main__ - INFO -     Palabras clave: runway(6), fashion(4), ropa(2)
+2025-09-06 16:42:37,205 - __main__ - INFO -   Cluster 48: 27 imágenes
+2025-09-06 16:42:37,205 - __main__ - INFO -     Colores: negro, gris, blanco
+2025-09-06 16:42:37,205 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,206 - __main__ - INFO -     Palabras clave: fashion(21), moda(6), fuente:local(27)
+2025-09-06 16:42:37,206 - __main__ - INFO -   Cluster 49: 17 imágenes
+2025-09-06 16:42:37,206 - __main__ - INFO -     Colores: negro, blanco, marrón
+2025-09-06 16:42:37,206 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,206 - __main__ - INFO -     Palabras clave: fashion(13), runway(4), fuente:local(17)
+2025-09-06 16:42:37,206 - __main__ - INFO -   Cluster 50: 37 imágenes
+2025-09-06 16:42:37,206 - __main__ - INFO -     Colores: negro, blanco, gris
+2025-09-06 16:42:37,206 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,206 - __main__ - INFO -     Palabras clave: fashion(21), runway(14), vestidos(1)
+2025-09-06 16:42:37,206 - __main__ - INFO -   Cluster 51: 13 imágenes
+2025-09-06 16:42:37,206 - __main__ - INFO -     Colores: negro, gris, marrón
+2025-09-06 16:42:37,206 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,206 - __main__ - INFO -     Palabras clave: fashion(11), moda(1), runway(1)
+2025-09-06 16:42:37,206 - __main__ - INFO -   Cluster 52: 12 imágenes
+2025-09-06 16:42:37,206 - __main__ - INFO -     Colores: negro, gris, marrón
+2025-09-06 16:42:37,206 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,206 - __main__ - INFO -     Palabras clave: fashion(9), moda(2), runway(1)
+2025-09-06 16:42:37,206 - __main__ - INFO -   Cluster 53: 10 imágenes
+2025-09-06 16:42:37,206 - __main__ - INFO -     Colores: negro, blanco, marrón
+2025-09-06 16:42:37,206 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,206 - __main__ - INFO -     Palabras clave: fashion(5), runway(4), ropa(1)
+2025-09-06 16:42:37,206 - __main__ - INFO -   Cluster 54: 17 imágenes
+2025-09-06 16:42:37,207 - __main__ - INFO -     Colores: negro, gris, marrón
+2025-09-06 16:42:37,207 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,207 - __main__ - INFO -     Palabras clave: fashion(14), runway(2), moda(1)
+2025-09-06 16:42:37,207 - __main__ - INFO -   Cluster 55: 19 imágenes
+2025-09-06 16:42:37,207 - __main__ - INFO -     Colores: negro, blanco, marrón
+2025-09-06 16:42:37,207 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,207 - __main__ - INFO -     Palabras clave: fashion(14), runway(3), moda(2)
+2025-09-06 16:42:37,207 - __main__ - INFO -   Cluster 56: 14 imágenes
+2025-09-06 16:42:37,207 - __main__ - INFO -     Colores: negro, beige, marrón
+2025-09-06 16:42:37,207 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,207 - __main__ - INFO -     Palabras clave: fashion(10), runway(4), fuente:local(14)
+2025-09-06 16:42:37,207 - __main__ - INFO -   Cluster 57: 17 imágenes
+2025-09-06 16:42:37,207 - __main__ - INFO -     Colores: negro, blanco, beige
+2025-09-06 16:42:37,207 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,207 - __main__ - INFO -     Palabras clave: fashion(8), runway(6), ropa(1)
+2025-09-06 16:42:37,207 - __main__ - INFO -   Cluster 58: 13 imágenes
+2025-09-06 16:42:37,207 - __main__ - INFO -     Colores: burdeos, negro, marrón
+2025-09-06 16:42:37,207 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,207 - __main__ - INFO -     Palabras clave: fashion(10), runway(2), estilo(1)
+2025-09-06 16:42:37,207 - __main__ - INFO -   Cluster 59: 13 imágenes
+2025-09-06 16:42:37,207 - __main__ - INFO -     Colores: negro, blanco, gris
+2025-09-06 16:42:37,207 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,207 - __main__ - INFO -     Palabras clave: general(4), fashion(4), ropa(3)
+2025-09-06 16:42:37,207 - __main__ - INFO -   Cluster 60: 11 imágenes
+2025-09-06 16:42:37,207 - __main__ - INFO -     Colores: negro, blanco, beige
+2025-09-06 16:42:37,207 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,207 - __main__ - INFO -     Palabras clave: runway(6), fashion(3), ropa(1)
+2025-09-06 16:42:37,208 - __main__ - INFO -   Cluster 61: 20 imágenes
+2025-09-06 16:42:37,208 - __main__ - INFO -     Colores: negro, gris, plateado
+2025-09-06 16:42:37,208 - __main__ - INFO -     Etiqueta: elegante formal sofisticado
+2025-09-06 16:42:37,208 - __main__ - INFO -     Palabras clave: runway(10), ropa(9), estilo(1)
+2025-09-06 16:43:27,021 - __main__ - INFO - 🚀 Iniciando generación de visualizaciones
+2025-09-06 16:43:27,021 - __main__ - INFO - 📁 Cargando datos desde reports
+2025-09-06 16:43:27,074 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:43:27,074 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:43:27,076 - fashion_clustering.utils.io - INFO - Resultados de clustering cargados: 20594 imágenes
+2025-09-06 16:43:27,076 - fashion_clustering.utils.io - INFO - Algoritmo: dbscan
+2025-09-06 16:43:27,077 - __main__ - INFO - ✅ Datos cargados: 20594 imágenes, 62 clusters
+2025-09-06 16:43:27,077 - __main__ - INFO - 🎨 Creando visualización UMAP
+2025-09-06 16:43:27,096 - fashion_clustering.utils.io - INFO - Embeddings PCA cargados: (20594, 50)
+2025-09-06 16:43:27,096 - fashion_clustering.utils.io - INFO - Embeddings UMAP cargados: (20594, 2)
+2025-09-06 16:43:29,783 - fashion_clustering.utils.viz - INFO - Gráfico UMAP guardado en reports/umap_clusters.png
+2025-09-06 16:43:29,784 - __main__ - INFO - 📈 Creando curva del codo
+2025-09-06 16:43:30,172 - fashion_clustering.utils.viz - INFO - Curva del codo guardada en reports/elbow.png
+2025-09-06 16:43:30,172 - __main__ - INFO - 📊 Creando análisis de silhouette
+2025-09-06 16:43:30,789 - fashion_clustering.utils.viz - INFO - Análisis de silhouette guardado en reports/silhouette_analysis.png
+2025-09-06 16:43:30,789 - __main__ - INFO - 📊 Creando gráfico de tamaños de clusters
+2025-09-06 16:43:31,494 - fashion_clustering.utils.viz - INFO - Gráfico de tamaños de clusters guardado en reports/cluster_sizes.png
+2025-09-06 16:43:31,494 - __main__ - INFO - 🖼️ Creando mosaicos de prototipos
+2025-09-06 16:43:31,494 - __main__ - ERROR - ❌ Error generando visualizaciones: cannot import name 'find_cluster_prototypes' from 'fashion_clustering.utils.metrics' (/home/jose/PreditorIA2025/fashion_clustering/utils/metrics.py)
+2025-09-06 16:43:53,939 - __main__ - INFO - 🚀 Iniciando generación de visualizaciones
+2025-09-06 16:43:53,939 - __main__ - INFO - 📁 Cargando datos desde reports
+2025-09-06 16:43:53,981 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:43:53,981 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:43:53,984 - fashion_clustering.utils.io - INFO - Resultados de clustering cargados: 20594 imágenes
+2025-09-06 16:43:53,984 - fashion_clustering.utils.io - INFO - Algoritmo: dbscan
+2025-09-06 16:43:53,985 - __main__ - INFO - ✅ Datos cargados: 20594 imágenes, 62 clusters
+2025-09-06 16:43:53,985 - __main__ - INFO - 🎨 Creando visualización UMAP
+2025-09-06 16:43:53,987 - fashion_clustering.utils.io - INFO - Embeddings PCA cargados: (20594, 50)
+2025-09-06 16:43:53,987 - fashion_clustering.utils.io - INFO - Embeddings UMAP cargados: (20594, 2)
+2025-09-06 16:43:56,720 - fashion_clustering.utils.viz - INFO - Gráfico UMAP guardado en reports/umap_clusters.png
+2025-09-06 16:43:56,720 - __main__ - INFO - 📈 Creando curva del codo
+2025-09-06 16:43:57,100 - fashion_clustering.utils.viz - INFO - Curva del codo guardada en reports/elbow.png
+2025-09-06 16:43:57,100 - __main__ - INFO - 📊 Creando análisis de silhouette
+2025-09-06 16:43:57,700 - fashion_clustering.utils.viz - INFO - Análisis de silhouette guardado en reports/silhouette_analysis.png
+2025-09-06 16:43:57,700 - __main__ - INFO - 📊 Creando gráfico de tamaños de clusters
+2025-09-06 16:43:58,381 - fashion_clustering.utils.viz - INFO - Gráfico de tamaños de clusters guardado en reports/cluster_sizes.png
+2025-09-06 16:43:58,381 - __main__ - INFO - 🖼️ Creando mosaicos de prototipos
+2025-09-06 16:43:58,381 - __main__ - ERROR - ❌ Error generando visualizaciones: cannot import name 'find_cluster_prototypes' from 'fashion_clustering.utils.data' (/home/jose/PreditorIA2025/fashion_clustering/utils/data.py)
+2025-09-06 16:44:38,567 - __main__ - INFO - 🚀 Iniciando generación de visualizaciones
+2025-09-06 16:44:38,568 - __main__ - INFO - 📁 Cargando datos desde reports
+2025-09-06 16:44:38,610 - fashion_clustering.utils.io - INFO - Embeddings cargados: (20594, 256)
+2025-09-06 16:44:38,610 - fashion_clustering.utils.io - INFO - Metadatos cargados: (20594, 5)
+2025-09-06 16:44:38,613 - fashion_clustering.utils.io - INFO - Resultados de clustering cargados: 20594 imágenes
+2025-09-06 16:44:38,613 - fashion_clustering.utils.io - INFO - Algoritmo: dbscan
+2025-09-06 16:44:38,614 - __main__ - INFO - ✅ Datos cargados: 20594 imágenes, 62 clusters
+2025-09-06 16:44:38,614 - __main__ - INFO - 🎨 Creando visualización UMAP
+2025-09-06 16:44:38,616 - fashion_clustering.utils.io - INFO - Embeddings PCA cargados: (20594, 50)
+2025-09-06 16:44:38,616 - fashion_clustering.utils.io - INFO - Embeddings UMAP cargados: (20594, 2)
+2025-09-06 16:44:41,110 - fashion_clustering.utils.viz - INFO - Gráfico UMAP guardado en reports/umap_clusters.png
+2025-09-06 16:44:41,110 - __main__ - INFO - 📈 Creando curva del codo
+2025-09-06 16:44:41,482 - fashion_clustering.utils.viz - INFO - Curva del codo guardada en reports/elbow.png
+2025-09-06 16:44:41,482 - __main__ - INFO - 📊 Creando análisis de silhouette
+2025-09-06 16:44:42,074 - fashion_clustering.utils.viz - INFO - Análisis de silhouette guardado en reports/silhouette_analysis.png
+2025-09-06 16:44:42,074 - __main__ - INFO - 📊 Creando gráfico de tamaños de clusters
+2025-09-06 16:44:42,706 - fashion_clustering.utils.viz - INFO - Gráfico de tamaños de clusters guardado en reports/cluster_sizes.png
+2025-09-06 16:44:42,706 - __main__ - INFO - 🖼️ Creando mosaicos de prototipos
+2025-09-06 16:44:43,308 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 0 guardados en reports/cluster_0_prototypes.jpg
+2025-09-06 16:44:43,802 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 1 guardados en reports/cluster_1_prototypes.jpg
+2025-09-06 16:44:44,516 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 2 guardados en reports/cluster_2_prototypes.jpg
+2025-09-06 16:44:45,012 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 3 guardados en reports/cluster_3_prototypes.jpg
+2025-09-06 16:44:45,533 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 4 guardados en reports/cluster_4_prototypes.jpg
+2025-09-06 16:44:46,050 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 5 guardados en reports/cluster_5_prototypes.jpg
+2025-09-06 16:44:46,541 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 6 guardados en reports/cluster_6_prototypes.jpg
+2025-09-06 16:44:47,053 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 7 guardados en reports/cluster_7_prototypes.jpg
+2025-09-06 16:44:47,748 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 8 guardados en reports/cluster_8_prototypes.jpg
+2025-09-06 16:44:48,252 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 9 guardados en reports/cluster_9_prototypes.jpg
+2025-09-06 16:44:48,772 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 10 guardados en reports/cluster_10_prototypes.jpg
+2025-09-06 16:44:49,294 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 11 guardados en reports/cluster_11_prototypes.jpg
+2025-09-06 16:44:49,814 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 12 guardados en reports/cluster_12_prototypes.jpg
+2025-09-06 16:44:50,331 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 13 guardados en reports/cluster_13_prototypes.jpg
+2025-09-06 16:44:51,059 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 14 guardados en reports/cluster_14_prototypes.jpg
+2025-09-06 16:44:51,547 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 15 guardados en reports/cluster_15_prototypes.jpg
+2025-09-06 16:44:52,221 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 16 guardados en reports/cluster_16_prototypes.jpg
+2025-09-06 16:44:52,718 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 17 guardados en reports/cluster_17_prototypes.jpg
+2025-09-06 16:44:53,234 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 18 guardados en reports/cluster_18_prototypes.jpg
+2025-09-06 16:44:53,999 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 19 guardados en reports/cluster_19_prototypes.jpg
+2025-09-06 16:44:54,497 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 20 guardados en reports/cluster_20_prototypes.jpg
+2025-09-06 16:44:55,029 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 21 guardados en reports/cluster_21_prototypes.jpg
+2025-09-06 16:44:55,555 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 22 guardados en reports/cluster_22_prototypes.jpg
+2025-09-06 16:44:56,111 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 23 guardados en reports/cluster_23_prototypes.jpg
+2025-09-06 16:44:56,676 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 24 guardados en reports/cluster_24_prototypes.jpg
+2025-09-06 16:44:57,418 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 25 guardados en reports/cluster_25_prototypes.jpg
+2025-09-06 16:44:57,945 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 26 guardados en reports/cluster_26_prototypes.jpg
+2025-09-06 16:44:58,448 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 27 guardados en reports/cluster_27_prototypes.jpg
+2025-09-06 16:44:58,958 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 28 guardados en reports/cluster_28_prototypes.jpg
+2025-09-06 16:44:59,455 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 29 guardados en reports/cluster_29_prototypes.jpg
+2025-09-06 16:45:00,181 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 30 guardados en reports/cluster_30_prototypes.jpg
+2025-09-06 16:45:00,679 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 31 guardados en reports/cluster_31_prototypes.jpg
+2025-09-06 16:45:01,189 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 32 guardados en reports/cluster_32_prototypes.jpg
+2025-09-06 16:45:01,704 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 33 guardados en reports/cluster_33_prototypes.jpg
+2025-09-06 16:45:02,215 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 34 guardados en reports/cluster_34_prototypes.jpg
+2025-09-06 16:45:02,722 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 35 guardados en reports/cluster_35_prototypes.jpg
+2025-09-06 16:45:03,448 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 36 guardados en reports/cluster_36_prototypes.jpg
+2025-09-06 16:45:03,934 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 37 guardados en reports/cluster_37_prototypes.jpg
+2025-09-06 16:45:04,448 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 38 guardados en reports/cluster_38_prototypes.jpg
+2025-09-06 16:45:04,952 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 39 guardados en reports/cluster_39_prototypes.jpg
+2025-09-06 16:45:05,456 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 40 guardados en reports/cluster_40_prototypes.jpg
+2025-09-06 16:45:05,938 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 41 guardados en reports/cluster_41_prototypes.jpg
+2025-09-06 16:45:06,855 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 42 guardados en reports/cluster_42_prototypes.jpg
+2025-09-06 16:45:07,383 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 43 guardados en reports/cluster_43_prototypes.jpg
+2025-09-06 16:45:07,913 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 44 guardados en reports/cluster_44_prototypes.jpg
+2025-09-06 16:45:08,459 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 45 guardados en reports/cluster_45_prototypes.jpg
+2025-09-06 16:45:09,034 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 46 guardados en reports/cluster_46_prototypes.jpg
+2025-09-06 16:45:09,825 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 47 guardados en reports/cluster_47_prototypes.jpg
+2025-09-06 16:45:10,362 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 48 guardados en reports/cluster_48_prototypes.jpg
+2025-09-06 16:45:10,890 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 49 guardados en reports/cluster_49_prototypes.jpg
+2025-09-06 16:45:11,436 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 50 guardados en reports/cluster_50_prototypes.jpg
+2025-09-06 16:45:11,978 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 51 guardados en reports/cluster_51_prototypes.jpg
+2025-09-06 16:45:12,523 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 52 guardados en reports/cluster_52_prototypes.jpg
+2025-09-06 16:45:13,328 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 53 guardados en reports/cluster_53_prototypes.jpg
+2025-09-06 16:45:13,868 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 54 guardados en reports/cluster_54_prototypes.jpg
+2025-09-06 16:45:14,431 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 55 guardados en reports/cluster_55_prototypes.jpg
+2025-09-06 16:45:14,980 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 56 guardados en reports/cluster_56_prototypes.jpg
+2025-09-06 16:45:15,533 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 57 guardados en reports/cluster_57_prototypes.jpg
+2025-09-06 16:45:16,326 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 58 guardados en reports/cluster_58_prototypes.jpg
+2025-09-06 16:45:16,837 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 59 guardados en reports/cluster_59_prototypes.jpg
+2025-09-06 16:45:17,360 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 60 guardados en reports/cluster_60_prototypes.jpg
+2025-09-06 16:45:17,918 - fashion_clustering.utils.viz - INFO - Prototipos del cluster 61 guardados en reports/cluster_61_prototypes.jpg
+2025-09-06 16:45:17,919 - __main__ - INFO - 📅 Creando visualizaciones temporales
+2025-09-06 16:45:17,958 - fashion_clustering.utils.time - INFO - Tendencias temporales calculadas para 1 meses
+2025-09-06 16:45:17,967 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,969 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,970 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,971 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,971 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,972 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,972 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,972 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,973 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,973 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,973 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,974 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,975 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,975 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,977 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,978 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,979 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,980 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,980 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,981 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,981 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,981 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,982 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,983 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,984 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,985 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,986 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,987 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,987 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,987 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,988 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,988 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,989 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,990 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,992 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,992 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,993 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,994 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,994 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,995 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,995 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,996 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,997 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,998 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:17,999 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,000 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,000 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,001 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,001 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,002 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,002 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,003 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,004 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,005 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,006 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,006 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,007 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,008 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,008 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,008 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,009 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,010 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,011 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,012 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,013 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,014 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,015 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,015 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,016 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,017 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,018 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,019 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,020 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,020 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,021 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,021 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,021 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,022 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,022 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,022 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,023 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,023 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,024 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,025 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,026 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,027 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,028 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,028 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,029 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,030 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,031 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,032 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,033 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,033 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,034 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,034 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,034 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,035 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,035 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,035 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,036 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,036 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,036 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,037 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,037 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,039 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,040 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,041 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,042 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,043 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,044 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,046 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,046 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,047 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,048 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,048 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,049 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,049 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,049 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,050 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,050 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,051 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,051 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,053 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,054 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:18,055 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-06 16:45:19,422 - fashion_clustering.utils.viz - INFO - Tendencias temporales guardadas en reports/cluster_trends.png
+2025-09-06 16:45:19,424 - __main__ - INFO - 📊 Datos temporales guardados
+2025-09-06 16:45:19,450 - fashion_clustering.utils.time - INFO - Comparación local vs global: chi2=44.482, p=0.955
+2025-09-06 16:45:19,451 - __main__ - ERROR - ❌ Error generando visualizaciones: Object of type bool is not JSON serializable

@@ -1,0 +1,925 @@
+{% extends "base.html" %}
+
+{% block title %}FashionSense AI - Análisis de Tendencias de Moda{% endblock %}
+
+{% block content %}
+<!-- About Section -->
+<div id="about-section" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Imágenes Principales -->
+            <div class="mb-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Primera Imagen -->
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                            <img src="/static/uploads/runway_model1.jpg" alt="Análisis de Moda Guatemalteca" class="w-full h-[700px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 text-white">
+                                <h3 class="text-3xl font-bold mb-2">Análisis de Moda Guatemalteca</h3>
+                                <p class="text-lg opacity-90">Inteligencia Artificial Avanzada</p>
+                                <p class="text-sm opacity-75 mt-2">Tecnología de vanguardia para análisis de moda</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Segunda Imagen -->
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                            <img src="/static/uploads/runway_model2.jpg" alt="Fashion Show Guatemala" class="w-full h-[700px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 text-white">
+                                <h3 class="text-3xl font-bold mb-2">Tendencias en Tiempo Real</h3>
+                                <p class="text-lg opacity-90">Modelo propio entrenado</p>
+                                <p class="text-sm opacity-75 mt-2">¿Está de moda? Te lo decimos con % de certeza</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido Descriptivo -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                        Nuestra Misión
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        FashionSense AI revoluciona el análisis de tendencias de moda guatemalteca mediante inteligencia artificial avanzada. Nuestro sistema combina modelos de deep learning especializados con algoritmos de clustering para identificar patrones únicos en la moda local.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Utilizamos un modelo MobileNetV2 entrenado específicamente para la moda guatemalteca, procesando más de 16,000 imágenes organizadas en 150 clusters de tendencias para ofrecer análisis precisos y confiables.
+                    </p>
+                </div>
+                
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">
+                        Tecnología Avanzada
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Modelo MobileNetV2</h4>
+                                <p class="text-gray-600">Entrenado específicamente para moda guatemalteca</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Clustering K-means</h4>
+                                <p class="text-gray-600">150 grupos de tendencias identificados</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Análisis Predictivo</h4>
+                                <p class="text-gray-600">TrendScore de 0-100 para cada prenda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="space-y-2">
+                        <div class="text-4xl font-bold text-blue-600">150</div>
+                        <div class="text-lg font-semibold text-gray-900">Clusters de Tendencias</div>
+                        <div class="text-sm text-gray-600">Patrones únicos identificados</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-4xl font-bold text-purple-600">16,959</div>
+                        <div class="text-lg font-semibold text-gray-900">Imágenes Analizadas</div>
+                        <div class="text-sm text-gray-600">Dataset de moda guatemalteca</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-4xl font-bold text-green-600">11</div>
+                        <div class="text-lg font-semibold text-gray-900">Categorías de Moda</div>
+                        <div class="text-sm text-gray-600">Clasificación especializada</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div id="features-section" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Características Principales
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Tecnología de vanguardia para análisis de moda
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">IA Avanzada</h3>
+                    <p class="text-gray-600">
+                        Modelo MobileNetV2 entrenado específicamente para moda guatemalteca con 11 categorías de clasificación.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Clustering K-means</h3>
+                    <p class="text-gray-600">
+                        Análisis de 150 clusters para identificar patrones de tendencias únicos en la moda guatemalteca.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">TrendScore</h3>
+                    <p class="text-gray-600">
+                        Puntuación de 0-100 para determinar si una prenda está en tendencia basada en análisis estadístico.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Cómo Funciona el TrendScore -->
+            <div class="mt-16 bg-white rounded-2xl shadow-xl p-8">
+                <h3 class="text-2xl font-bold text-center text-gray-900 mb-8">🔬 Cómo Funciona Nuestro TrendScore</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-blue-600 font-bold text-lg">1</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Tamaño del Cluster</h4>
+                                <p class="text-gray-600 text-sm">Mide qué tan popular es este estilo. Si muchas imágenes se parecen a la tuya, significa que está en tendencia.</p>
+                                <div class="mt-2 p-2 bg-blue-50 rounded text-xs text-blue-700">
+                                    <strong>Fórmula:</strong> (imágenes del cluster ÷ cluster más grande) × 40 puntos
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-green-600 font-bold text-lg">2</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Similitud</h4>
+                                <p class="text-gray-600 text-sm">Qué tan parecida es tu imagen al grupo de tendencia. Mayor similitud = mayor tendencia.</p>
+                                <div class="mt-2 p-2 bg-green-50 rounded text-xs text-green-700">
+                                    <strong>Fórmula:</strong> similitud × 60 puntos
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-orange-600 font-bold text-lg">3</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Bonus Popularidad</h4>
+                                <p class="text-gray-600 text-sm">Clusters con más de 100 imágenes reciben bonus extra porque son estilos súper populares.</p>
+                                <div class="mt-2 p-2 bg-orange-50 rounded text-xs text-orange-700">
+                                    <strong>Fórmula:</strong> hasta 10 puntos extra
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-4 text-center">📊 Clasificación de Tendencias</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-4 h-4 bg-red-500 rounded-full"></div>
+                                    <span class="font-medium text-red-800">NO EN TENDENCIA</span>
+                                </div>
+                                <span class="text-red-600 font-bold">< 11 puntos</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                                    <span class="font-medium text-yellow-800">NEUTRO</span>
+                                </div>
+                                <span class="text-yellow-600 font-bold">11-26 puntos</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg border border-green-200">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+                                    <span class="font-medium text-green-800">EN TENDENCIA</span>
+                                </div>
+                                <span class="text-green-600 font-bold">≥ 26 puntos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-white rounded-lg border border-gray-200">
+                            <h5 class="font-semibold text-gray-900 mb-2">🎯 Base Científica</h5>
+                            <p class="text-sm text-gray-600">Basado en análisis estadístico de <strong>16,959 imágenes</strong> de moda guatemalteca usando percentiles (P25=11, P75=26)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How it Works -->
+<div class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Cómo Funciona
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Proceso de análisis en 4 pasos simples
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Sube tu Imagen</h3>
+                    <p class="text-gray-600 text-sm">Selecciona una imagen de moda para analizar</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Extracción de Características</h3>
+                    <p class="text-gray-600 text-sm">IA extrae características visuales usando MobileNetV2</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Asignación de Cluster</h3>
+                    <p class="text-gray-600 text-sm">Se encuentra el cluster más similar usando K-means</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">4</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">TrendScore</h3>
+                    <p class="text-gray-600 text-sm">Se calcula la puntuación de tendencia (0-100)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+        <!-- Upload Section -->
+<div id="upload-section" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Análisis de Tendencias
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Sube una imagen de moda y obtén un análisis completo con IA
+                </p>
+            </div>
+
+                <!-- Analysis Progress Section (Hidden by default) -->
+            <div id="progressContainer" class="bg-white rounded-xl shadow-lg p-6 mb-8" style="display: none;">
+                <div class="flex items-center mb-4">
+                    <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mr-3">
+                        <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900">Analizando Imagen...</h3>
+                </div>
+                
+                        <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                    <div id="analysisProgress" class="bg-gradient-to-r from-purple-600 to-blue-600 h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+
+                        <!-- Status Text -->
+                <div class="text-center mb-6">
+                    <p id="analysisStatus" class="text-gray-600">Iniciando análisis...</p>
+                        </div>
+
+                        <!-- Analysis Steps -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div id="step-preprocessing" class="text-center p-3 bg-gray-100 rounded-lg">
+                        <div class="w-6 h-6 bg-gray-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                            <div class="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                </div>
+                        <p class="text-sm text-gray-600">Preprocesando</p>
+                                </div>
+                    <div id="step-extraction" class="text-center p-3 bg-gray-100 rounded-lg">
+                        <div class="w-6 h-6 bg-gray-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                            <div class="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                        <p class="text-sm text-gray-600">Extrayendo</p>
+                                </div>
+                    <div id="step-clustering" class="text-center p-3 bg-gray-100 rounded-lg">
+                        <div class="w-6 h-6 bg-gray-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                            <div class="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                </div>
+                        <p class="text-sm text-gray-600">Clustering</p>
+                            </div>
+                    <div id="step-trend" class="text-center p-3 bg-gray-100 rounded-lg">
+                        <div class="w-6 h-6 bg-gray-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                            <div class="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">TrendScore</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Form -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <form id="analysisForm" enctype="multipart/form-data">
+                    <div class="mb-6">
+                        <label for="file" class="block text-sm font-medium text-gray-700 mb-2">
+                            Seleccionar Imagen
+                        </label>
+                        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-purple-400 transition duration-300">
+                            <div class="space-y-1 text-center">
+                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <div class="flex text-sm text-gray-600">
+                                    <label for="file" class="relative cursor-pointer bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-purple-500">
+                                        <span>Subir archivo</span>
+                                        <input id="file" name="file" type="file" class="sr-only" accept="image/*" required onchange="previewImage(this)">
+                                    </label>
+                                    <p class="pl-1">o arrastra y suelta</p>
+                                </div>
+                                <p class="text-xs text-gray-500">PNG, JPG, JPEG, GIF, BMP, WEBP hasta 16MB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Image Preview -->
+                    <div id="imagePreview" class="text-center mb-6" style="display: none;">
+                        <img id="previewImg" class="max-h-64 mx-auto rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105">
+                            Analizar Tendencias
+                        </button>
+                    </div>
+                </form>
+        </div>
+
+        <!-- Analysis Results Section (Hidden by default) -->
+            <div id="analysisResults" class="mt-8" style="display: none;">
+            <!-- Results will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Variables globales
+let progressInterval = null;
+
+// Función para obtener el nombre de la categoría
+function getCategoryName(classId) {
+    const classNames = {
+        0: "Accesorios",
+        1: "Estilo", 
+        2: "Fashion",
+        3: "General",
+        4: "Jewelry",
+        5: "Moda",
+        6: "Ropa",
+        7: "Runway",
+        8: "Scarves",
+        9: "Sombreros",
+        10: "Vestidos"
+    };
+    
+    if (classId !== null && classId !== undefined && classId >= 0 && classId <= 10) {
+        return classNames[classId] || `Categoría ${classId}`;
+    } else {
+        return `Clase ${classId} (fuera del rango esperado)`;
+    }
+}
+
+// Función para mostrar progreso
+function showProgressContainer() {
+    const progressContainer = document.getElementById('progressContainer');
+    if (progressContainer) {
+        progressContainer.style.display = 'block';
+    }
+}
+
+// Función para ocultar progreso
+function hideProgressContainer() {
+    const progressContainer = document.getElementById('progressContainer');
+    if (progressContainer) {
+        progressContainer.style.display = 'none';
+    }
+}
+
+// Función para actualizar barra de progreso
+function updateProgressBar(progress, status) {
+    const progressBar = document.getElementById('analysisProgress');
+    const statusText = document.getElementById('analysisStatus');
+    
+    if (progressBar) {
+        progressBar.style.width = progress + '%';
+    }
+    
+    if (statusText) {
+        statusText.textContent = status;
+    }
+    
+    // Actualizar pasos
+    updateAnalysisSteps(progress);
+}
+
+// Función para actualizar pasos
+function updateAnalysisSteps(progress) {
+    const steps = [
+        { id: 'step-preprocessing', threshold: 20 },
+        { id: 'step-extraction', threshold: 40 },
+        { id: 'step-clustering', threshold: 60 },
+        { id: 'step-trend', threshold: 80 }
+    ];
+
+    steps.forEach(step => {
+        const element = document.getElementById(step.id);
+        if (element) {
+            if (progress >= step.threshold) {
+                element.classList.remove('bg-gray-100');
+                element.classList.add('bg-green-100');
+                const icon = element.querySelector('div');
+                if (icon) {
+                    icon.classList.remove('bg-gray-400');
+                    icon.classList.add('bg-green-500');
+                    icon.innerHTML = '<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>';
+                }
+            }
+        }
+    });
+}
+
+// Función para iniciar análisis
+async function startAnalysis(file) {
+    try {
+        showProgressContainer();
+        
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const response = await fetch('/api/analyze', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            startProgressMonitoring();
+        } else {
+            throw new Error(data.error || 'Error iniciando análisis');
+        }
+    } catch (error) {
+        console.error('Error en análisis:', error);
+        alert('Error iniciando análisis: ' + error.message);
+        hideProgressContainer();
+    }
+}
+
+// Función para monitorear progreso
+function startProgressMonitoring() {
+    if (progressInterval) {
+        clearInterval(progressInterval);
+    }
+    
+    progressInterval = setInterval(async () => {
+        try {
+            const response = await fetch('/api/analysis_progress');
+            const data = await response.json();
+            
+            updateProgressBar(data.progress, data.status);
+            
+            if (!data.analysis_active && data.progress === 0) {
+                clearInterval(progressInterval);
+                progressInterval = null;
+                await getAnalysisResults();
+            }
+        } catch (error) {
+            console.error('Error monitoreando progreso:', error);
+            clearInterval(progressInterval);
+            progressInterval = null;
+            hideProgressContainer();
+        }
+    }, 1000);
+}
+
+// Función para obtener resultados
+async function getAnalysisResults() {
+    try {
+        const response = await fetch('/api/analysis_result');
+        const data = await response.json();
+        
+        if (data.success) {
+            showAnalysisResults(data.result, data.filename);
+        } else {
+            throw new Error(data.message || 'Error obteniendo resultados');
+        }
+    } catch (error) {
+        console.error('Error obteniendo resultados:', error);
+        alert('Error obteniendo resultados: ' + error.message);
+    } finally {
+        hideProgressContainer();
+    }
+}
+
+// Función para mostrar resultados
+function showAnalysisResults(result, filename) {
+    const resultsContainer = document.getElementById('analysisResults');
+    if (!resultsContainer) {
+        return;
+    }
+    
+    const interpretation = result.interpretation || {};
+    
+    const resultsHTML = `
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="flex items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">Resultados del Análisis</h3>
+            </div>
+            
+                <!-- Interpretación Principal -->
+                ${interpretation.trend_analysis ? `
+            <div class="mb-8 p-6 rounded-lg ${result.trend_score >= 26 ? 'bg-green-50 border border-green-200' : result.trend_score >= 11 ? 'bg-yellow-50 border border-yellow-200' : 'bg-red-50 border border-red-200'}">
+                <h4 class="text-lg font-semibold mb-2 ${result.trend_score >= 26 ? 'text-green-800' : result.trend_score >= 11 ? 'text-yellow-800' : 'text-red-800'}">
+                        ${interpretation.trend_analysis || 'Análisis de tendencia'}
+                </h4>
+                <p class="${result.trend_score >= 26 ? 'text-green-700' : result.trend_score >= 11 ? 'text-yellow-700' : 'text-red-700'}">${interpretation.summary || ''}</p>
+                </div>
+                ` : ''}
+                
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-4">Análisis de Tendencias</h4>
+                    
+                    <!-- Metodología Científica -->
+                    <div class="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <h5 class="text-sm font-semibold text-blue-800 mb-2">🔬 Metodología Científica</h5>
+                        <div class="text-xs text-blue-700 space-y-2">
+                            <div>
+                                <p><strong>Base de datos:</strong> 16,959 imágenes de moda guatemalteca</p>
+                                <p class="ml-3 text-blue-600">Imágenes reales de moda local organizadas en categorías</p>
+                            </div>
+                            <div>
+                                <p><strong>Clusters:</strong> 150 grupos de tendencias identificados</p>
+                                <p class="ml-3 text-blue-600">Algoritmo K-means agrupa estilos similares automáticamente</p>
+                            </div>
+                            <div>
+                                <p><strong>Distribución:</strong> 25% No tendencia, 50% Neutro, 25% En tendencia</p>
+                                <p class="ml-3 text-blue-600">Basada en análisis estadístico de percentiles del dataset real</p>
+                            </div>
+                            <div>
+                                <p><strong>Umbrales:</strong> P25=2, P75=17 (análisis de 16,959 imágenes)</p>
+                                <p class="ml-3 text-blue-600">Método científico estándar para clasificación de tendencias</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-700">Trend Score:</span>
+                                <span class="text-2xl font-bold ${result.trend_score >= 26 ? 'text-green-600' : result.trend_score >= 11 ? 'text-yellow-600' : 'text-red-600'}">
+                                    ${result.trend_score}/100
+                                </span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="h-3 rounded-full ${result.trend_score >= 26 ? 'bg-gradient-to-r from-green-500 to-green-600' : result.trend_score >= 11 ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' : 'bg-gradient-to-r from-red-500 to-red-600'}" style="width: ${result.trend_score}%"></div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Cluster ID:</span>
+                                <span class="font-semibold">${result.cluster_id}</span>
+                            </div>
+                            
+                            ${interpretation.cluster_explanation ? `<div class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">${interpretation.cluster_explanation}</div>` : ''}
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Similitud:</span>
+                                <span class="font-semibold">${result.similarity_score ? result.similarity_score.toFixed(1) : 'N/A'}%</span>
+                            </div>
+                            ${interpretation.similarity_explanation ? `<div class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">${interpretation.similarity_explanation}</div>` : ''}
+                        </div>
+                    </div>
+                            </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-4">Análisis Visual</h4>
+                    <div class="space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Confianza:</span>
+                                <span class="font-semibold">${result.confidence ? (result.confidence * 100).toFixed(1) : 'N/A'}%</span>
+                            </div>
+                            ${interpretation.confidence_analysis ? `<div class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">${interpretation.confidence_analysis}</div>` : ''}
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Clase predicha:</span>
+                                <span class="font-semibold">${result.predicted_class || 'N/A'}</span>
+                            </div>
+                            ${interpretation.class_explanation ? `<div class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">${interpretation.class_explanation}</div>` : ''}
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <span class="text-gray-700 block">Colores dominantes:</span>
+                            <div class="flex flex-wrap gap-2">
+                                ${result.colors ? result.colors.map(color => 
+                                    `<span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">${color}</span>`
+                                ).join('') : '<span class="text-gray-500">No detectados</span>'}
+                            </div>
+                            ${interpretation.color_analysis ? `<div class="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg mt-2">${interpretation.color_analysis}</div>` : ''}
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+                
+                
+                
+            <div class="mt-8 pt-6 border-t border-gray-200 text-sm text-gray-500">
+                            Análisis completado: ${result.timestamp}
+            </div>
+        </div>
+    `;
+    
+    resultsContainer.innerHTML = resultsHTML;
+    resultsContainer.style.display = 'block';
+    resultsContainer.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Función para preview de imagen
+function previewImage(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const previewImg = document.getElementById('previewImg');
+            const imagePreview = document.getElementById('imagePreview');
+            
+            if (previewImg && imagePreview) {
+                previewImg.src = e.target.result;
+                imagePreview.style.display = 'block';
+            }
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Funciones de scroll
+function scrollToUpload() {
+    document.getElementById('upload-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToAbout() {
+    document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function scrollToFeatures() {
+    document.getElementById('features-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Inicializar cuando se carga la página
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('analysisForm');
+    const fileInput = document.getElementById('file');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert('Por favor selecciona una imagen');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            
+            // Validar tipo de archivo
+            const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/bmp', 'image/webp'];
+            if (!allowedTypes.includes(file.type)) {
+                alert('Tipo de archivo no permitido. Usa JPG, PNG, GIF, BMP o WebP');
+                return;
+            }
+            
+            // Validar tamaño
+            const maxSize = 16 * 1024 * 1024; // 16MB
+            if (file.size > maxSize) {
+                alert('El archivo es demasiado grande. Máximo 16MB');
+                return;
+            }
+            
+            startAnalysis(file);
+        });
+    }
+    
+    if (fileInput) {
+        fileInput.addEventListener('change', function(e) {
+            previewImage(e.target);
+        });
+    }
+});
+</script>
+
+<!-- Planes de Suscripción Section -->
+<div id="pricing-section" class="py-20" style="background: linear-gradient(to bottom right, #fdf2f2, #fce7e7);">
+    <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Planes de Suscripción</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Elige el plan que mejor se adapte a tus necesidades de análisis de moda
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plan Básico -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 relative">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Básico</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900">Gratis</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">5 análisis por mes</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Análisis básico de tendencias</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Soporte por email</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition duration-300">
+                            Comenzar Gratis
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan Profesional -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 relative border-2" style="border-color: #76232f;">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="text-white px-4 py-2 rounded-full text-sm font-semibold" style="background-color: #76232f;">Más Popular</span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Profesional</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900">$20</span>
+                            <span class="text-gray-600">/mes</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Análisis ilimitados</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Análisis avanzado con IA</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Reportes detallados</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Soporte prioritario</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">API access</span>
+                            </li>
+                        </ul>
+                        <button class="w-full text-white py-3 px-6 rounded-lg font-semibold transition duration-300" style="background-color: #76232f;" onmouseover="this.style.backgroundColor='#8b2c3f'" onmouseout="this.style.backgroundColor='#76232f'">
+                            Suscribirse Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan Business -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 relative">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Business</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900">Contactar</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Todo del plan Profesional</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Análisis personalizado</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Integración personalizada</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Soporte 24/7</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-gray-600">Gerente de cuenta dedicado</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition duration-300">
+                            Contactar Ventas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

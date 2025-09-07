@@ -1,0 +1,116 @@
+[
+  {
+    "expected": "tops",
+    "predicted": "scarves",
+    "confidence": 0.32984232902526855,
+    "top3": [
+      {
+        "class": "scarves",
+        "confidence": 0.32984232902526855
+      },
+      {
+        "class": "pants",
+        "confidence": 0.23754015564918518
+      },
+      {
+        "class": "shoes",
+        "confidence": 0.21009117364883423
+      }
+    ]
+  },
+  {
+    "expected": "dress",
+    "predicted": "scarves",
+    "confidence": 0.4190575182437897,
+    "top3": [
+      {
+        "class": "scarves",
+        "confidence": 0.4190575182437897
+      },
+      {
+        "class": "shoes",
+        "confidence": 0.2707052528858185
+      },
+      {
+        "class": "tops",
+        "confidence": 0.19439418613910675
+      }
+    ]
+  },
+  {
+    "expected": "shoes",
+    "predicted": "tops",
+    "confidence": 0.5093644857406616,
+    "top3": [
+      {
+        "class": "tops",
+        "confidence": 0.5093644857406616
+      },
+      {
+        "class": "scarves",
+        "confidence": 0.28439006209373474
+      },
+      {
+        "class": "shoes",
+        "confidence": 0.1394137442111969
+      }
+    ]
+  },
+  {
+    "expected": "bags",
+    "predicted": "scarves",
+    "confidence": 0.942365825176239,
+    "top3": [
+      {
+        "class": "scarves",
+        "confidence": 0.942365825176239
+      },
+      {
+        "class": "shoes",
+        "confidence": 0.03788130357861519
+      },
+      {
+        "class": "pants",
+        "confidence": 0.010221375152468681
+      }
+    ]
+  },
+  {
+    "expected": "scarves",
+    "predicted": "tops",
+    "confidence": 0.5067066550254822,
+    "top3": [
+      {
+        "class": "tops",
+        "confidence": 0.5067066550254822
+      },
+      {
+        "class": "scarves",
+        "confidence": 0.471195250749588
+      },
+      {
+        "class": "shoes",
+        "confidence": 0.020601879805326462
+      }
+    ]
+  },
+  {
+    "expected": "jewelry",
+    "predicted": "shoes",
+    "confidence": 0.5021111369132996,
+    "top3": [
+      {
+        "class": "shoes",
+        "confidence": 0.5021111369132996
+      },
+      {
+        "class": "scarves",
+        "confidence": 0.26521235704421997
+      },
+      {
+        "class": "tops",
+        "confidence": 0.1766212433576584
+      }
+    ]
+  }
+]

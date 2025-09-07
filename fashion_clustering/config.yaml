@@ -1,0 +1,69 @@
+# Configuración por defecto para Fashion Clustering
+# Parámetros del dataset
+data:
+  root: "data/processed"  # Ruta base del dataset
+  image_size: [224, 224]  # Tamaño de imagen
+  batch_size: 128         # Tamaño de lote
+  num_workers: 8          # Número de workers para DataLoader
+  normalize: true         # Normalización ImageNet
+
+# Parámetros del modelo
+model:
+  name: "mobilenetv2"
+  checkpoint: "/home/jose/PreditorIA2025/data/logs/training/mobilenet_v2_final.h5"  # Ruta al checkpoint afinado
+  freeze_layers: true    # Congelar capas base
+  embedding_layer: -2    # Índice de la capa de embedding (penúltima)
+
+# Parámetros de reducción de dimensionalidad
+dimensionality_reduction:
+  pca:
+    n_components: 50
+    random_state: 42
+  umap:
+    n_components: 2
+    n_neighbors: 15
+    min_dist: 0.1
+    random_state: 42
+
+# Parámetros de clustering
+clustering:
+  kmeans:
+    k_min: 100
+    k_max: 200
+    random_state: 42
+    max_iter: 300
+    n_init: 10
+  dbscan:
+    eps_grid: [0.3, 0.5, 0.7, 0.9]
+    min_samples_grid: [5, 10, 15, 20]
+    metric: "euclidean"
+  auto:
+    prefer_kmeans: true  # Preferir K-Means en caso de empate
+
+# Parámetros de análisis
+analysis:
+  top_prototypes: 10      # Número de prototipos por cluster
+  color_samples: 5        # Tamaño de muestra para análisis de color
+  silhouette_threshold: 0.3  # Umbral mínimo de silhouette
+  dbi_threshold: 2.0      # Umbral máximo de DBI
+
+# Parámetros de visualización
+visualization:
+  figure_size: [12, 8]
+  dpi: 300
+  style: "default"        # Estilo de matplotlib
+  save_format: "png"
+
+# Parámetros de logging
+logging:
+  level: "INFO"
+  file: "reports/run.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Parámetros de reanudación
+resume:
+  enabled: true
+  check_existing: true
+  overwrite: false
+
+

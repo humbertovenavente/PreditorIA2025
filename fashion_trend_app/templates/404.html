@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Página No Encontrada - Fashion Trend Analysis{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6 mx-auto text-center">
+        <div class="error-page">
+            <h1 class="display-1 text-primary">404</h1>
+            <h2 class="mb-4">Página No Encontrada</h2>
+            <p class="lead text-muted mb-4">
+                Lo sentimos, la página que buscas no existe.
+            </p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-home me-2"></i>
+                Volver al Inicio
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

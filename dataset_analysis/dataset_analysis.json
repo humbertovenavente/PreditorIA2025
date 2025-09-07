@@ -1,0 +1,24 @@
+{
+  "total_images": 73155,
+  "total_categories": 17,
+  "category_distribution": {
+    "test_backup": 1,
+    "train_backup": 1,
+    "scarves": 3,
+    "jewelry": 3,
+    "general": 3,
+    "fashion": 3,
+    "vestidos": 3,
+    "moda": 3,
+    "ropa": 3,
+    "estilo": 3,
+    "sombreros": 3,
+    "runway": 3,
+    "accesorios": 3,
+    "validation_backup": 1,
+    "normalized": 1,
+    "images": 1,
+    "train": 1
+  },
+  "balance_ratio": 3.0
+}

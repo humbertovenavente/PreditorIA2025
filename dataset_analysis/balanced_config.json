@@ -1,0 +1,55 @@
+{
+  "balanced_stats": {
+    "tops": {
+      "train": 0,
+      "test": 0,
+      "validation": 0
+    },
+    "dress": {
+      "train": 0,
+      "test": 0,
+      "validation": 0
+    },
+    "shoes": {
+      "train": 0,
+      "test": 0,
+      "validation": 0
+    },
+    "bags": {
+      "train": 0,
+      "test": 0,
+      "validation": 0
+    },
+    "scarves": {
+      "train": 0,
+      "test": 0,
+      "validation": 0
+    },
+    "jewelry": {
+      "train": 0,
+      "test": 0,
+      "validation": 0
+    },
+    "pants": {
+      "train": 0,
+      "test": 0,
+      "validation": 0
+    },
+    "general": {
+      "train": 0,
+      "test": 0,
+      "validation": 0
+    }
+  },
+  "total_images": 0,
+  "categories": [
+    "tops",
+    "dress",
+    "shoes",
+    "bags",
+    "scarves",
+    "jewelry",
+    "pants",
+    "general"
+  ]
+}
