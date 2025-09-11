@@ -177,8 +177,8 @@ class ModelManager:
             logger.error(f"❌ Error finding closest cluster: {e}")
             return None, 0.0
     
-    def calculate_trend_score(self, cluster_id: int, similarity_score: float) -> int:
-        """Calculate trend score based on cluster and similarity"""
+    def calculate_trend_score(self, cluster_id: int, similarity_score: float = None) -> int:
+        """Calculate trend score based ONLY on cluster size (new simplified approach)"""
         if self.cluster_stats is None or cluster_id is None:
             return 50  # Neutral score
         
@@ -192,15 +192,9 @@ class ModelManager:
             else:
                 cluster_size = 0
             
-            # Calculate size score (0-40 points)
+            # Calculate trend score based ONLY on cluster size (0-100)
             max_cluster_size = max(cluster_sizes.values()) if cluster_sizes else 1
-            size_score = (cluster_size / max_cluster_size) * 40
-            
-            # Similarity contribution (0-60 points)
-            similarity_contribution = similarity_score * 0.6
-            
-            # Total score
-            trend_score = min(100, size_score + similarity_contribution)
+            trend_score = round(100 * cluster_size / max_cluster_size)
             
             return int(trend_score)
             
@@ -231,6 +225,24 @@ class ModelManager:
             logger.error(f"❌ Error getting cluster info: {e}")
             return None
     
+    def is_trending(self, cluster_id: int, trend_threshold: int = 60) -> bool:
+        """Determine if a cluster is trending based on size"""
+        trend_score = self.calculate_trend_score(cluster_id)
+        return trend_score >= trend_threshold
+    
+    def get_trend_info(self, cluster_id: int, trend_threshold: int = 60) -> Dict[str, Any]:
+        """Get complete trend information for a cluster"""
+        trend_score = self.calculate_trend_score(cluster_id)
+        is_trending = trend_score >= trend_threshold
+        
+        return {
+            'cluster_id': cluster_id,
+            'trend_score': trend_score,
+            'is_trending': is_trending,
+            'trend_label': f"En tendencia ({trend_score}/100)" if is_trending else f"No en tendencia ({trend_score}/100)",
+            'threshold': trend_threshold
+        }
+
     def get_overall_stats(self) -> Dict[str, Any]:
         """Get overall statistics"""
         if self.cluster_stats is None:
