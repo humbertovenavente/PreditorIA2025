@@ -152,14 +152,14 @@ def load_models_with_progress():
         models_loaded = False
 
 def load_clustering_data():
-    """Cargar datos de clustering desde clustering_results/"""
+    """Cargar datos de clustering desde fashion_trend_app/models/"""
     try:
         # Cargar resultados completos del clustering
-        with open('/home/jose/PreditorIA2025/clustering_results/clustering_results.pkl', 'rb') as f:
+        with open('/home/jose/PreditorIA2025/fashion_trend_app/models/clustering_results.pkl', 'rb') as f:
             clustering_results = pickle.load(f)
         
         # Cargar modelo K-means
-        with open('/home/jose/PreditorIA2025/clustering_results/kmeans_model.pkl', 'rb') as f:
+        with open('/home/jose/PreditorIA2025/fashion_trend_app/models/kmeans_model.pkl', 'rb') as f:
             kmeans_model = pickle.load(f)
         
         # Corregir tipo de datos si es necesario
