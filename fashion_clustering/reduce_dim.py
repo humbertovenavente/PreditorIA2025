@@ -39,8 +39,8 @@ def load_config(config_path: str) -> dict:
         logging.error(f"Error cargando configuración: {e}")
         return {}
 
-def run_pca(embeddings: np.ndarray, n_components: int, random_state: int = 42) -> np.ndarray:
-    """Ejecuta PCA"""
+def run_pca(embeddings: np.ndarray, n_components: int, random_state: int = 42) -> tuple:
+    """Ejecuta PCA y retorna tanto los embeddings como el modelo"""
     logger = logging.getLogger(__name__)
     logger.info(f"🔄 Ejecutando PCA con {n_components} componentes")
     
@@ -50,7 +50,7 @@ def run_pca(embeddings: np.ndarray, n_components: int, random_state: int = 42) -
     logger.info(f"✅ PCA completado: {pca_embeddings.shape}")
     logger.info(f"📊 Varianza explicada: {pca.explained_variance_ratio_.sum():.3f}")
     
-    return pca_embeddings
+    return pca_embeddings, pca
 
 def run_umap(embeddings: np.ndarray, n_components: int, n_neighbors: int = 15, 
              min_dist: float = 0.1, random_state: int = 42) -> np.ndarray:
@@ -122,11 +122,12 @@ def main():
         umap_embeddings = None
         
         # Ejecutar PCA
+        pca_model = None
         if args.method in ['pca', 'both']:
             n_components = args.n_components or pca_config.get('n_components', 50)
             random_state = args.random_state or pca_config.get('random_state', 42)
             
-            pca_embeddings = run_pca(embeddings, n_components, random_state)
+            pca_embeddings, pca_model = run_pca(embeddings, n_components, random_state)
         
         # Ejecutar UMAP
         if args.method in ['umap', 'both']:
@@ -142,6 +143,7 @@ def main():
         saved_files = save_dimensionality_reduction(
             pca_embeddings=pca_embeddings,
             umap_embeddings=umap_embeddings,
+            pca_model=pca_model,
             save_dir=args.output_dir
         )
         

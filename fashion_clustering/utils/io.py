@@ -200,6 +200,7 @@ def load_clustering_results(assignments_path: str,
 
 def save_dimensionality_reduction(pca_embeddings: Optional[np.ndarray] = None,
                                  umap_embeddings: Optional[np.ndarray] = None,
+                                 pca_model: Optional[Any] = None,
                                  save_dir: str = "reports") -> Dict[str, str]:
     """
     Guarda resultados de reducción de dimensionalidad
@@ -207,6 +208,7 @@ def save_dimensionality_reduction(pca_embeddings: Optional[np.ndarray] = None,
     Args:
         pca_embeddings: Embeddings PCA
         umap_embeddings: Embeddings UMAP
+        pca_model: Modelo PCA entrenado
         save_dir: Directorio para guardar
     
     Returns:
@@ -223,6 +225,13 @@ def save_dimensionality_reduction(pca_embeddings: Optional[np.ndarray] = None,
             np.save(pca_path, pca_embeddings)
             saved_files['pca'] = str(pca_path)
             logger.info(f"Embeddings PCA guardados en {pca_path}")
+        
+        if pca_model is not None:
+            pca_model_path = save_path / "pca_model.pkl"
+            with open(pca_model_path, 'wb') as f:
+                pickle.dump(pca_model, f)
+            saved_files['pca_model'] = str(pca_model_path)
+            logger.info(f"Modelo PCA guardado en {pca_model_path}")
         
         if umap_embeddings is not None:
             umap_path = save_path / "umap.npy"

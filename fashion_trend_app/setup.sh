@@ -5,7 +5,7 @@
 
 set -e  # Exit on any error
 
-echo "🚀 Configurando Fashion Trend Analysis App..."
+echo " Configurando Fashion Trend Analysis App..."
 
 # Colores para output
 RED='\033[0;31m'
@@ -105,23 +105,23 @@ import sys
 sys.path.append('/home/jose/PreditorIA2025')
 try:
     import fashion_clustering
-    print('✅ Módulo fashion_clustering importado correctamente')
+    print(' Módulo fashion_clustering importado correctamente')
 except ImportError as e:
-    print(f'❌ Error importando fashion_clustering: {e}')
+    print(f' Error importando fashion_clustering: {e}')
     sys.exit(1)
 
 try:
     import tensorflow as tf
-    print('✅ TensorFlow importado correctamente')
+    print(' TensorFlow importado correctamente')
 except ImportError as e:
-    print(f'❌ Error importando TensorFlow: {e}')
+    print(f' Error importando TensorFlow: {e}')
     sys.exit(1)
 
 try:
     import flask
-    print('✅ Flask importado correctamente')
+    print(' Flask importado correctamente')
 except ImportError as e:
-    print(f'❌ Error importando Flask: {e}')
+    print(f' Error importando Flask: {e}')
     sys.exit(1)
 "
 
@@ -134,15 +134,15 @@ fi
 
 # Mostrar información de uso
 echo ""
-echo "🎉 ¡Configuración completada exitosamente!"
+echo " ¡Configuración completada exitosamente!"
 echo ""
-echo "📋 Para ejecutar la aplicación:"
+echo " Para ejecutar la aplicación:"
 echo "   python3 run.py"
 echo ""
-echo "🌐 La aplicación estará disponible en:"
+echo " La aplicación estará disponible en:"
 echo "   http://localhost:5000"
 echo ""
-echo "📁 Estructura del proyecto:"
+echo " Estructura del proyecto:"
 echo "   $(pwd)/"
 echo "   ├── app.py              # Aplicación principal"
 echo "   ├── run.py              # Script de inicio"
@@ -151,11 +151,11 @@ echo "   ├── static/            # Archivos estáticos"
 echo "   ├── utils/             # Utilidades"
 echo "   └── logs/              # Archivos de log"
 echo ""
-echo "🔧 Para desarrollo:"
+echo " Para desarrollo:"
 echo "   export FLASK_ENV=development"
 echo "   python3 app.py"
 echo ""
-echo "📖 Para más información, consulta README.md"
+echo " Para más información, consulta README.md"
 echo ""
 print_success "¡Setup completado! 🚀"
 

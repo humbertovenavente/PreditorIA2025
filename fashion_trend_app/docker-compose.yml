@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  fashion-trend-app:
+    build: .
+    container_name: fashion-trend-app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app_with_progress.py
+      - FLASK_ENV=production
+      - PYTHONPATH=/app
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./static/uploads:/app/static/uploads
+    restart: unless-stopped
+    networks:
+      - fashion-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: fashion-trend-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - fashion-trend-app
+    restart: unless-stopped
+    networks:
+      - fashion-network
+
+networks:
+  fashion-network:
+    driver: bridge

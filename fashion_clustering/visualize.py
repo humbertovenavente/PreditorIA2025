@@ -51,7 +51,7 @@ def create_umap_visualization(embeddings: np.ndarray,
                             output_dir: str) -> None:
     """Crea visualización UMAP"""
     logger = logging.getLogger(__name__)
-    logger.info("🎨 Creando visualización UMAP")
+    logger.info("Creando visualización UMAP")
     
     # Cargar embeddings UMAP si existen
     dim_reduction = load_dimensionality_reduction(output_dir)
@@ -63,12 +63,12 @@ def create_umap_visualization(embeddings: np.ndarray,
             title="Clusters en espacio UMAP"
         )
     else:
-        logger.warning("⚠️ Embeddings UMAP no encontrados. Ejecute reduce_dim.py primero")
+        logger.warning("Embeddings UMAP no encontrados. Ejecute reduce_dim.py primero")
 
 def create_elbow_visualization(stats: Dict[str, Any], output_dir: str) -> None:
     """Crea visualización de curva del codo"""
     logger = logging.getLogger(__name__)
-    logger.info("📈 Creando curva del codo")
+    logger.info(" Creando curva del codo")
     
     parameters = stats.get('parameters', {})
     if 'k_range' in parameters and 'inertias' in parameters:
@@ -79,12 +79,12 @@ def create_elbow_visualization(stats: Dict[str, Any], output_dir: str) -> None:
             title="Método del Codo - K-Means"
         )
     else:
-        logger.warning("⚠️ Datos de curva del codo no disponibles")
+        logger.warning("Datos de curva del codo no disponibles")
 
 def create_silhouette_visualization(stats: Dict[str, Any], output_dir: str) -> None:
     """Crea visualización de análisis de silhouette"""
     logger = logging.getLogger(__name__)
-    logger.info("📊 Creando análisis de silhouette")
+    logger.info("Creando análisis de silhouette")
     
     parameters = stats.get('parameters', {})
     if all(key in parameters for key in ['k_range', 'silhouette_scores', 'dbi_scores']):
@@ -96,12 +96,12 @@ def create_silhouette_visualization(stats: Dict[str, Any], output_dir: str) -> N
             title="Análisis de Silhouette y DBI"
         )
     else:
-        logger.warning("⚠️ Datos de silhouette no disponibles")
+        logger.warning(" Datos de silhouette no disponibles")
 
 def create_cluster_sizes_visualization(cluster_labels: np.ndarray, output_dir: str) -> None:
     """Crea visualización de tamaños de clusters"""
     logger = logging.getLogger(__name__)
-    logger.info("📊 Creando gráfico de tamaños de clusters")
+    logger.info("Creando gráfico de tamaños de clusters")
     
     plot_cluster_sizes(
         cluster_labels,
@@ -116,7 +116,7 @@ def create_prototypes_visualization(metadata: pd.DataFrame,
                                   top_k: int = 10) -> None:
     """Crea mosaicos de prototipos"""
     logger = logging.getLogger(__name__)
-    logger.info("🖼️ Creando mosaicos de prototipos")
+    logger.info("Creando mosaicos de prototipos")
     
     # Encontrar prototipos por cluster
     from fashion_clustering.utils.data import find_cluster_prototypes
@@ -130,14 +130,14 @@ def create_prototypes_visualization(metadata: pd.DataFrame,
             images_per_row=5
         )
     else:
-        logger.warning("⚠️ No se pudieron encontrar prototipos")
+        logger.warning(" No se pudieron encontrar prototipos")
 
 def create_temporal_visualizations(metadata: pd.DataFrame,
                                  cluster_labels: np.ndarray,
                                  output_dir: str) -> None:
     """Crea visualizaciones temporales"""
     logger = logging.getLogger(__name__)
-    logger.info("📅 Creando visualizaciones temporales")
+    logger.info("Creando visualizaciones temporales")
     
     # Análisis temporal
     trends_data = analyze_temporal_trends(metadata, cluster_labels)
@@ -150,9 +150,9 @@ def create_temporal_visualizations(metadata: pd.DataFrame,
         
         # Guardar datos temporales
         trends_data.to_csv(f"{output_dir}/cluster_trends.csv", index=False)
-        logger.info("📊 Datos temporales guardados")
+        logger.info("Datos temporales guardados")
     else:
-        logger.warning("⚠️ No hay datos temporales disponibles")
+        logger.warning(" No hay datos temporales disponibles")
     
     # Análisis local vs global
     local_global_stats = compare_local_global(metadata, cluster_labels)
@@ -160,14 +160,14 @@ def create_temporal_visualizations(metadata: pd.DataFrame,
         import json
         with open(f"{output_dir}/local_global_stats.json", 'w', encoding='utf-8') as f:
             json.dump(local_global_stats, f, indent=2, ensure_ascii=False)
-        logger.info("📊 Estadísticas local vs global guardadas")
+        logger.info("Estadísticas local vs global guardadas")
     else:
-        logger.warning("⚠️ No hay datos de fuente disponibles")
+        logger.warning(" No hay datos de fuente disponibles")
 
 def create_summary_visualization(stats: Dict[str, Any], output_dir: str) -> None:
     """Crea gráfico resumen"""
     logger = logging.getLogger(__name__)
-    logger.info("📋 Creando gráfico resumen")
+    logger.info("Creando gráfico resumen")
     
     create_summary_plot(
         stats,
@@ -217,11 +217,11 @@ def main():
     setup_logging(log_file, log_level)
     
     logger = logging.getLogger(__name__)
-    logger.info("🚀 Iniciando generación de visualizaciones")
+    logger.info(" Iniciando generación de visualizaciones")
     
     try:
         # Cargar datos
-        logger.info(f"📁 Cargando datos desde {args.input_dir}")
+        logger.info(f" Cargando datos desde {args.input_dir}")
         embeddings_path = f"{args.input_dir}/embeddings.npy"
         metadata_path = f"{args.input_dir}/metadata.csv"
         assignments_path = f"{args.input_dir}/cluster_assignments.csv"
@@ -230,7 +230,7 @@ def main():
         embeddings, metadata = load_embeddings(embeddings_path, metadata_path)
         cluster_labels, stats = load_clustering_results(assignments_path, stats_path)
         
-        logger.info(f"✅ Datos cargados: {embeddings.shape[0]} imágenes, {len(np.unique(cluster_labels[cluster_labels != -1]))} clusters")
+        logger.info(f" Datos cargados: {embeddings.shape[0]} imágenes, {len(np.unique(cluster_labels[cluster_labels != -1]))} clusters")
         
         # Crear directorio de salida
         Path(args.output_dir).mkdir(parents=True, exist_ok=True)
@@ -260,19 +260,19 @@ def main():
         if args.all or args.summary:
             create_summary_visualization(stats, args.output_dir)
         
-        logger.info("🎉 Visualizaciones generadas exitosamente")
-        logger.info(f"📁 Archivos guardados en: {args.output_dir}")
+        logger.info(" Visualizaciones generadas exitosamente")
+        logger.info(f" Archivos guardados en: {args.output_dir}")
         
         # Listar archivos generados
         output_path = Path(args.output_dir)
         generated_files = list(output_path.glob("*.png")) + list(output_path.glob("*.jpg"))
         if generated_files:
-            logger.info("📊 Archivos de visualización generados:")
+            logger.info(" Archivos de visualización generados:")
             for file_path in generated_files:
                 logger.info(f"  - {file_path.name}")
         
     except Exception as e:
-        logger.error(f"❌ Error generando visualizaciones: {e}")
+        logger.error(f" Error generando visualizaciones: {e}")
         raise
 
 if __name__ == "__main__":

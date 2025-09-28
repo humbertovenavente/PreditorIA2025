@@ -18,8 +18,8 @@ class Config:
     ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp'}
     
     # Model paths
-    MODEL_PATH = '/home/jose/PreditorIA2025/data/logs/training/mobilenet_v2_final.h5'
-    CLUSTERING_DATA_DIR = '/home/jose/PreditorIA2025/reports'
+    MODEL_PATH = 'models/mobilenet_v2_final.h5'
+    CLUSTERING_DATA_DIR = 'reports'
     
     # Clustering settings
     CLUSTER_SIMILARITY_THRESHOLD = 0.7

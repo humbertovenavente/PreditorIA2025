@@ -464,14 +464,6 @@ function showAnalysisResults(result, filename) {
                     </div>
                 </div>
                 <hr>
-                <div class="row">
-                    <div class="col-12">
-                        <small class="text-muted">
-                            <i class="fas fa-clock me-1"></i>
-                            Análisis completado: ${result.timestamp}
-                        </small>
-                    </div>
-                </div>
             </div>
         </div>
     `;
