@@ -1,229 +1,107 @@
 {% extends "base.html" %}
 
-{% block title %}Resultado - Fashion Trend Analysis{% endblock %}
+{% block title %}Resultado -- FashionSense AI{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-lg-10 mx-auto">
-        <!-- Header -->
-        <div class="text-center mb-4">
-            <h1 class="display-5 fw-bold text-primary">
-                <i class="fas fa-chart-line me-2"></i>
-                Resultado del Análisis
-            </h1>
-            <p class="lead text-muted">Análisis completado el {{ result.timestamp }}</p>
+<div class="max-w-4xl mx-auto px-6 py-16">
+    <div class="mb-8">
+        <h1 class="text-2xl font-bold text-gray-900" data-i18n="resultpage.title">Resultado del analisis</h1>
+        <p class="text-sm text-gray-500 mt-1">{{ result.timestamp }}</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Image -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                <h2 class="text-sm font-medium text-gray-900" data-i18n="resultpage.image">Imagen analizada</h2>
+            </div>
+            <div class="p-4 flex justify-center">
+                <img src="{{ url_for('static', filename='uploads/' + image_path) }}"
+                     class="max-h-80 rounded"
+                     alt="Imagen analizada">
+            </div>
         </div>
 
-        <div class="row">
-            <!-- Image and Basic Info -->
-            <div class="col-lg-6 mb-4">
-                <div class="card shadow border-0">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">
-                            <i class="fas fa-image me-2"></i>
-                            Imagen Analizada
-                        </h5>
+        <!-- Trend Score -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
+                <h2 class="text-sm font-medium text-gray-900" data-i18n="resultpage.trend">Analisis de tendencias</h2>
+            </div>
+            <div class="p-4">
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-gray-600">TrendScore</span>
+                        <span class="text-xl font-bold text-gray-900">{{ result.trend_score }}/100</span>
                     </div>
-                    <div class="card-body text-center">
-                        <img src="{{ url_for('static', filename='images/uploads/' + image_path) }}" 
-                             class="img-fluid rounded shadow" 
-                             style="max-height: 400px;"
-                             alt="Imagen analizada">
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="h-2 rounded-full transition-all {% if result.is_trending %}bg-green-600{% else %}bg-yellow-500{% endif %}"
+                             style="width: {{ result.trend_score }}%"></div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Trend Analysis -->
-            <div class="col-lg-6 mb-4">
-                <div class="card shadow border-0">
-                    <div class="card-header bg-success text-white">
-                        <h5 class="mb-0">
-                            <i class="fas fa-trending-up me-2"></i>
-                            Análisis de Tendencias
-                        </h5>
+                <div class="mb-4">
+                    {% if result.is_trending %}
+                        <span class="inline-block px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded text-sm font-medium" data-i18n="result.trending">EN TENDENCIA</span>
+                    {% else %}
+                        <span class="inline-block px-3 py-1 bg-yellow-50 text-yellow-700 border border-yellow-200 rounded text-sm font-medium" data-i18n="result.not_trending">NO EN TENDENCIA</span>
+                    {% endif %}
+                </div>
+
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between py-1 border-b border-gray-100">
+                        <span class="text-gray-500" data-i18n="resultpage.cluster">Cluster</span>
+                        <span class="text-gray-900">#{{ result.cluster_id }}</span>
                     </div>
-                    <div class="card-body">
-                        <!-- Trend Score -->
-                        <div class="mb-4">
-                            <h6 class="fw-bold">TrendScore</h6>
-                            <div class="progress mb-2" style="height: 25px;">
-                                <div class="progress-bar {% if result.is_trending %}bg-success{% else %}bg-warning{% endif %}" 
-                                     role="progressbar" 
-                                     style="width: {{ result.trend_score }}%"
-                                     aria-valuenow="{{ result.trend_score }}" 
-                                     aria-valuemin="0" 
-                                     aria-valuemax="100">
-                                    {{ result.trend_score }}/100
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <small class="text-muted">No en tendencia</small>
-                                <small class="text-muted">En tendencia</small>
-                            </div>
-                        </div>
+                    <div class="flex justify-between py-1 border-b border-gray-100">
+                        <span class="text-gray-500" data-i18n="resultpage.similarity">Similitud</span>
+                        <span class="text-gray-900">{{ "%.1f"|format(result.similarity_score) }}%</span>
+                    </div>
+                </div>
 
-                        <!-- Status -->
-                        <div class="mb-4">
-                            <h6 class="fw-bold">Estado</h6>
-                            {% if result.is_trending %}
-                                <span class="badge bg-success fs-6">
-                                    <i class="fas fa-check-circle me-1"></i>
-                                    EN TENDENCIA
-                                </span>
+                {% if result.colors %}
+                <div class="mt-4">
+                    <p class="text-sm text-gray-500 mb-2" data-i18n="resultpage.dominant_colors">Colores dominantes</p>
+                    <div class="flex flex-wrap gap-2">
+                        {% for color in result.colors %}
+                            {% if color is mapping %}
+                                <span class="text-xs text-gray-700 bg-gray-100 px-2 py-1 rounded">{{ color.name }}</span>
                             {% else %}
-                                <span class="badge bg-warning fs-6">
-                                    <i class="fas fa-exclamation-circle me-1"></i>
-                                    NO EN TENDENCIA
-                                </span>
+                                <span class="text-xs text-gray-700 bg-gray-100 px-2 py-1 rounded">{{ color }}</span>
                             {% endif %}
-                        </div>
-
-                        <!-- Cluster Info -->
-                        <div class="mb-4">
-                            <h6 class="fw-bold">Cluster Asignado</h6>
-                            <p class="mb-1">
-                                <strong>ID:</strong> {{ result.cluster_id }}
-                            </p>
-                            <p class="mb-1">
-                                <strong>Similitud:</strong> {{ "%.1f"|format(result.similarity_score) }}%
-                            </p>
-                            {% if result.cluster_info %}
-                                <p class="mb-0">
-                                    <strong>Descripción:</strong> {{ result.cluster_info.description }}
-                                </p>
-                            {% endif %}
-                        </div>
-
-                        <!-- Colors -->
-                        {% if result.colors %}
-                        <div class="mb-4">
-                            <h6 class="fw-bold">Colores Dominantes</h6>
-                            <div class="d-flex flex-wrap gap-2">
-                                {% for color in result.colors %}
-                                    <span class="badge bg-secondary">{{ color }}</span>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
+    </div>
 
-        <!-- Detailed Analysis -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card shadow border-0">
-                    <div class="card-header bg-info text-white">
-                        <h5 class="mb-0">
-                            <i class="fas fa-microscope me-2"></i>
-                            Análisis Detallado
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h6 class="fw-bold text-primary">Métricas de IA</h6>
-                                <ul class="list-unstyled">
-                                    <li><strong>Confianza del modelo:</strong> 
-                                        {% if result.confidence %}
-                                            {{ "%.1f"|format(result.confidence * 100) }}%
-                                        {% else %}
-                                            N/A
-                                        {% endif %}
-                                    </li>
-                                    <li><strong>Clase predicha:</strong> 
-                                        {% if result.predicted_class %}
-                                            {{ result.predicted_class }}
-                                        {% else %}
-                                            N/A
-                                        {% endif %}
-                                    </li>
-                                    <li><strong>Score de similitud:</strong> {{ "%.1f"|format(result.similarity_score) }}%</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="fw-bold text-primary">Interpretación</h6>
-                                <p class="mb-2">
-                                    {% if result.trend_score >= 80 %}
-                                        <i class="fas fa-star text-warning"></i>
-                                        <strong>Excelente tendencia:</strong> Esta prenda está muy en tendencia según el análisis.
-                                    {% elif result.trend_score >= 60 %}
-                                        <i class="fas fa-thumbs-up text-success"></i>
-                                        <strong>Buena tendencia:</strong> La prenda muestra características de tendencia.
-                                    {% elif result.trend_score >= 40 %}
-                                        <i class="fas fa-minus text-warning"></i>
-                                        <strong>Tendencia neutral:</strong> No hay indicadores claros de tendencia.
-                                    {% else %}
-                                        <i class="fas fa-thumbs-down text-danger"></i>
-                                        <strong>Baja tendencia:</strong> La prenda no parece estar en tendencia actual.
-                                    {% endif %}
-                                </p>
-                                <p class="small text-muted mb-0">
-                                    El TrendScore se calcula basado en el tamaño del cluster y la similitud con imágenes similares en el dataset.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Actions -->
-        <div class="text-center mt-4">
-            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg me-3">
-                <i class="fas fa-upload me-2"></i>
-                Analizar Otra Imagen
-            </a>
-            <button class="btn btn-outline-secondary btn-lg" onclick="window.print()">
-                <i class="fas fa-print me-2"></i>
-                Imprimir Resultado
-            </button>
-        </div>
+    <div class="flex gap-4">
+        <a href="{{ url_for('index') }}" class="bg-gray-900 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition" data-i18n="resultpage.another">
+            Analizar otra imagen
+        </a>
+        <button onclick="window.print()" class="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-50 transition" data-i18n="resultpage.print">
+            Imprimir resultado
+        </button>
     </div>
 </div>
 {% endblock %}
 
 {% block extra_scripts %}
 <script>
-// Animate progress bar on load
 document.addEventListener('DOMContentLoaded', function() {
-    const progressBar = document.querySelector('.progress-bar');
-    const width = progressBar.style.width;
-    progressBar.style.width = '0%';
-    
-    setTimeout(() => {
-        progressBar.style.transition = 'width 1s ease-in-out';
-        progressBar.style.width = width;
-    }, 500);
-});
-
-// Print styles
-window.addEventListener('beforeprint', function() {
-    document.body.classList.add('printing');
-});
-
-window.addEventListener('afterprint', function() {
-    document.body.classList.remove('printing');
+    const bar = document.querySelector('.h-2.rounded-full.transition-all');
+    if (bar) {
+        const w = bar.style.width;
+        bar.style.width = '0%';
+        setTimeout(() => { bar.style.width = w; }, 300);
+    }
 });
 </script>
-
 <style>
 @media print {
-    .btn, .navbar, footer {
-        display: none !important;
-    }
-    
-    .card {
-        border: 1px solid #000 !important;
-        box-shadow: none !important;
-    }
-    
-    body {
-        font-size: 12pt;
-    }
+    header, footer, a, button { display: none !important; }
+    body { font-size: 12pt; }
 }
 </style>
 {% endblock %}
-
-

@@ -96,10 +96,10 @@ def preprocess_image_enhanced(image_path, target_size=(224, 224)):
         return preprocess_image(image_path, target_size)
 
 # Configuración
-app = Flask(__name__, static_folder='/home/jose/static', static_url_path='/static')
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 app.config['SECRET_KEY'] = 'fashion_trend_2025_guatemala'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-app.config['UPLOAD_FOLDER'] = '/home/jose/static/images/uploads'
+app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'uploads')
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
@@ -449,46 +449,50 @@ def analyze_image_colors(image_path):
         
         # PASO 4: Convertir a nombres de colores con análisis mejorado
         dominant_colors = []
+        dominant_colors_rgb = []
+        seen_names = []
         for cluster in cluster_info:
             r, g, b = cluster['center']
-            
+
             # Usar análisis híbrido RGB + HSV para mayor precisión
             color_name = analyze_color_hybrid(r, g, b)
-            
+
             # Evitar duplicados y colores muy similares
-            if color_name and color_name not in dominant_colors:
-                # Verificar que no sea muy similar a colores ya detectados
-                if not is_similar_color_name(color_name, dominant_colors):
-                    dominant_colors.append(color_name)
-            
-            # Limitar a 3-4 colores principales
+            if color_name and color_name not in seen_names:
+                if not is_similar_color_name(color_name, seen_names):
+                    seen_names.append(color_name)
+                    dominant_colors.append({
+                        'name': color_name,
+                        'rgb': [int(r), int(g), int(b)],
+                        'hex': '#{:02x}{:02x}{:02x}'.format(int(r), int(g), int(b)),
+                        'percentage': round(float(cluster['size']) / len(labels) * 100, 1)
+                    })
+
             if len(dominant_colors) >= 4:
                 break
-        
+
         # PASO 5: Validación y fallback
         if not dominant_colors:
             logger.info("Usando análisis directo como fallback")
-            # Análisis directo del color promedio
             avg_color = np.mean(filtered_pixels, axis=0).astype(int)
             r, g, b = avg_color
             main_color = analyze_color_hybrid(r, g, b)
-            dominant_colors = [main_color] if main_color else ['multicolor']
-        
-        # Limitar a máximo 3 colores para consistencia
-        dominant_colors = dominant_colors[:3]
+            dominant_colors = [{'name': main_color or 'multicolor', 'rgb': [int(r), int(g), int(b)], 'hex': '#{:02x}{:02x}{:02x}'.format(int(r), int(g), int(b)), 'percentage': 100.0}]
+
+        # Limitar a máximo 4 colores
+        dominant_colors = dominant_colors[:4]
         
         # Guardar en cache
         manage_cache_size()
         _color_cache[cache_key] = dominant_colors
-        
-        logger.info(f"Colores detectados MEJORADOS: {dominant_colors}")
+
+        logger.info(f"Colores detectados MEJORADOS: {[c['name'] for c in dominant_colors]}")
         logger.info(f"Tiempo de análisis: {time.time() - start_time:.2f}s")
-        
+
         return dominant_colors
-        
+
     except Exception as e:
         logger.error(f"Error en análisis de colores mejorado: {e}")
-        # Fallback robusto
         try:
             image = Image.open(image_path)
             image = image.convert('RGB')
@@ -496,9 +500,9 @@ def analyze_image_colors(image_path):
             avg_color = np.mean(data.reshape(-1, 3), axis=0).astype(int)
             r, g, b = avg_color
             basic_color = analyze_color_hybrid(r, g, b)
-            return [basic_color] if basic_color else ['multicolor']
+            return [{'name': basic_color or 'multicolor', 'rgb': [int(r), int(g), int(b)], 'hex': '#{:02x}{:02x}{:02x}'.format(int(r), int(g), int(b)), 'percentage': 100.0}]
         except:
-            return ['multicolor']
+            return [{'name': 'multicolor', 'rgb': [128, 128, 128], 'hex': '#808080', 'percentage': 100.0}]
 
 def rgb_to_color_name(r, g, b):
     """Convertir valores RGB a nombres de colores usando sistema de puntuación flexible"""
@@ -604,140 +608,88 @@ def calculate_saturation(r, g, b):
     return (max_val - min_val) / max_val
 
 def analyze_color_hybrid(r, g, b):
-    """Análisis híbrido RGB + HSV ULTRA-PRECISO para detección de colores reales"""
-    # Normalizar valores RGB
+    """Analisis de color usando webcolors + HSV para nombres en espanol precisos"""
+    import webcolors
+
+    r, g, b = int(r), int(g), int(b)
     r_norm, g_norm, b_norm = r/255.0, g/255.0, b/255.0
     h, s, v = colorsys.rgb_to_hsv(r_norm, g_norm, b_norm)
     h_deg = h * 360
-    
-    # ANÁLISIS ULTRA-PRECISO CON MÚLTIPLES CRITERIOS
-    
-    # 1. NEGROS Y BLANCOS PUROS (casos especiales)
-    if v < 0.15:  # Muy oscuro
+
+    # Neutrals first
+    if v < 0.12:
         return 'negro'
-    elif v > 0.92 and s < 0.05:  # Muy claro y sin saturación
+    if v > 0.93 and s < 0.05:
         return 'blanco'
-    
-    # 2. GRISES (baja saturación, valores medios)
-    elif s < 0.12:
-        if v < 0.25:
-            return 'gris muy oscuro'
-        elif v < 0.45:
-            return 'gris oscuro'
-        elif v < 0.70:
-            return 'gris'
-        elif v < 0.88:
-            return 'gris claro'
-        else:
-            return 'blanco'
-    
-    # 3. ROJOS MEJORADOS (0-25° y 340-360°) - MÁS PRECISO
-    elif (h_deg <= 25 or h_deg >= 340):
-        if s > 0.8 and v > 0.8:
-            return 'rojo brillante'
-        elif s > 0.6 and v > 0.6:
-            return 'rojo'
-        elif s > 0.4 and v > 0.3:
-            return 'rojo oscuro'
-        else:
-            # Rojo con poca saturación = marrón rojizo
-            return 'café rojizo' if v > 0.4 else 'café oscuro'
-    
-    # 4. NARANJAS Y MARRONES (25-65°) - SEPARACIÓN CLARA
-    elif 25 < h_deg <= 65:
-        if s > 0.7 and v > 0.7:
-            return 'naranja brillante'
-        elif s > 0.5 and v > 0.5:
-            return 'naranja'
-        elif s > 0.3:
-            return 'naranja oscuro'
-        else:
-            # Marrones (naranja desaturado)
-            if v > 0.7:
-                return 'beige'
-            elif v > 0.5:
-                return 'café claro'
-            elif v > 0.3:
-                return 'café'
-            else:
-                return 'café oscuro'
-    
-    # 5. AMARILLOS (65-95°) - MEJORADO
-    elif 65 < h_deg <= 95:
-        if s > 0.7 and v > 0.8:
-            return 'amarillo brillante'
-        elif s > 0.5 and v > 0.6:
-            return 'amarillo'
-        elif s > 0.3:
-            return 'amarillo oscuro'
-        else:
-            return 'beige amarillento'
-    
-    # 6. VERDES (95-165°) - PRECISIÓN MEJORADA
-    elif 95 < h_deg <= 165:
-        if s > 0.7 and v > 0.7:
-            return 'verde brillante'
-        elif s > 0.5 and v > 0.5:
-            if h_deg < 130:
-                return 'verde lima'
-            else:
-                return 'verde'
-        elif s > 0.3:
-            return 'verde oscuro'
-        else:
-            return 'verde grisáceo'
-    
-    # 7. CIANES (165-185°) - MÁS ESPECÍFICO
-    elif 165 < h_deg <= 185:
-        if s > 0.6:
-            return 'cian'
-        else:
-            return 'azul verdoso'
-    
-    # 8. AZULES (185-265°) - ULTRA-PRECISIÓN PARA DENIM
-    elif 185 < h_deg <= 265:
-        if s > 0.8 and v > 0.8:
-            return 'azul brillante'
-        elif s > 0.6 and v > 0.7:
-            if h_deg < 210:
-                return 'azul cielo'
-            elif h_deg < 230:
-                return 'azul'
-            else:
-                return 'azul real'
-        elif s > 0.4 and v > 0.4:
-            if h_deg < 215:
-                return 'azul denim'  # PERFECTO PARA JEANS
-            elif h_deg < 240:
-                return 'azul oscuro'
-            else:
-                return 'azul marino'
-        elif v > 0.3:
-            return 'azul marino'
-        else:
-            return 'azul muy oscuro'
-    
-    # 9. MORADOS Y VIOLETAS (265-340°) - SEPARACIÓN CLARA
-    elif 265 < h_deg < 340:
-        if h_deg < 295:  # Morados
-            if s > 0.6 and v > 0.6:
-                return 'morado'
-            elif s > 0.4:
-                return 'morado oscuro'
-            else:
-                return 'gris violáceo'
-        else:  # Magentas y rosas
-            if s > 0.7 and v > 0.7:
-                return 'magenta'
-            elif s > 0.5 and v > 0.6:
-                return 'rosa'
-            elif s > 0.3:
-                return 'rosa oscuro'
-            else:
-                return 'rosa pálido'
-    
-    # Fallback robusto
-    return 'color indefinido'
+    if s < 0.10:
+        if v < 0.3: return 'gris oscuro'
+        if v < 0.65: return 'gris'
+        return 'gris claro'
+
+    # Try webcolors closest match for english name, then translate
+    try:
+        closest = webcolors.rgb_to_name((r, g, b), spec='css3')
+    except ValueError:
+        closest = None
+
+    # Map from CSS3 english names to spanish
+    en_to_es = {
+        'black': 'negro', 'white': 'blanco', 'red': 'rojo', 'darkred': 'rojo oscuro',
+        'firebrick': 'rojo', 'crimson': 'rojo', 'indianred': 'rojo suave',
+        'tomato': 'rojo anaranjado', 'orangered': 'naranja rojizo',
+        'orange': 'naranja', 'darkorange': 'naranja oscuro',
+        'gold': 'dorado', 'yellow': 'amarillo', 'khaki': 'caqui',
+        'olive': 'oliva', 'green': 'verde', 'darkgreen': 'verde oscuro',
+        'limegreen': 'verde lima', 'forestgreen': 'verde bosque',
+        'teal': 'verde azulado', 'cyan': 'cian', 'aqua': 'agua',
+        'blue': 'azul', 'navy': 'azul marino', 'darkblue': 'azul oscuro',
+        'royalblue': 'azul real', 'steelblue': 'azul acero',
+        'dodgerblue': 'azul cielo', 'skyblue': 'azul cielo',
+        'slateblue': 'azul pizarra', 'midnightblue': 'azul medianoche',
+        'purple': 'morado', 'indigo': 'indigo', 'violet': 'violeta',
+        'magenta': 'magenta', 'pink': 'rosa', 'hotpink': 'rosa fuerte',
+        'deeppink': 'rosa intenso', 'lightpink': 'rosa claro',
+        'brown': 'cafe', 'saddlebrown': 'cafe oscuro', 'sienna': 'siena',
+        'chocolate': 'chocolate', 'peru': 'cafe claro', 'tan': 'beige',
+        'wheat': 'trigo', 'bisque': 'crema', 'beige': 'beige',
+        'maroon': 'granate', 'coral': 'coral', 'salmon': 'salmon',
+        'linen': 'crema', 'ivory': 'marfil', 'snow': 'blanco',
+        'gray': 'gris', 'grey': 'gris', 'darkgray': 'gris oscuro',
+        'lightgray': 'gris claro', 'silver': 'plateado',
+        'dimgray': 'gris oscuro', 'slategray': 'gris pizarra',
+    }
+
+    if closest and closest.lower() in en_to_es:
+        return en_to_es[closest.lower()]
+
+    # HSV fallback for cases webcolors can't match well
+    if h_deg <= 15 or h_deg >= 345:
+        if v > 0.6: return 'rojo'
+        return 'rojo oscuro'
+    if 15 < h_deg <= 45:
+        if s > 0.5 and v > 0.5: return 'naranja'
+        if v > 0.6: return 'beige'
+        if v > 0.35: return 'cafe claro'
+        return 'cafe oscuro'
+    if 45 < h_deg <= 70:
+        if v > 0.7: return 'amarillo'
+        return 'amarillo oscuro'
+    if 70 < h_deg <= 165:
+        if v > 0.6: return 'verde'
+        return 'verde oscuro'
+    if 165 < h_deg <= 195:
+        return 'cian'
+    if 195 < h_deg <= 260:
+        if v > 0.6: return 'azul'
+        return 'azul oscuro'
+    if 260 < h_deg <= 310:
+        if v > 0.6: return 'morado'
+        return 'morado oscuro'
+    if 310 < h_deg < 345:
+        if v > 0.6: return 'rosa'
+        return 'rosa oscuro'
+
+    return 'multicolor'
 
 def is_similar_color_name(color_name, existing_colors):
     """Verificar si un color es muy similar a los ya detectados"""
@@ -888,32 +840,23 @@ def api_analysis_result():
     try:
         logger.info(f"DEBUG: analysis_result disponible: {analysis_result is not None}")
         if analysis_result is not None:
-            # Convertir numpy arrays a listas para serialización JSON
-            serializable_result = {}
-            for key, value in analysis_result.items():
-                if isinstance(value, np.ndarray):
-                    serializable_result[key] = np.array(value).tolist()
-                elif isinstance(value, np.integer):
-                    serializable_result[key] = int(value)
-                elif isinstance(value, np.floating):
-                    serializable_result[key] = float(value)
-                elif isinstance(value, np.bool_):
-                    serializable_result[key] = bool(value)
-                elif isinstance(value, dict):
-                    # Procesar diccionarios anidados (como cluster_info)
-                    nested_dict = {}
-                    for nested_key, nested_value in value.items():
-                        if isinstance(nested_value, np.integer):
-                            nested_dict[nested_key] = int(nested_value)
-                        elif isinstance(nested_value, np.floating):
-                            nested_dict[nested_key] = float(nested_value)
-                        elif isinstance(nested_value, np.bool_):
-                            nested_dict[nested_key] = bool(nested_value)
-                        else:
-                            nested_dict[nested_key] = nested_value
-                    serializable_result[key] = nested_dict
-                else:
-                    serializable_result[key] = value
+            # Convertir numpy types recursivamente para serialización JSON
+            def make_serializable(obj):
+                if isinstance(obj, np.ndarray):
+                    return obj.tolist()
+                elif isinstance(obj, np.integer):
+                    return int(obj)
+                elif isinstance(obj, np.floating):
+                    return float(obj)
+                elif isinstance(obj, np.bool_):
+                    return bool(obj)
+                elif isinstance(obj, dict):
+                    return {k: make_serializable(v) for k, v in obj.items()}
+                elif isinstance(obj, list):
+                    return [make_serializable(item) for item in obj]
+                return obj
+
+            serializable_result = make_serializable(analysis_result)
             
             logger.info(f"DEBUG: Devolviendo resultado exitoso con {len(serializable_result)} campos")
             logger.info(f"DEBUG: cluster_info serializado: {serializable_result.get('cluster_info', 'NO EXISTE')}")
@@ -1050,9 +993,9 @@ def generate_comprehensive_analysis(image_path):
             'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'analysis_method': 'comprehensive_integral',
             
-            # Colores
+            # Colores (nuevo formato con RGB y hex)
             'colors': colors,
-            'primary_color': colors[0] if colors else 'Desconocido',
+            'primary_color': colors[0]['name'] if colors else 'Desconocido',
             'color_palette': colors,
             
             # Categoría y estilo
@@ -1110,48 +1053,67 @@ def generate_heuristic_interpretation(result):
         else:
             trend_label = "NO EN TENDENCIA"
         
-        # Fórmula INTELIGENTE con valores reales
-        synergy_bonus = 0
-        if h5_score > 0.15 and kmeans_score > 0.05:
-            synergy_bonus = min(0.15, (h5_score * kmeans_score) * 2)
-        
-        weighted_score = (h5_score * 0.7) + (kmeans_score * 0.3) + synergy_bonus
-        import math
-        normalized_score = 1 / (1 + math.exp(-4 * (weighted_score - 0.3)))
-        
-        formula_info = f"H5({h5_score:.3f}×0.7) + K-means({kmeans_score:.3f}×0.3) + Sinergia({synergy_bonus:.3f}) = {weighted_score:.3f} | Sigmoide = {normalized_score:.3f} | Final: {combined_score:.3f}"
-        
-        # Información del cluster con número de imágenes - Obtener del cluster_info
+        # Información del cluster
         cluster_id = cluster_info.get('cluster_id', 'N/A')
         cluster_size = cluster_info.get('cluster_size', 0)
-        
-        cluster_explanation = f"Cluster ID: {cluster_id} ({cluster_size} imágenes)"
-        
-        # También actualizar cluster_info para el resultado
-        cluster_info = {
-            'cluster_id': cluster_id,
-            'cluster_size': cluster_size,
-            'cluster_percentage': cluster_info.get('cluster_percentage', 0)
-        }
-        
-        # Asegurar que cluster_explanation se pase al resultado
+
+        cluster_explanation = f"Grupo de tendencia #{cluster_id} ({cluster_size} prendas similares)"
         result['cluster_explanation'] = cluster_explanation
-        
-        # Información de la categoría predicha
+
+        # Categoría predicha
         predicted_category = result.get('predicted_category', 'Desconocida')
-        predicted_class = result.get('predicted_class', 'N/A')
-        category_explanation = f"Categoría: {predicted_category} (Clase {predicted_class})"
-        
-        # Interpretación con fórmula completa
+        category_explanation = f"Estilo detectado: {predicted_category}"
+
+        # Generar recomendaciones para subir tendencias
+        trend_score = result.get('trend_score', 0)
+        colors = result.get('colors', [])
+        color_names = [c['name'] if isinstance(c, dict) else c for c in colors]
+        recommendations = []
+
+        if trend_score < 60:
+            recommendations.append("Combina con accesorios en tendencia para elevar el look")
+            recommendations.append("Prueba combinaciones de colores complementarios")
+            if any(c.lower() in ['negro', 'gris', 'blanco'] for c in color_names):
+                recommendations.append("Agrega un toque de color vibrante como acento")
+            recommendations.append("Considera agregar texturas o estampados populares esta temporada")
+            recommendations.append("Mezcla esta prenda con piezas de tendencia actual para un outfit equilibrado")
+        else:
+            recommendations.append("Esta prenda ya esta en tendencia, usala como pieza central del outfit")
+            recommendations.append("Complementa con accesorios minimalistas para un look elegante")
+            recommendations.append("Comparte este estilo en redes sociales para inspirar a otros")
+
+        # Analisis de colores para la interpretación
+        color_analysis = ""
+        if color_names:
+            color_analysis = f"Se detectaron los colores: {', '.join(color_names[:4])}. "
+            trending_colors = ['rojo', 'verde', 'azul', 'beige', 'terracota', 'lavanda']
+            matching = [c for c in color_names if any(tc in c.lower() for tc in trending_colors)]
+            if matching:
+                color_analysis += f"Los colores {', '.join(matching)} estan en tendencia esta temporada."
+            else:
+                color_analysis += "Considera integrar colores de temporada como terracota, lavanda o verde salvia."
+
+        # Interpretación amigable sin fórmulas
+        if trend_score >= 80:
+            trend_desc = "Esta prenda tiene un nivel de tendencia muy alto. Es un excelente acierto de moda."
+        elif trend_score >= 60:
+            trend_desc = "Esta prenda muestra buenas caracteristicas de tendencia actual."
+        elif trend_score >= 40:
+            trend_desc = "Esta prenda tiene potencial pero necesita algunos ajustes para estar en tendencia."
+        elif trend_score >= 20:
+            trend_desc = "Esta prenda no esta en la tendencia actual, pero con las combinaciones correctas puede mejorar."
+        else:
+            trend_desc = "Esta prenda esta fuera de las tendencias actuales. Revisa las recomendaciones para mejorar tu estilo."
+
         interpretation = {
             'trend_analysis': trend_label,
-            'formula_explanation': formula_info,
+            'formula_explanation': trend_desc,
             'cluster_explanation': cluster_explanation,
             'category_explanation': category_explanation,
             'confidence_analysis': "",
             'popularity_analysis': "",
-            'color_analysis': "",
-            'recommendations': [],
+            'color_analysis': color_analysis,
+            'recommendations': recommendations,
             'summary': trend_label
         }
         

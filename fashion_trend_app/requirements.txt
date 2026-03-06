@@ -18,5 +18,8 @@ opencv-python>=4.8.0
 # Data handling
 scipy>=1.11.0
 
+# Color detection
+webcolors>=25.1.0
+
 # Development
 python-dotenv>=1.0.0
