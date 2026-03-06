@@ -19,7 +19,7 @@
                     para predecir tendencias de moda locales.
                 </p>
                 <a href="#upload-section" class="inline-block bg-white text-gray-900 font-semibold py-3 px-8 rounded-lg text-sm hover:bg-gray-200 transition mb-8" data-i18n="award.cta">
-                    Probar mi prenda si esta de moda
+                    Probar si mi prenda esta de moda
                 </a>
 
                 <div class="space-y-4 text-sm text-gray-300">
@@ -55,8 +55,8 @@
     <div class="max-w-7xl mx-auto px-6 py-20">
 
         <!-- Hero Images -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
-            <div class="relative overflow-hidden rounded-lg" style="height: 520px;">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-20">
+            <div class="relative overflow-hidden rounded-lg" style="height: 280px; min-height: 280px;">
                 <img src="{{ url_for('static', filename='images/IMAGEN22.jpeg') }}"
                      alt="Analisis de Moda Guatemalteca"
                      class="w-full h-full object-cover">
@@ -66,7 +66,7 @@
                     <p class="text-sm text-white/80" data-i18n="about.hero1_sub">Inteligencia Artificial Avanzada</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg" style="height: 520px;">
+            <div class="relative overflow-hidden rounded-lg" style="height: 280px; min-height: 280px;">
                 <img src="{{ url_for('static', filename='images/imagen1.jpeg') }}"
                      alt="Fashion Show Guatemala"
                      class="w-full h-full object-cover">
@@ -156,11 +156,11 @@
                 <div id="analysisProgress" class="bg-gray-900 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
             </div>
             <p id="analysisStatus" class="text-xs text-gray-500" data-i18n="upload.status">Iniciando analisis...</p>
-            <div class="grid grid-cols-4 gap-3 mt-4">
-                <div id="step-preprocessing" class="text-center py-2 bg-gray-100 rounded text-xs text-gray-500" data-i18n="upload.step_pre">Preprocesando</div>
-                <div id="step-extraction" class="text-center py-2 bg-gray-100 rounded text-xs text-gray-500" data-i18n="upload.step_ext">Extrayendo</div>
-                <div id="step-clustering" class="text-center py-2 bg-gray-100 rounded text-xs text-gray-500" data-i18n="upload.step_clust">Clustering</div>
-                <div id="step-trend" class="text-center py-2 bg-gray-100 rounded text-xs text-gray-500" data-i18n="upload.step_trend">TrendScore</div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4">
+                <div id="step-preprocessing" class="text-center py-2 px-1 bg-gray-100 rounded text-[10px] sm:text-xs text-gray-500 truncate" data-i18n="upload.step_pre">Preprocesando</div>
+                <div id="step-extraction" class="text-center py-2 px-1 bg-gray-100 rounded text-[10px] sm:text-xs text-gray-500 truncate" data-i18n="upload.step_ext">Extrayendo</div>
+                <div id="step-clustering" class="text-center py-2 px-1 bg-gray-100 rounded text-[10px] sm:text-xs text-gray-500 truncate" data-i18n="upload.step_clust">Clustering</div>
+                <div id="step-trend" class="text-center py-2 px-1 bg-gray-100 rounded text-[10px] sm:text-xs text-gray-500 truncate" data-i18n="upload.step_trend">TrendScore</div>
             </div>
         </div>
 
@@ -323,32 +323,32 @@ function showAnalysisResults(result, filename) {
 
     container.innerHTML = ''
         + '<div class="border border-gray-200 rounded-lg overflow-hidden">'
-        + '  <div class="p-6 border-b border-gray-200">'
-        + '    <h3 class="text-lg font-semibold text-gray-900">' + t('result.title') + '</h3>'
+        + '  <div class="p-4 sm:p-6 border-b border-gray-200">'
+        + '    <h3 class="text-base sm:text-lg font-semibold text-gray-900">' + t('result.title') + '</h3>'
         + '  </div>'
-        + '  <div class="p-6">'
+        + '  <div class="p-4 sm:p-6">'
         // Status
-        + '    <div class="' + scoreBg + ' border rounded-lg p-4 mb-6">'
-        + '      <div class="flex items-center justify-between">'
-        + '        <span class="text-sm font-semibold ' + scoreText + '">' + scoreLabel + '</span>'
-        + '        <span class="text-2xl font-bold" style="color:' + scoreColor + '">' + result.trend_score + '/100</span>'
+        + '    <div class="' + scoreBg + ' border rounded-lg p-3 sm:p-4 mb-6">'
+        + '      <div class="flex items-center justify-between gap-2">'
+        + '        <span class="text-xs sm:text-sm font-semibold ' + scoreText + '">' + scoreLabel + '</span>'
+        + '        <span class="text-xl sm:text-2xl font-bold whitespace-nowrap" style="color:' + scoreColor + '">' + result.trend_score + '/100</span>'
         + '      </div>'
         + '      <div class="w-full bg-gray-200 rounded-full h-2 mt-3">'
         + '        <div class="h-2 rounded-full transition-all duration-700" style="width:' + result.trend_score + '%;background-color:' + scoreColor + '"></div>'
         + '      </div>'
-        + (interp.formula_explanation ? '<p class="text-xs text-gray-500 mt-3">' + interp.formula_explanation + '</p>' : '')
+        + (interp.formula_explanation ? '<p class="text-[10px] sm:text-xs text-gray-500 mt-3">' + interp.formula_explanation + '</p>' : '')
         + '    </div>'
-        // Grid
-        + '    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">'
-        // Left: details
+        // Grid - stacks on mobile
+        + '    <div class="grid grid-cols-1 gap-6">'
+        // Details
         + '      <div>'
         + '        <h4 class="text-sm font-semibold text-gray-900 mb-3">' + t('result.details') + '</h4>'
         + '        <div class="space-y-2 text-sm">'
         + (interp.category_explanation ? '<div class="flex justify-between py-1 border-b border-gray-100"><span class="text-gray-500">' + t('result.style') + '</span><span class="text-gray-900">' + (result.predicted_category || '') + '</span></div>' : '')
-        + (interp.cluster_explanation ? '<div class="flex justify-between py-1 border-b border-gray-100"><span class="text-gray-500">' + t('result.group') + '</span><span class="text-gray-900">#' + (result.cluster_id || '') + ' (' + (result.cluster_size || 0) + ' ' + t('result.similar_items') + ')</span></div>' : '')
+        + (interp.cluster_explanation ? '<div class="flex justify-between py-1 border-b border-gray-100"><span class="text-gray-500">' + t('result.group') + '</span><span class="text-gray-900 text-right">#' + (result.cluster_id || '') + ' (' + (result.cluster_size || 0) + ' ' + t('result.similar_items') + ')</span></div>' : '')
         + '        </div>'
         + '      </div>'
-        // Right: colors
+        // Colors
         + '      <div>'
         + '        <h4 class="text-sm font-semibold text-gray-900 mb-3">' + t('result.colors') + '</h4>'
         + '        <div class="space-y-1">' + renderColors(result.colors) + '</div>'

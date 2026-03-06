@@ -986,40 +986,40 @@ def generate_comprehensive_analysis(image_path):
         predicted_category = category_names.get(predicted_class, f'Categoría {predicted_class}') if predicted_class is not None else 'Desconocida'
         
         # 5. RESULTADO FINAL UNIFICADO
-        logger.info(f"DEBUG: cluster_info del trend_analysis: {trend_analysis.get('cluster_info', 'NO EXISTE')}")
+        cluster_info = trend_analysis.get('cluster_info') or {}
         result = {
             # Información básica
             'image_path': image_path,
             'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'analysis_method': 'comprehensive_integral',
-            
+
             # Colores (nuevo formato con RGB y hex)
             'colors': colors,
             'primary_color': colors[0]['name'] if colors else 'Desconocido',
             'color_palette': colors,
-            
+
             # Categoría y estilo
             'predicted_class': int(predicted_class) if predicted_class is not None else -1,
             'predicted_category': predicted_category,
             'style_confidence': float(confidence) if confidence else 0.0,
-            'confidence': float(confidence) if confidence else 0.0,  # Para compatibilidad con frontend
-            
+            'confidence': float(confidence) if confidence else 0.0,
+
             # Tendencias
-            'trend_score': int(trend_analysis['combined_score'] * 100),
-                'is_trending': bool(trend_analysis['is_trending']),
-                'trend_label': str(trend_analysis['trend_label']),
-                'h5_score': float(trend_analysis['h5_score']),
-                'kmeans_score': float(trend_analysis['kmeans_score']),
-                'combined_score': float(trend_analysis['combined_score']),
-            
+            'trend_score': min(100, int(trend_analysis.get('combined_score', 0) * 100)),
+            'is_trending': bool(trend_analysis.get('is_trending', False)),
+            'trend_label': str(trend_analysis.get('trend_label', 'NO EN TENDENCIA')),
+            'h5_score': float(trend_analysis.get('h5_score', 0)),
+            'kmeans_score': float(trend_analysis.get('kmeans_score', 0)),
+            'combined_score': float(trend_analysis.get('combined_score', 0)),
+
             # Clustering
-            'cluster_id': int(trend_analysis['cluster_info'].get('cluster_id', 0)),
-            'cluster_size': int(trend_analysis['cluster_info'].get('cluster_size', 0)),
-            
+            'cluster_id': int(cluster_info.get('cluster_id', 0)),
+            'cluster_size': int(cluster_info.get('cluster_size', 0)),
+
             # Fórmulas y explicaciones
-            'formula_used': str(trend_analysis.get('formula_used', 'Fórmula Inteligente: H5 + K-means + Sinergia + Sigmoide')),
+            'formula_used': str(trend_analysis.get('formula_used', 'H5 + K-means + Sinergia + Sigmoide')),
             'threshold': float(trend_analysis.get('threshold', 0.3)),
-            
+
             # Metadatos
             'total_analysis_time': 0.0,
             'models_used': ['MobileNetV2', 'K-means', 'ColorAnalysis'],
@@ -1133,12 +1133,11 @@ def generate_heuristic_interpretation(result):
             'summary': "Error en análisis"
         }
 
+# Iniciar carga de modelos en segundo plano (funciona con gunicorn y ejecucion directa)
+logger.info("Iniciando Fashion Trend App SIMPLIFICADA...")
+loading_thread = threading.Thread(target=load_models_with_progress)
+loading_thread.daemon = True
+loading_thread.start()
+
 if __name__ == '__main__':
-    # Iniciar carga de modelos en segundo plano
-    logger.info("🚀 Iniciando Fashion Trend App SIMPLIFICADA...")
-    loading_thread = threading.Thread(target=load_models_with_progress)
-    loading_thread.daemon = True
-    loading_thread.start()
-    
-    # Ejecutar aplicación
     app.run(host='0.0.0.0', port=5000, debug=False)

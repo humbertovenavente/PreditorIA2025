@@ -204,60 +204,28 @@ class FashionTrendAnalyzer:
             # Preparar batch
             image_batch = np.expand_dims(image, axis=0)
             
-            # Extraer embedding de la penúltima capa (1,280 dimensiones) según metodología real
+            # Usar salida softmax del modelo (11 dims) que coincide con KMeans
+            expected_dims = self.kmeans_model.cluster_centers_.shape[1]
+            prediction = self.h5_model.predict(image_batch, verbose=0)[0]
+
+            if len(prediction) == expected_dims:
+                embedding = prediction.astype(np.float64)
+            elif len(prediction) >= expected_dims:
+                embedding = prediction[:expected_dims].astype(np.float64)
+            else:
+                embedding = np.zeros(expected_dims, dtype=np.float64)
+                embedding[:len(prediction)] = prediction.astype(np.float64)
+
+            embedding = embedding.reshape(1, -1)
+
             try:
-                # Crear modelo intermedio para extraer embeddings de la penúltima capa
-                from tensorflow.keras.models import Model
-                intermediate_model = Model(inputs=self.h5_model.input, outputs=self.h5_model.layers[-2].output)
-                embedding_1280 = intermediate_model.predict(image_batch, verbose=0)[0]
-                
-                # Aplicar PCA para reducir de 1,280 a 50 dimensiones (según metodología)
-                if hasattr(self, 'pca_model') and self.pca_model is not None:
-                    embedding = self.pca_model.transform([embedding_1280])[0].astype(np.float64)
-                    logger.info(f"Embedding PCA: {embedding.shape} (1,280 -> 50 dimensiones)")
-                else:
-                    # Fallback: usar solo las primeras 50 dimensiones si no hay PCA
-                    embedding = embedding_1280[:50].astype(np.float64)
-                    logger.warning("Usando fallback sin PCA - solo primeras 50 dimensiones")
-                    
-            except Exception as e:
-                logger.warning(f"Error extrayendo embedding de penúltima capa: {e}")
-                # Fallback: usar la salida final
-                prediction = self.h5_model.predict(image_batch, verbose=0)[0]
-                expected_dims = self.kmeans_model.cluster_centers_.shape[1]
-                if len(prediction) >= expected_dims:
-                    embedding = prediction[:expected_dims].astype(np.float64)
-                else:
-                    embedding = np.zeros(expected_dims, dtype=np.float64)
-                    embedding[:len(prediction)] = prediction.astype(np.float64)
-            
-            embedding = embedding.reshape(1, -1)  # Asegurar forma (1, n_features)
-            
-            try:
-                # Predecir cluster
                 predicted_cluster = self.kmeans_model.predict(embedding)[0]
-                logger.info(f"Cluster predicho correctamente: {predicted_cluster}")
-                
+                logger.info(f"Cluster predicho: {predicted_cluster}")
             except Exception as cluster_error:
-                logger.error(f" Error en predicción de cluster: {cluster_error}")
-                logger.error(f"   Embedding shape después de reshape: {embedding.shape}")
-                logger.error(f"   K-means cluster centers shape: {self.kmeans_model.cluster_centers_.shape}")
-                
-                # Fallback más inteligente usando distancia a centroides
-                if hasattr(self.kmeans_model, 'cluster_centers_'):
-                    try:
-                        distances = np.linalg.norm(self.kmeans_model.cluster_centers_ - embedding.flatten(), axis=1)
-                        predicted_cluster = int(np.argmin(distances))
-                        logger.warning(f" Usando fallback por distancia: cluster {predicted_cluster}")
-                    except Exception as distance_error:
-                        logger.error(f"Error en fallback por distancia: {distance_error}")
-                        # Último recurso
-                        predicted_cluster = int(np.sum(embedding.flatten()) % len(self.cluster_sizes))
-                        logger.warning(f"Usando fallback aleatorio: cluster {predicted_cluster}")
-                else:
-                    # Último recurso
-                    predicted_cluster = int(np.sum(embedding.flatten()) % len(self.cluster_sizes))
-                    logger.warning(f" Usando fallback aleatorio: cluster {predicted_cluster}")
+                logger.error(f"Error en predicción de cluster: {cluster_error}")
+                distances = np.linalg.norm(self.kmeans_model.cluster_centers_ - embedding, axis=1)
+                predicted_cluster = int(np.argmin(distances))
+                logger.warning(f"Usando fallback por distancia: cluster {predicted_cluster}")
             
             # Calcular score K-means mejorado basado en el cluster más grande
             cluster_size = self.cluster_sizes.get(predicted_cluster, 0)
@@ -414,48 +382,26 @@ class FashionTrendAnalyzer:
             # Preparar batch
             image_batch = np.expand_dims(image, axis=0)
             
-            # Extraer embedding de la penúltima capa (1,280 dimensiones) según metodología real
+            # Usar salida softmax del modelo (dims que coinciden con KMeans)
+            expected_dims = self.kmeans_model.cluster_centers_.shape[1]
+            prediction = self.h5_model.predict(image_batch, verbose=0)[0]
+
+            if len(prediction) == expected_dims:
+                embedding = prediction.astype(np.float64)
+            elif len(prediction) >= expected_dims:
+                embedding = prediction[:expected_dims].astype(np.float64)
+            else:
+                embedding = np.zeros(expected_dims, dtype=np.float64)
+                embedding[:len(prediction)] = prediction.astype(np.float64)
+
+            embedding = embedding.reshape(1, -1)
+
             try:
-                # Crear modelo intermedio para extraer embeddings de la penúltima capa
-                from tensorflow.keras.models import Model
-                intermediate_model = Model(inputs=self.h5_model.input, outputs=self.h5_model.layers[-2].output)
-                embedding_1280 = intermediate_model.predict(image_batch, verbose=0)[0]
-                
-                # Aplicar PCA para reducir de 1,280 a 50 dimensiones (según metodología)
-                if hasattr(self, 'pca_model') and self.pca_model is not None:
-                    embedding = self.pca_model.transform([embedding_1280])[0].astype(np.float64)
-                    logger.info(f"Embedding PCA: {embedding.shape} (1,280 -> 50 dimensiones)")
-                else:
-                    # Fallback: usar solo las primeras 50 dimensiones si no hay PCA
-                    embedding = embedding_1280[:50].astype(np.float64)
-                    logger.warning("Usando fallback sin PCA - solo primeras 50 dimensiones")
-                    
-            except Exception as e:
-                logger.warning(f"Error extrayendo embedding de penúltima capa: {e}")
-                # Fallback: usar la salida final
-                prediction = self.h5_model.predict(image_batch, verbose=0)[0]
-                expected_dims = self.kmeans_model.cluster_centers_.shape[1]
-                if len(prediction) >= expected_dims:
-                    embedding = prediction[:expected_dims].astype(np.float64)
-                else:
-                    embedding = np.zeros(expected_dims, dtype=np.float64)
-                    embedding[:len(prediction)] = prediction.astype(np.float64)
-            
-            try:
-                # Predecir cluster
-                predicted_cluster = self.kmeans_model.predict([embedding])[0]
-                
+                predicted_cluster = self.kmeans_model.predict(embedding)[0]
             except Exception as cluster_error:
-                logger.error(f" Error en predicción de cluster (_get_cluster_info): {cluster_error}")
-                # Fallback más inteligente usando distancia a centroides
-                if hasattr(self.kmeans_model, 'cluster_centers_'):
-                    distances = np.linalg.norm(self.kmeans_model.cluster_centers_ - embedding, axis=1)
-                    predicted_cluster = int(np.argmin(distances))
-                    logger.warning(f" Usando fallback por distancia en _get_cluster_info: cluster {predicted_cluster}")
-                else:
-                    # Último recurso
-                    predicted_cluster = int(np.sum(embedding) % len(self.cluster_sizes))
-                    logger.warning(f" Usando fallback aleatorio en _get_cluster_info: cluster {predicted_cluster}")
+                logger.error(f"Error en cluster (_get_cluster_info): {cluster_error}")
+                distances = np.linalg.norm(self.kmeans_model.cluster_centers_ - embedding, axis=1)
+                predicted_cluster = int(np.argmin(distances))
             
             # Obtener estadísticas del cluster
             cluster_size = self.cluster_sizes.get(predicted_cluster, 0)

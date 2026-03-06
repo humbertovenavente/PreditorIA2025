@@ -9,7 +9,7 @@ const translations = {
     "award.badge": "Premios ILAN 2025",
     "award.title": "Primer prototipo de Inteligencia Artificial aplicado en el sector de la moda en Guatemala",
     "award.desc": "Reconocido con el segundo lugar en los Premios ILAN a la Innovacion Universitaria por el Israel Innovation Network. Un prototipo que utiliza redes neuronales y clustering para predecir tendencias de moda locales.",
-    "award.cta": "Probar mi prenda si esta de moda",
+    "award.cta": "Probar si mi prenda esta de moda",
     "award.project_label": "Proyecto",
     "award.project_value": "Prototipo con Redes Neuronales y Clustering para predecir tendencias de moda locales",
     "award.author_label": "Autor",
