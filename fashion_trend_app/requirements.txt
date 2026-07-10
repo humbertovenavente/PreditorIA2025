@@ -22,7 +22,8 @@ scipy>=1.11.0
 webcolors>=25.1.0
 
 # Garment segmentation (aislar la ropa del fondo antes del analisis de color)
-rembg>=2.0.50
+# rembg[cpu] incluye onnxruntime; sin backend, rembg hace sys.exit() y tumba el worker.
+rembg[cpu]>=2.0.50
 opencv-python-headless>=4.8.0
 
 # Development

@@ -27,6 +27,8 @@ def _get_rembg_session():
         return None
     if _rembg_session is not None:
         return _rembg_session
+    # Catch BaseException: rembg without an onnxruntime backend calls
+    # sys.exit(), which raises SystemExit and would otherwise kill the worker.
     try:
         from rembg import new_session
 
@@ -34,7 +36,7 @@ def _get_rembg_session():
         _rembg_session = new_session("u2netp")
         logger.info("Segmentacion: rembg (u2netp) disponible")
         return _rembg_session
-    except Exception as e:
+    except BaseException as e:
         logger.warning(f"Segmentacion: rembg no disponible, usando fallback ({e})")
         _rembg_disabled = True
         return None
@@ -51,7 +53,7 @@ def _mask_from_rembg(image: Image.Image):
         alpha = remove(image, session=session, only_mask=True)
         mask = np.array(alpha) > 128
         return mask
-    except Exception as e:
+    except BaseException as e:
         logger.warning(f"Segmentacion rembg fallo: {e}")
         return None
 
