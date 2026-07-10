@@ -53,6 +53,8 @@ def manage_cache_size():
 
 # Importar analizador de tendencias
 from utils.trend_analyzer import FashionTrendAnalyzer, create_trend_analyzer
+# Segmentacion de prenda para analisis de color mas preciso
+from utils.segmentation import get_foreground_pixels
 
 def preprocess_image(image_path, target_size=(224, 224)):
     """Preprocesar imagen para el modelo - versión básica"""
@@ -380,17 +382,13 @@ def analyze_image_colors(image_path):
         # Cargar imagen con mejor resolución para mayor precisión
         image = Image.open(image_path)
         image = image.convert('RGB')
-        
-        # Usar resolución más alta para mejor detección de colores
-        image = image.resize((300, 300), Image.Resampling.LANCZOS)
-        
-        # Convertir a array numpy
-        img_array = np.array(image)
-        pixels = img_array.reshape(-1, 3)
-        
+
+        # PASO 0: Aislar la prenda del fondo para que el color no se contamine
+        # con el fondo/piel. Devuelve solo los pixeles de la ropa.
+        pixels_float, seg_method = get_foreground_pixels(image, size=(300, 300))
+        logger.info(f"Color: usando segmentacion '{seg_method}' ({len(pixels_float)} px)")
+
         # PASO 1: Filtrar píxeles extremos y ruido de manera más eficiente
-        # Convertir a float para evitar overflow
-        pixels_float = pixels.astype(np.float32)
         
         # Calcular brightness de manera vectorizada
         brightness = np.mean(pixels_float, axis=1)

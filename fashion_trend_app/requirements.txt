@@ -4,6 +4,7 @@
 Flask>=2.3.0
 Werkzeug>=2.3.0
 Jinja2>=3.1.0
+gunicorn>=21.2.0
 
 # Machine Learning
 tensorflow-cpu>=2.16.0
@@ -19,6 +20,10 @@ scipy>=1.11.0
 
 # Color detection
 webcolors>=25.1.0
+
+# Garment segmentation (aislar la ropa del fondo antes del analisis de color)
+rembg>=2.0.50
+opencv-python-headless>=4.8.0
 
 # Development
 python-dotenv>=1.0.0

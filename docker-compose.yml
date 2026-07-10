@@ -1,49 +1,20 @@
-version: '3.8'
-
+# Deploy del backend de analisis de tendencias (UI + API + ML) en un solo contenedor.
+# En EC2: docker compose up -d --build  ->  app en el puerto 80.
 services:
-  fashion-scraper:
-    build: .
-    container_name: fashion-scraper
+  fashion-trend-app:
+    build:
+      context: ./fashion_trend_app
+    image: preditoria-backend:latest
+    container_name: preditoria-backend
+    ports:
+      - "80:8080"
     environment:
-      # Google Cloud Configuration
-      - GOOGLE_CLOUD_PROJECT=${GOOGLE_CLOUD_PROJECT}
-      - GCS_BUCKET_NAME=${GCS_BUCKET_NAME}
-      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/gcp-key.json
-      
-      # Scraper Configuration
-      - TARGET_IMAGES=5000
-      - HEADLESS_BROWSER=true
-      
-    volumes:
-      # Montar datos locales
-      - ./data:/app/data
-      - ./credentials:/app/credentials:ro
-      
-    # Configuración de recursos
-    deploy:
-      resources:
-        limits:
-          memory: 4G
-          cpus: '2'
-        reservations:
-          memory: 2G
-          cpus: '1'
-    
-    # Reiniciar en caso de fallo
+      - PORT=8080
+      - SECRET_KEY=${SECRET_KEY:-fashion_trend_2025_guatemala_prod}
     restart: unless-stopped
-    
-    # Comando por defecto
-    command: ["python", "main.py", "--platform", "all"]
-
-  # Servicio opcional para monitoreo
-  stats-viewer:
-    build: .
-    container_name: fashion-scraper-stats
-    environment:
-      - GOOGLE_CLOUD_PROJECT=${GOOGLE_CLOUD_PROJECT}
-      - GCS_BUCKET_NAME=${GCS_BUCKET_NAME}
-    volumes:
-      - ./data:/app/data
-      - ./credentials:/app/credentials:ro
-    command: ["python", "main.py", "--stats"]
-    profiles: ["stats"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
