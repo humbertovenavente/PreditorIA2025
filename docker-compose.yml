@@ -7,7 +7,8 @@ services:
     image: preditoria-backend:latest
     container_name: preditoria-backend
     ports:
-      - "80:8080"
+      # Solo localhost: Nginx (host) hace de reverse proxy en 80/443 con SSL
+      - "127.0.0.1:8080:8080"
     environment:
       - PORT=8080
       - SECRET_KEY=${SECRET_KEY:-fashion_trend_2025_guatemala_prod}
